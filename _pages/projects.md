@@ -1,6 +1,8 @@
 ---
+title: Projects
+layout: collection
 permalink: /projects/
-title: "Some Projects I'm involved in or ideas I had"
+collection: projects
+entries_layout: grid  # This will set up the grid layout
+classes: wide  # Optional: makes the page wider
 ---
-
-Great stuff Coming soon!
