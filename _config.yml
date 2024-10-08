@@ -64,14 +64,16 @@ author:
       url: "https://dhuzard.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://www.linkedin.com/in/dhuzard"
+      url: "https://x.com/DHuzard"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/dhuzard"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/blaxtractattoos/"
-
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://www.linkedin.com/in/dhuzard"
 footer:
   links:
     - label: "Twitter"
@@ -83,6 +85,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/blaxtractattoos/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://www.linkedin.com/in/dhuzard"
 
 defaults:
   # _posts

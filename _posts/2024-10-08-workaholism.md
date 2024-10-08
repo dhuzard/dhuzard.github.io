@@ -11,8 +11,6 @@ header:
   teaser: /assets/images/workaholism-infographics.webp 
 ---
 
-# The Rise of the Workaholic: How Capitalism Selected for Overwork and Is Shaping Society
-
 In the relentless hustle of modern life, we often celebrate those who put in long hours, wear exhaustion as a badge of honor, and grind their way to the top. Whether it’s in the boardroom, the lab, or even in politics, the workaholic reigns supreme. But is this relentless pursuit of work shaping more than just our individual lives? Could it be that capitalism itself has selected for workaholics, pushing them to positions of power, and in doing so, shaping our entire society?
 
 ## Workaholism: More than Just Dedication

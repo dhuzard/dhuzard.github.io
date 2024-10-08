@@ -4,7 +4,7 @@ permalink: /cv/
 title: "Quick CV overview"
 ---
 
-# Damien Huzard | Neuro-physio-behaviorist, PhD
+## Damien Huzard | Neuro-physio-behaviorist, PhD
 
 I am a neuroscientist with over a decade of experience leading multidisciplinary research projects at the intersection of neurophysiology, behavior, and data science. I specialize in neurodevelopmental disorders, particularly ASD, and Homecage monitoring systems to improve preclinical and translational research outcomes. I have a proven track record of managing complex projects, analyzing large datasets, and publishing high-impact studies. I’m passionate about leading cross-functional teams to develop innovative solutions in preclinical research.
 
