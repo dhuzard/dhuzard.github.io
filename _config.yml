@@ -21,6 +21,13 @@ github_username: DHuzard
 minimal_mistakes_skin: default
 search: true
 
+#Headers page
+header_pages:
+  - index.md # New home page
+  - _pages/posts.md # Link to your blog posts
+  - _pages/projects.md # Link to your projects page
+
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
