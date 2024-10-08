@@ -1,7 +1,8 @@
 ---
 title: "All blog Posts"
-permalink: /posts/
 layout: collection
+permalink: /posts/
 collection: posts
-author_profile: true
+entries_layout: grid  # This will set up the grid layout
+classes: wide  # Optional: makes the page wider
 ---
