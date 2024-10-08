@@ -11,7 +11,7 @@ I am a neuroscientist with over a decade of experience leading multidisciplinary
 ## Click to view My CV
 
 <a href="/assets/PDFs/CV.pdf">
-  <img src="/assets/images/CV.png" alt="My CV" style="width: 200px;">
+  <img src="/assets/images/cv.png" alt="My CV" style="width: 200px;">
 </a>
 
 ## Education
