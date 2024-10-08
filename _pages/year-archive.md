@@ -1,6 +1,7 @@
 ---
-title: "Posts by Year"
+title: "All blog Posts"
 permalink: /posts/
-layout: posts
+layout: collection
+collection: posts
 author_profile: true
 ---
