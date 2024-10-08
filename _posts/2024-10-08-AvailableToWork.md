@@ -1,6 +1,6 @@
 ---
 title: "From academia to industry: I'll still be a Scientist !"
-last_modified_at: 2024-10-08T12:12:12-10:02
+date: 2024-10-01
   - Blog
 tags:
   - post
@@ -8,6 +8,7 @@ author: HD
 header:
   image: /assets/images/DALL·E 2024-10-08-A professional.webp # Ensure your images are stored in the appropriate folder
   teaser: /assets/images/DALL·E 2024-10-08-A professional.webp
+layout: single
 ---
 
 Here I'm, advertising myself and sharing the fact that I am currently looking for a science Job (and probably not in academia anymore…)

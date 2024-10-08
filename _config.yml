@@ -128,4 +128,8 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
+  posts:
+    output: true
+    permalink: /posts/:title/
+    layout: post
 
