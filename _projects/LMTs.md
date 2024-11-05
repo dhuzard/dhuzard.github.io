@@ -18,7 +18,7 @@ In the meantime here is a little library of the result:
 
 ![Image 1](\assets\LMT\PXL_20240227_151822737.MP.jpg)
 ![Image 2](\assets\LMT\PXL_20240227_151833053.MP.jpg)
-![Image 3](\assets\LMT\PXL_20240227_151849173.MP.jpgg)
+![Image 3](\assets\LMT\PXL_20240227_151849173.MP.jpg)
 
 ## Videos
 
