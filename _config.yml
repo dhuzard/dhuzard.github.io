@@ -62,9 +62,10 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Damien Huzard"
+  name : "Damien Huzard"
   avatar : "/assets/images/dhuzard_profile_2025.jpg"
-  bio    : "Hello! I'm Damien Huzard, a Neuro-physio-behaviorist with a passion for research and development. I founded NeuroNautix in 2025 to share my expertise in data analysis, data management, behavioral experiments and homecage monitoring systems."
+  bio : "Hello! I'm Damien Huzard, a Neuro-physio-behaviorist with a passion for research and development. I founded NeuroNautix in 2025 to share my expertise in data analysis, data management, behavioral experiments and homecage monitoring systems."
+  links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://neuronautix.com"
