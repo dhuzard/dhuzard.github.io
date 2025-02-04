@@ -63,12 +63,11 @@ plugins:
 
 author:
   name   : "Damien Huzard"
-  avatar : "/assets/images/face-2.jpg"
-  bio    : "Hello! I'm **Damien Huzard**, a Neuro-physio-behaviorist with a passion for research and development. Explore my site to learn more about my professional journey, read my latest blog posts, and discover the projects I'm working on."
-  links:
+  avatar : "/assets/images/dhuzard_profile_2025.jpg"
+  bio    : "Hello! I'm **Damien Huzard**, a Neuro-physio-behaviorist with a passion for research and development. I founded NeuroNautix in 2025 to share my expertise in data analysis/management, behavioral experiments and homecage monitoring systems.
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://dhuzard.github.io"
+      url: "https://neuronautix.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://x.com/DHuzard"
