@@ -5,6 +5,8 @@ classes: wide
 author_profile: true
 ---
 ![Profile Image](/assets/images/DALL·E 2024-10-09 My GPT face.webp)
+<img src="/assets/images/DALL·E 2024-10-09 My GPT face.webp" alt="Profile Image" width="200">
+
 ## About Me
 Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)  
 
@@ -28,7 +30,26 @@ My ultimate goal is to improve the way preclinical behavioral research could ben
 
 ---
 
-## Lab Experience
+## Non-Academic Experience
+
+### Founder and CSO
+**Metadatapp**  
+[Metadatapp website](https://metadatapp.net) 
+Montpellier, France
+<p align="center">
+  <img src="/assets//images/MDTA_Logo2_thin.png" height="35"/>
+</p>
+
+### Founder and CEO
+**NeuroNautix**  
+[Neuronautix website](https://neuronautix.com)  
+Montpellier, France
+*Dec 2024 - today*
+<p align="center">
+  <img src="/assets//images/neuronautix_logo.png" height="35"/>
+</p>
+
+## Academic/Lab Experience
 
 ### Senior Postdoc
 
@@ -39,7 +60,7 @@ Montpellier, France
 *July 2021 - May 2024*
 
 <p align="center">
-  <img src="/assets//images/Inserm_Logo.png" height="50"/>
+  <img src="/assets//images/Inserm_Logo.png" height="25"/>
 </p>
 
 *What if the skin and somatosensory system were involved in social deficits of a mouse model of autism?*
@@ -78,7 +99,7 @@ EPFL, Switzerland
 *March 2014 - June 2018*
 
 <p align="center">
-  <img src="/assets//images/EPFL_Logo.png" height="50"/>
+  <img src="/assets//images/EPFL_Logo.png" height="25"/>
 </p>
 
 [LGC Lab](https://www.epfl.ch/labs/lgc/)
@@ -101,7 +122,7 @@ Concordia University
 Montreal, Canada
 *July 2012 - October 2013*
 <p align="center">
-  <img src="/assets//images/Concordia_Logo.svg.png" height="50"/>
+  <img src="/assets//images/Concordia_Logo.svg.png" height="25"/>
 </p>
 
 [CSBN Website](https://www.concordia.ca/research/neuroscience.html)
@@ -123,7 +144,7 @@ Montreal, Canada
 *GPA: 5.6/6*
 
 <p align="center">
-  <img src="/assets//images/EPFL_Logo.png" height="50"/>
+  <img src="/assets//images/EPFL_Logo.png" height="25"/>
 </p>
 
 ---
