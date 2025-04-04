@@ -14,14 +14,12 @@ Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
 I'm fascinated by bio-behavioral phenotyping, which is considering and describing organisms in their entirerity. I consider myself a **"neuro-physio-behaviorist"**.
 I like doing and trying a *lot* of stuff, mostly science related.
 
-My main research interests are gravitating around the concepts of Adaptation, Stress, coping strategies, social interactions which are linked to main physiological features such as cardiac regulation and sensory-processing.
+My main research interests are gravitating around the concepts of Adaptation, Stress, coping strategies, social interactions which are linked to main physiological features such as cardiac regulation and sensory-processing. I am an advocate for the biobehavioral phenotyping of animal models, pushing for a description over an interpretation of data! In my last postdoc, I was focusing on analyzing the skin as (one of) the first interface linking environment and behavioral adaptation.
 
-I am an advocate for the biobehavioral phenotyping of animal models, pushing for a description over an interpretation of data!
+Now, I'm very much interested into (meta)data management and how this could be improved in preclinical laboratory settings. This is why, I initiated the project MAPP. In that context, I'm now trying to incorporate relevant aspect of the Web Semantics into intuitive research workflows. 
 
-Now, I am focusing on analyzing the skin as (one of) the first interface linking environment and behavioral adaptation.
-
-- I am an expert in **behavior**: protocols and analysis. I'm moderator of [TheBehaviourForum](https://www.thebehaviourforum.org/)
-- I know a few Python libraries: **Pandas**, **Scipy**, **Seaborn**, **statsmodel**, **Dabest**, **ipywidget** ...
+- I am an expert in **behavior**: protocols and analysis. I'm administrator of [TheBehaviourForum](https://www.thebehaviourforum.org/)
+- I know few Python tools: **Pandas**, **Scipy**, **Seaborn**, **statsmodel**, **Dabest**, **ipywidget** ...
 - I developed one python library ([**LMT-Widget-Tool**](https://pypi.org/project/LWTools/)) to help non-python-experts analyze **live mouse tracker** data.
 - I combine behavioral tests with **physiological** parameters, such as **ECG/HRV** and **Skin-Nerve** recordings.
 
@@ -32,35 +30,53 @@ My ultimate goal is to improve the way preclinical behavioral research could ben
 ## Non-Academic Experience
 
 ### Founder and CSO
-**Metadatapp**  
-[Metadatapp website](https://metadatapp.net) 
+**METADATAPP (MAPP)**  
 Montpellier, France
-<p align="center">
-  <img src="/assets/images/MDTA_Logo2_thin.png" height="35"/>
-</p>
+'A platform for better metadata management in preclinical research.'
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="margin-right: 20px;">
+        <img src="/assets/images/METADATAPP (2).png" alt="your Metadata app" width="150" />
+    </div>
+    <div style="text-align: center;">
+        <a href="www.metadatapp.net" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
+    </div>
+</div>
+
+---
 
 ### Founder and CEO
-**NeuroNautix**  
-[Neuronautix website](https://neuronautix.com)  
+**NeuroNautix**   
 Montpellier, France
 *Dec 2024 - today*
-<p align="center">
-  <img src="/assets/images/neuronautix_logo.png" height="35"/>
-</p>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="margin-right: 20px;">
+        <img src="/assets/images/neuronautix_logo.png" alt="your Metadata app" width="300" />
+    </div>
+    <div style="text-align: center;">
+        <a href="www.neuronautix.com" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
+    </div>
+</div>
+
+---
 
 ## Academic/Lab Experience
 
 ### Senior Postdoc
 
 **Labs of E. Bourinet and A. François**  
-[Affective touch lab link](https://www.igf.cnrs.fr/index.php/fr/h-teams-fr/ht-francois-fr)  
-Uni Montpellier, Inserm, IGF  
+University of Montpellier, Inserm, IGF  
 Montpellier, France
 *July 2021 - May 2024*
 
-<p align="center">
-  <img src="/assets/images/Inserm_Logo.png" height="25"/>
-</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="margin-right: 20px;">
+        <img src="/assets/images/Inserm_Logo.png" alt="your Metadata app" width="300" />
+    </div>
+    <div style="text-align: center;">
+        <a href="https://www.igf.cnrs.fr/index.php/fr/h-teams-fr/ht-francois-fr" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Lab link</a>
+    </div>
+</div>
 
 *What if the skin and somatosensory system were involved in social deficits of a mouse model of autism?*
 
@@ -97,12 +113,14 @@ I was studying social behaviors with two mouse models of Autism (Magel2-KO and C
 EPFL, Switzerland
 *March 2014 - June 2018*
 
-<p align="center">
-  <img src="/assets/images/EPFL_Logo.png" height="25"/>
-</p>
-
-[LGC Lab](https://www.epfl.ch/labs/lgc/)
-
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="margin-right: 20px;">
+        <img src="/assets/images/EPFL_Logo.png" alt="your Metadata app" width="300" />
+    </div>
+    <div style="text-align: center;">
+        <a href="https://www.epfl.ch/labs/lgc/" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">LGC Lab link</a>
+    </div>
+</div>
 
 I studied the bio-behavioral phenotype of rats with different stress adaptation profiles:
 - Focused on a model of rats selected for differential adaptation profiles to stress.
@@ -120,11 +138,15 @@ I studied the bio-behavioral phenotype of rats with different stress adaptation 
 Concordia University  
 Montreal, Canada
 *July 2012 - October 2013*
-<p align="center">
-  <img src="/assets/images/Concordia_Logo.svg.png" height="25"/>
-</p>
 
-[CSBN Website](https://www.concordia.ca/research/neuroscience.html)
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="margin-right: 20px;">
+        <img src="/assets/images/Concordia_Logo.svg.png" alt="your Metadata app" width="300" />
+    </div>
+    <div style="text-align: center;">
+        <a href="https://www.concordia.ca/research/neuroscience.html" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">CSBN Website</a>
+    </div>
+</div>
 
 *The effects of extrinsic stress on somatic markers and behavior are dependent on animal housing conditions, D. Huzard et al., Physiology and Behavior, 2015*
 
@@ -142,10 +164,9 @@ Montreal, Canada
 *September 2011 - September 2013*
 *GPA: 5.6/6*
 
-<p align="center">
-  <img src="/assets/images/EPFL_Logo.png" height="25"/>
-</p>
-
+<div style="margin-right: 20px;">
+        <img src="/assets/images/EPFL_Logo.png" alt="your Metadata app" width="300" />
+</div>
 ---
 
 ### Bachelor's Degree in Life Sciences
@@ -156,6 +177,11 @@ Montreal, Canada
 ---
 
 ## Publications
+
+- **Primary sensory neuron dysfunction underlying mechanical itch hypersensitivity in a Shank3 mouse model of autism**  
+  *BioRxiv*, 2024 Dec 29; doi: https://doi.org/10.1101/2024.12.29.630575
+  **Huzard D**, Marias M, Granat C, Oliva J, Soubeyre V, Grellier G, Negm A, Devaux J, Bourinet E, and François A.  
+  [LINK](https://www.biorxiv.org/content/10.1101/2024.12.29.630575v1)
 
 - **The impact of C-tactile low-threshold mechanoreceptors on affective touch and social interactions in mice.**  
   *Science Advances*, 2022 June 29; Vol 8, Num 26 eabo7566. doi: 10.1126/sciadv.abo7566. PMID: 35767616; PMCID: PMC9242590.  
@@ -204,6 +230,9 @@ Montreal, Canada
 
 ## Conferences / Oral and Poster Presentations
 
+- **2025, May** - NeuroFrance - **Poster** "The Behaviour Forum"
+- **2025, May** - TEATIME Webinar - **Oral presentation** "The use of AI in laboratory research communication"
+- **2025, Jan.** - TEATIME Webinar - **Oral presentation** "The importance of Storytelling in Animal research communication"
 - **2023, Nov.** - SFETD, Saint-Malo - **Oral presentation** in the 'Young Talents' session: "PRIMARY SOMATOSENSORY NEURONS DYSFUNCTION IN A MOUSE MODEL OF AUTISM"
 - **2023, July** - The Festival of Touch, IASAT, Marseille - **Poster**: "PRIMARY SOMATOSENSORY NEURONS DYSFUNCTION IN A MOUSE MODEL OF AUTISM"
 - **2023, May** - Neurofrance, Lyon - **Poster**: "PRIMARY SOMATOSENSORY NEURONS DYSFUNCTION IN A MOUSE MODEL OF AUTISM"
@@ -229,6 +258,7 @@ Montreal, Canada
 
 ## Grants / Awards
 
+- **2025, May** - COST - Young researcher and innovators travel Grant ⇒ Attendance to neuroFrance on Behalf of [The Behaviour Forum](www.thebehaviourforum.com)
 - **2023, June** - YISS, IGF - Best Speaker Award (€500) ⇒ Cajal MABA Neurokit course
 - **2023, March** - RFRD 2023 Symposium - Best Presentation Award ⇒ Invitation to the SFETD 2023 conference
 - **2023, January** - EPNA - 'Excellent Paper in Neuroscience Award' from [neuron-eranet.eu](https://www.neuron-eranet.eu/joint-calls/epna/excellent-paper-in-neuroscience-award-2022/) for our article in Science Advances: [Paper Link](https://www.science.org/doi/10.1126/sciadv.abo7566/)
@@ -259,6 +289,7 @@ Montreal, Canada
 
 ## Collaborations
 
+- **Denis Greuet (INM Montpellier)**: Testing Homecage monitoring systems
 - **Lilian Basso (Toulouse)**: Analysis of inflammatory markers in the skin.
 - **Antoine Besnard (IGF)**:
   - Testing somatosensory responses (Von-Frey filaments) in the context of avoidance in mice.
@@ -270,6 +301,8 @@ Montreal, Canada
 
 ## Responsibilities
 
+- **2025-Present**: Founder of [METADATAPP](www.metadatapp.net)
+- **2024-Present**: Founder of [NeuroNautix](https://www.neuronautix.com/)
 - **2023-Present**: Moderator of [TheBehaviouralForum.org](https://www.thebehaviouralforum.org/)
 - **2023-Present**: Member of [COST-TEATIME](https://www.cost-teatime.org/) (WG3 & 4): Improving biomedical research by automated behaviour monitoring in the animal home-cage
 - **2022-Present**: Member of the IGF lab council
