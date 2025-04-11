@@ -12,7 +12,7 @@ Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
 
 I'm fascinated by bio-behavioral phenotyping, which is considering and describing organisms in their entirerity. I consider myself a **"neuro-physio-behaviorist"**.
-I like doing and trying a *lot* of stuff, mostly science related.
+I like doing and trying a *lot* of stuff, mostly science related. I'm also an **Open Science** Advocate.
 
 My main research interests are gravitating around the concepts of Adaptation, Stress, coping strategies, social interactions which are linked to main physiological features such as cardiac regulation and sensory-processing. I am an advocate for the biobehavioral phenotyping of animal models, pushing for a description over an interpretation of data! In my last postdoc, I was focusing on analyzing the skin as (one of) the first interface linking environment and behavioral adaptation.
 
@@ -32,7 +32,7 @@ My ultimate goal is to improve the way preclinical behavioral research could ben
 ### Founder and CSO
 **METADATAPP (MAPP)**  
 Montpellier, France
-'A platform for better metadata management in preclinical research.'
+'A platform to facilitate metadata management in preclinical research.'
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="margin-right: 20px;">
         <img src="/assets/images/METADATAPP (2).png" alt="your Metadata app" width="150" />
