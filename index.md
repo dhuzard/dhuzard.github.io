@@ -4,10 +4,11 @@ permalink: /
 classes: wide
 author_profile: true
 ---
-<img src="/assets/images/NeuroNautix-Moustraunot nobg.png" alt="Profile Image" width="400" style="display:block; margin:auto;">
+<img src="assets\images\NeuroNautix-Moustraunot_nobg.png" alt="Profile Image" width="400" style="display:block; margin:auto;">
 
 ## About Me
 Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
+
 ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
 
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
