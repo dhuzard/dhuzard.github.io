@@ -4,10 +4,11 @@ permalink: /
 classes: wide
 author_profile: true
 ---
-<img src="/assets/images/DALL·E 2024-10-09 My GPT face.webp" alt="Profile Image" width="400" style="display:block; margin:auto;">
+<img src="/assets/images/NeuroNautix-Moustraunot nobg.png" alt="Profile Image" width="400" style="display:block; margin:auto;">
 
 ## About Me
-Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)  
+Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
+ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
 
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
 
@@ -18,6 +19,7 @@ My main research interests are gravitating around the concepts of Adaptation, St
 
 Now, I'm very much interested into (meta)data management and how this could be improved in preclinical laboratory settings. This is why, I initiated the project MAPP. In that context, I'm now trying to incorporate relevant aspect of the Web Semantics into intuitive research workflows. 
 
+- I love Home Cage monitoring technologies and the way integrating various sensors may lead to the most accurate and usefull digital biomarkers in preclinical research.
 - I am an expert in **behavior**: protocols and analysis. I'm administrator of [TheBehaviourForum](https://www.thebehaviourforum.org/)
 - I know few Python tools: **Pandas**, **Scipy**, **Seaborn**, **statsmodel**, **Dabest**, **ipywidget** ...
 - I developed one python library ([**LMT-Widget-Tool**](https://pypi.org/project/LWTools/)) to help non-python-experts analyze **live mouse tracker** data.
