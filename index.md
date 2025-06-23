@@ -7,6 +7,7 @@ author_profile: true
 <img src="assets\images\Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="250" style="display:block; margin:auto;">
 
 ## About Me
+Hi! I'm Damien Huzard, PhD in behavioral neuroscience
 > Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
 
 > ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
@@ -14,8 +15,6 @@ author_profile: true
 > For *Behavioral expertise*, *Consultancy on FAIR [Metadata management](https://www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website](https://www.neuronautix.com)!
 
 > To Book a quick meeting please check [here](https://koalendar.com/e/meet-with-damien-huzard)
-
-Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
 
 I'm fascinated by bio-behavioral phenotyping, which is considering and describing organisms in their entirerity. I consider myself a **Scientist** specialized in neuroscience, physiology and behavioral outputs.
 I like doing a *lot* of stuff, mostly science related. I'm also an **Open Science** Advocate.
