@@ -11,7 +11,7 @@ Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
 
 ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
 
-For *Behavioral expertise*, *Consultancy on FAIR [Metadata management]((https://www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website]((https://www.neuronautix.com)!
+For *Behavioral expertise*, *Consultancy on FAIR [Metadata management](https://www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website](https://www.neuronautix.com)!
 
 To Book a quick meeting please check [here](https://koalendar.com/e/meet-with-damien-huzard)
 
