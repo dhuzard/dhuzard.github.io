@@ -7,13 +7,13 @@ author_profile: true
 <img src="assets\images\Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="250" style="display:block; margin:auto;">
 
 ## About Me
-Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
+> Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
 
-ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
+> ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
 
-For *Behavioral expertise*, *Consultancy on FAIR [Metadata management](https://www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website](https://www.neuronautix.com)!
+> For *Behavioral expertise*, *Consultancy on FAIR [Metadata management](https://www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website](https://www.neuronautix.com)!
 
-To Book a quick meeting please check [here](https://koalendar.com/e/meet-with-damien-huzard)
+> To Book a quick meeting please check [here](https://koalendar.com/e/meet-with-damien-huzard)
 
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
 
