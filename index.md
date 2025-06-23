@@ -4,45 +4,50 @@ permalink: /
 classes: wide
 author_profile: true
 ---
-<img src="assets\images\NeuroNautix-Moustraunot_nobg.png" alt="Profile Image" width="400" style="display:block; margin:auto;">
+<img src="assets\images\Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="400" style="display:block; margin:auto;">
 
 ## About Me
 Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
 
 ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
 
-For *Behavioral expertise*, *Consultancy on FAIR Metadata management* and Data analysis services please check [NEURONAUTIX website](www.neuronautix.com)!
+For *Behavioral expertise*, *Consultancy on FAIR [Metadata management](www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website](www.neuronautix.com)!
 
 To Book a quick meeting please check [here](https://koalendar.com/e/meet-with-damien-huzard)
 
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience.
 
-I'm fascinated by bio-behavioral phenotyping, which is considering and describing organisms in their entirerity. I consider myself a **"neuro-physio-behaviorist"**.
-I like doing and trying a *lot* of stuff, mostly science related. I'm also an **Open Science** Advocate.
+I'm fascinated by bio-behavioral phenotyping, which is considering and describing organisms in their entirerity. I consider myself a **Scientist** specialized in neuroscience, physiology and behavioral outputs.
+I like doing a *lot* of stuff, mostly science related. I'm also an **Open Science** Advocate.
 
-My main research interests are gravitating around the concepts of Adaptation, Stress, coping strategies, social interactions which are linked to main physiological features such as cardiac regulation and sensory-processing. I am an advocate for the biobehavioral phenotyping of animal models, pushing for a description over an interpretation of data! In my last postdoc, I was focusing on analyzing the skin as (one of) the first interface linking environment and behavioral adaptation.
+My main research interests gravitated around the concepts of *Adaptation*, *Stress*, *coping strategies*, *social interactions* which are linked to main physiological features such as cardiac regulation* and *(somato)sensory-processing*. I am an advocate for the biobehavioral phenotyping of animal models, pushing for a description over an interpretation of data! In my last postdoc, I was focusing on analyzing the skin as (one of) the first interface linking environment and behavioral adaptation.
 
-Now, I'm very much interested into (meta)data management and how this could be improved in preclinical laboratory settings. This is why, I initiated the project MAPP. In that context, I'm now trying to incorporate relevant aspect of the Web Semantics into intuitive research workflows. 
+Now, I'm very much interested into FAIR (Findable, Accessible, Interoperable and Reusable) (meta)data management and how this could be improved in preclinical laboratory settings. This is why, I initiated the project MAPP. In that context, I'm now trying to incorporate relevant aspect of the Web Semantics into intuitive research workflows. 
+I also created the **FAIRRR** framework, a dedicated label specifying that FAIR preclinical research respects the 3Rs (Replace, Reduce, Refine) => **FAIR for the Animals, and for Innovative, Reproducible, and Responsible Research** (FAIRRR).
 
-- I love Home Cage monitoring technologies and the way integrating various sensors may lead to the most accurate and usefull digital biomarkers in preclinical research.
+My interests/expertise are:
+- I love **Home Cage monitoring** technologies and the way integrating various sensors may lead to the most accurate and usefull digital biomarkers in preclinical research.
 - I am an expert in **behavior**: protocols and analysis. I'm administrator of [TheBehaviourForum](https://www.thebehaviourforum.org/)
-- I know few Python tools: **Pandas**, **Scipy**, **Seaborn**, **statsmodel**, **Dabest**, **ipywidget** ...
-- I developed one python library ([**LMT-Widget-Tool**](https://pypi.org/project/LWTools/)) to help non-python-experts analyze **live mouse tracker** data.
+- I know Python coding and data analysis (*Pandas*, *Scipy*, *Seaborn*, *statsmodel*, *Dabest*, *ipywidget*, ...).
+- I developed one python library ([*LWTools* - **LMT-Widget-Tool**](https://pypi.org/project/LWTools/)) to help non-python-experts analyze [**live mouse tracker**](www.livemoustracker.org) data.
 - I combine behavioral tests with **physiological** parameters, such as **ECG/HRV** and **Skin-Nerve** recordings.
+- I developp a API-first platform for better metadata management in preclinical reseach: [MAPP](www.metadatapp.net).
 
-My ultimate goal is to improve the way preclinical behavioral research could benefit clinical conditions.
+My ultimate goal is to improve the way preclinical behavioral research could benefit translational and clinical research.
+
+<img src="assets\images\NeuroNautix-Moustraunot_nobg.png" alt="When I'll be old, I'll be a Mousetraunot!" width="400" style="display:block; margin:auto;">
 
 ---
 
 ## Non-Academic Experience
 
-### Founder and CSO
+### Founder and CEO (+ CSO)
 **METADATAPP (MAPP)**  
 Montpellier, France
 'A platform to facilitate metadata management in preclinical research.'
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="margin-right: 20px;">
-        <img src="/assets/images/METADATAPP (2).png" alt="your Metadata app" width="150" />
+        <img src="/assets/images/MAPP-Logo-color.png" alt="MAPP - your Metadata APP" width="150" />
     </div>
     <div style="text-align: center;">
         <a href="www.metadatapp.net" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
@@ -51,11 +56,11 @@ Montpellier, France
 
 ---
 
-### Founder and CEO
+### Founder
 **NeuroNautix**   
 Montpellier, France
 *Dec 2024 - today*
-
+'Consultancy and expert services on Behavioral research, Homecage monitoring Solutions, Data analysis and FAIR metadata management'
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="margin-right: 20px;">
         <img src="/assets/images/neuronautix_logo.png" alt="your Metadata app" width="300" />
