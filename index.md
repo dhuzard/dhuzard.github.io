@@ -50,7 +50,7 @@ Montpellier, France
         <img src="/assets/images/MAPP-Logo-color.png" alt="MAPP - your Metadata APP" width="150" />
     </div>
     <div style="text-align: center;">
-        <a href="www.metadatapp.net" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
+        <a href="https://www.metadatapp.net" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
     </div>
 </div>
 
@@ -66,7 +66,7 @@ Montpellier, France
         <img src="/assets/images/neuronautix_logo.png" alt="your Metadata app" width="300" />
     </div>
     <div style="text-align: center;">
-        <a href="www.neuronautix.com" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
+        <a href="https://www.neuronautix.com" style="display: inline-block; padding: 10px 20px; background-color:rgb(8,8,8); color: rgb(248, 215, 218); text-align: center; border-radius: 5px; text-decoration: none;">Website</a>
     </div>
 </div>
 
