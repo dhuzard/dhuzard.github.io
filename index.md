@@ -9,11 +9,9 @@ author_profile: true
 ## About Me
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience
 > Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
-
 > ORCID: [0000-0003-4820-7951](https://orcid.org/0000-0003-4820-7951)
-
+>
 > For *Behavioral expertise*, *Consultancy on FAIR [Metadata management](https://www.metadatapp.net)* and *Data analysis* services please check [NEURONAUTIX website](https://www.neuronautix.com)!
-
 > To Book a quick meeting please check [here](https://koalendar.com/e/meet-with-damien-huzard)
 
 I'm fascinated by bio-behavioral phenotyping, which is considering and describing organisms in their entirerity. I consider myself a **Scientist** specialized in neuroscience, physiology and behavioral outputs.
