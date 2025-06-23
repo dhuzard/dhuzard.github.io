@@ -4,7 +4,7 @@ permalink: /
 classes: wide
 author_profile: true
 ---
-<img src="assets\images\Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="400" style="display:block; margin:auto;">
+<img src="assets\images\Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="250" style="display:block; margin:auto;">
 
 ## About Me
 Email: [damien.huzard (at) gmail.com](mailto:damien.huzard@gmail.com)
