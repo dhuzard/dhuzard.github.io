@@ -5,6 +5,7 @@ categories:
   - Blog
 tags:
   - post
+  - personal
 author: HD (+ ChatGPT o4.5)
 header:
   image: /assets/images/today mom died.png 
@@ -26,7 +27,7 @@ In early May 2022, a small tumor was discovered in her corpus callosum—the thi
 
 The news had to be delivered by phone, and I was the one who told her. It was a terrible moment for both of us, filled with confusion, heartbreak, and a profound sense of helplessness. I'll never forget that conversation; it was a responsibility placed upon me by the neuro-oncologist, a decision I still grapple with, despite my mother's later appreciation that it came from me, not a 'cold stranger’.
 
-Early symptoms, leading Orev to ask for an MRI scan, were persistent migraines, headaches, blurred memory, and a sense of "mental fog". Despite the short median survival time for GBM patients—around 12 to 15 months—Orev “defied the odds,” surviving two years and three months. Her initial treatment involved six weeks of radiation combined with Temodal (temozolomide, a standard chemotherapy drug), followed by additional chemotherapy cycles. The first chemotherapy began in August 2022. Her MGMT methylation, a clinically relevant prognostic marker, was low (~13%), indicating lower survival and a reduced response to Temodal.
+Early symptoms, leading Orev to ask for an MRI scan, were persistent migraines, headaches, blurred memory, and a sense of "mental fog". Despite the short survival time she “defied the odds”, surviving two years and three months. Her initial treatment involved six weeks of radiation combined with Temodal (temozolomide, a standard chemotherapy drug), followed by additional chemotherapy cycles. The first chemotherapy began in August 2022. Her MGMT methylation, a clinically relevant prognostic marker, was low (~13%), indicating lower survival and a reduced response to Temodal.
 
 After this initial phase, she had to wait six months before assessing the tumor's progression, due to difficulties in performing MRI scans after irradiations. In January 2023, the follow-up MRI revealed disease progression, prompting the restart of a new chemotherapy treatment. In March, she began experiencing a steep cognitive decline, and by April-May 2023, her condition required urgent hospitalization and corticosteroid treatment to manage a brain edema.
 

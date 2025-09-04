@@ -18,7 +18,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   **Damien Huzard**, Neuro-physio-behaviorist.
 twitter_username: dhuzard
 github_username: DHuzard
-minimal_mistakes_skin: default
+minimal_mistakes_skin: "neon"
 search: true
 
 #Headers page
@@ -35,6 +35,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
+future: true
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
@@ -135,8 +136,12 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
-  posts:
-    output: true
-    permalink: /posts/:title/
-    layout: post
 
+# HTML head snippets
+head_scripts:
+  - <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  - <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  - <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  - <link rel="manifest" href="/site.webmanifest">
+  - <meta name="msapplication-TileColor" content="#da532c">
+  - <meta name="theme-color" content="#ffffff">
