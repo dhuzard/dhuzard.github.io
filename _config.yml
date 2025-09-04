@@ -15,7 +15,7 @@
 title: "DHuzard's Website"
 email: damien.huzard@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  **Damien Huzard**, Neuro-physio-behaviorist.
+  Damien Huzard, Neuro-physio-behaviorist.
 twitter_username: dhuzard
 github_username: DHuzard
 minimal_mistakes_skin: "neon"
@@ -23,7 +23,7 @@ search: true
 
 #Headers page
 header_pages:
-  - index.md # New home page
+  - / # New home page
   - _pages/posts.md # Link to your blog posts
   - _pages/projects.md # Link to your projects page
 
@@ -80,7 +80,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/blaxtractattoos/"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-instagram"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/dhuzard"
 footer:
   links:
@@ -94,7 +94,7 @@ footer:
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/blaxtractattoos/"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-instagram"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/dhuzard"
 
 defaults:

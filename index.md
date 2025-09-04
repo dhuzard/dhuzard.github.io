@@ -4,7 +4,7 @@ permalink: /
 classes: wide
 author_profile: true
 ---
-<img src="assets\images\Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="250" style="display:block; margin:auto;">
+<img src="/assets/images/Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="250" style="display:block; margin:auto;">
 
 ## About Me
 Hi! I'm Damien Huzard, PhD in behavioral neuroscience
@@ -32,7 +32,7 @@ My interests/expertise are:
 
 My ultimate goal is to improve the way preclinical behavioral research could benefit translational and clinical research.
 
-<img src="assets\images\NeuroNautix-Moustraunot_nobg.png" alt="When I'll be old, I'll be a Mousetraunot!" width="400" style="display:block; margin:auto;">
+<img src="/assets/images/NeuroNautix-Moustraunot_nobg.png" alt="When I'll be old, I'll be a Mousetraunot!" width="400" style="display:block; margin:auto;">
 
 ---
 
@@ -195,17 +195,17 @@ Montreal, Canada
 - **The impact of C-tactile low-threshold mechanoreceptors on affective touch and social interactions in mice.**  
   *Science Advances*, 2022 June 29; Vol 8, Num 26 eabo7566. doi: 10.1126/sciadv.abo7566. PMID: 35767616; PMCID: PMC9242590.  
   **Huzard D**, Martin M, Maingret F, Chemin J, Jeanneteau F, Mery PF, Fossat P, Bourinet E, and François A.  
-  [PDF](/assets//images/The%20impact%20of%20C-tactile%20low-threshold%20mechanoreceptors%20on%20affective%20touch%20and%20social%20interactions%20in%20mice.pdf)
+  [PDF](/assets/images/The%20impact%20of%20C-tactile%20low-threshold%20mechanoreceptors%20on%20affective%20touch%20and%20social%20interactions%20in%20mice.pdf)
 
 - **Experience and activity-dependent control of glucocorticoid receptors during the stress response in large-scale brain networks.**  
   *Stress*, 2021 March;24(2):130-153. DOI: 10.1080/10253890.2020.1806226  
   **Huzard D**, Rappeneau V, Meijer O.C., Touma C., Arango-Lievano M., Garabedian M.J., Jeanneteau F  
-  [PDF](/assets//images/Experience%20and%20activity-dependent%20control%20of%20glucocorticoid%20receptors%20during%20the%20stress%20response%20in%20large-scale%20brain%20networks.pdf)
+  [PDF](/assets/images/Experience%20and%20activity-dependent%20control%20of%20glucocorticoid%20receptors%20during%20the%20stress%20response%20in%20large-scale%20brain%20networks.pdf)
 
 - **Constitutive differences in glucocorticoid responsiveness are related to divergent spatial information processing abilities.**  
   *Stress*, 2020 Jan;23(1):37-49. doi: 10.1080/10253890.2019.1625885. Epub 2019 Jun 12. PMID: 31187686.  
   **Huzard D**, Vouros A, Monari S, Astori S, Vasilaki E, Sandi C.  
-  [PDF](/assets//images/Constitutive%20differences%20in%20glucocorticoid%20responsiveness%20are%20related%20to%20divergent%20spatial%20information%20processing%20abilities.pdf)
+  [PDF](/assets/images/Constitutive%20differences%20in%20glucocorticoid%20responsiveness%20are%20related%20to%20divergent%20spatial%20information%20processing%20abilities.pdf)
 
 - **Control of Social Withdrawal of Mice Deficient for the Autism Gene Magel2 by Restoration of Vasopressin-Oxytocin Dialogue in Septum.**  
   Borie AM, Dromard Y, Dufner D, Pollozi E, Huzard D, ...(+7)..., Jeanneteau F.  
@@ -215,12 +215,12 @@ Montreal, Canada
   *Neuroscience & Biobehavioral Reviews*, 2018 Aug;91:138-152. doi: 10.1016/j.neubiorev.2016.10.008. Epub 2016 Oct 14. PMID: 27751733.  
   Walker SE\*, Papilloud A\*, **Huzard D\***, Sandi C.  
   \*Equal contribution.  
-  [PDF](/assets//images/The%20link%20between%20aberrant%20hypothalamic–pituitary–adrenal%20axis%20activity%20during%20development%20and%20the%20emergence%20of%20aggression—Animal%20studies.pdf)
+  [PDF](/assets/images/The%20link%20between%20aberrant%20hypothalamic–pituitary–adrenal%20axis%20activity%20during%20development%20and%20the%20emergence%20of%20aggression—Animal%20studies.pdf)
 
 - **Low vagal tone in two rat models of psychopathology involving high or low corticosterone stress responses.**  
   *Psychoneuroendocrinology*, 2019 Mar;101:101-110. doi: 10.1016/j.psyneuen.2018.11.003. Epub 2018 Nov 3. PMID: 30448728.  
   **Huzard D**, Ghosal S, Grosse J, Carnevali L, Sgoifo A, Sandi C.  
-  [PDF](/assets//images/Low%20vagal%20tone%20in%20two%20rat%20models%20of%20psychopathology%20involving%20high%20or%20low%20corticosterone%20stress%20responses%20.pdf)
+  [PDF](/assets/images/Low%20vagal%20tone%20in%20two%20rat%20models%20of%20psychopathology%20involving%20high%20or%20low%20corticosterone%20stress%20responses%20.pdf)
 
 - **Low empathy-like behaviour in male mice associates with impaired sociability, emotional memory, physiological stress reactivity and variations in neurobiological regulations.**  
   *PLoS One*, 2017 Dec 4;12(12):e0188907. doi: 10.1371/journal.pone.0188907. PMID: 29200428; PMCID: PMC5714342.  
@@ -233,7 +233,7 @@ Montreal, Canada
 - **The effects of extrinsic stress on somatic markers and behavior are dependent on animal housing conditions.**  
   *Physiology & Behavior*, 2015 Nov 1;151:238-45. doi: 10.1016/j.physbeh.2015.07.018. Epub 2015 Jul 26. PMID: 26220463.  
   **Huzard D**, Mumby DG, Sandi C, Poirier GL, van der Kooij MA.  
-  [PDF](/assets//images/The%20effects%20of%20extrinsic%20stress%20on%20somatic%20markers%20and%20behavior%20are%20dependent%20on%20animal%20housing%20conditions.pdf)
+  [PDF](/assets/images/The%20effects%20of%20extrinsic%20stress%20on%20somatic%20markers%20and%20behavior%20are%20dependent%20on%20animal%20housing%20conditions.pdf)
 
 ---
 
