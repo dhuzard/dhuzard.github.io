@@ -1,0 +1,383 @@
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCM System Explorer & Comparator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>HCM System Explorer & Comparator</h1>
+        <p>Filter, explore, and compare Home Cage Monitoring systems.</p>
+    </header>
+
+    <div class="hcm-container">
+        <div id="filters-panel" class="panel">
+            <h2>Systems</h2>
+            <input type="text" id="search-box" placeholder="Search systems...">
+            <div id="system-list"></div>
+            
+            <div class="filter-group">
+                <h3>Filter by Technology</h3>
+                <div id="tech-filters"></div>
+            </div>
+            <div class="filter-group">
+                <h3>Filter by Behavior</h3>
+                <div id="behavior-filters"></div>
+            </div>
+            <div class="filter-group">
+                <h3>Other</h3>
+                <label>
+                    <input type="checkbox" id="open-source-filter"> Open Source
+                </label>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="comparison-panel" class="panel">
+                <h2>Comparison Area</h2>
+                <div id="comparison-area"><p>Drag systems from the list on the left to compare them here.</p></div>
+                <div id="export-buttons">
+                    <button id="export-csv">Export as CSV</button>
+                    <button id="export-pdf">Export as PDF</button>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Radar Chart</h2>
+                <canvas id="radar-chart"></canvas>
+            </div>
+
+            <div class="panel">
+                <h2>Introduction Timeline</h2>
+                <div id="timeline-view"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let systems = [];
+        let allTechnologies = new Set();
+        let allBehaviors = new Set();
+        let comparisonList = [];
+        let radarChart;
+
+        const systemListEl = document.getElementById('system-list');
+        const techFiltersEl = document.getElementById('tech-filters');
+        const behaviorFiltersEl = document.getElementById('behavior-filters');
+        const openSourceFilterEl = document.getElementById('open-source-filter');
+        const searchBoxEl = document.getElementById('search-box');
+        const comparisonAreaEl = document.getElementById('comparison-area');
+        const timelineViewEl = document.getElementById('timeline-view');
+
+        // Fetch data
+        fetch('systems.json')
+            .then(response => response.json())
+            .then(data => {
+                systems = data;
+                initialize();
+            })
+            .catch(error => {
+                console.error("Error loading systems.json:", error);
+                systemListEl.innerHTML = '<p style="color: red;">Could not load system data. Please check the console for errors.</p>';
+            });
+
+        function initialize() {
+            // Populate filter options
+            systems.forEach(system => {
+                (system.technologies || []).forEach(tech => allTechnologies.add(tech));
+                (system.behaviors || []).forEach(behavior => allBehaviors.add(behavior));
+            });
+
+            renderCheckboxes(allTechnologies, techFiltersEl, 'tech');
+            renderCheckboxes(allBehaviors, behaviorFiltersEl, 'behavior');
+
+            // Initial render
+            renderSystemList();
+            renderTimeline();
+            initRadarChart();
+
+            // Add event listeners
+            document.querySelectorAll('#tech-filters input, #behavior-filters input, #open-source-filter').forEach(el => {
+                el.addEventListener('change', renderSystemList);
+            });
+            searchBoxEl.addEventListener('input', renderSystemList);
+
+            // Drag and drop for comparison
+            comparisonAreaEl.addEventListener('dragover', e => e.preventDefault());
+            comparisonAreaEl.addEventListener('drop', e => {
+                e.preventDefault();
+                const systemName = e.dataTransfer.getData('text/plain');
+                const system = systems.find(s => s.name === systemName);
+                if (system && !comparisonList.some(s => s.name === system.name)) {
+                    comparisonList.push(system);
+                    renderComparison();
+                    updateRadarChart();
+                }
+            });
+
+            // Export buttons
+            document.getElementById('export-csv').addEventListener('click', exportCSV);
+            document.getElementById('export-pdf').addEventListener('click', exportPDF);
+        }
+
+        function renderCheckboxes(items, container, name) {
+            [...items].sort().forEach(item => {
+                const label = document.createElement('label');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = item;
+                checkbox.name = name;
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(` ${item}`));
+                container.appendChild(label);
+            });
+        }
+
+        function getSelectedFilters(name) {
+            return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(el => el.value);
+        }
+
+        function renderSystemList() {
+            const selectedTechs = getSelectedFilters('tech');
+            const selectedBehaviors = getSelectedFilters('behavior');
+            const isOpenSource = openSourceFilterEl.checked;
+            const searchTerm = searchBoxEl.value.toLowerCase();
+
+            const filteredSystems = systems.filter(system => {
+                const matchesSearch = system.name.toLowerCase().includes(searchTerm);
+                const matchesTech = selectedTechs.length === 0 || selectedTechs.every(tech => (system.technologies || []).includes(tech));
+                const matchesBehavior = selectedBehaviors.length === 0 || selectedBehaviors.every(behavior => (system.behaviors || []).includes(behavior));
+                const matchesOpenSource = !isOpenSource || system.openSource;
+
+                return matchesSearch && matchesTech && matchesBehavior && matchesOpenSource;
+            });
+
+            systemListEl.innerHTML = '';
+            filteredSystems.forEach(system => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'system-item';
+                itemEl.textContent = system.name;
+                itemEl.draggable = true;
+                itemEl.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', system.name);
+                });
+                systemListEl.appendChild(itemEl);
+            });
+            
+            renderTimeline(filteredSystems);
+        }
+
+        function renderComparison() {
+            comparisonAreaEl.innerHTML = '';
+            if (comparisonList.length === 0) {
+                comparisonAreaEl.innerHTML = '<p>Drag systems from the list on the left to compare them here.</p>';
+                return; // Exit the function since there are no cards to render
+            }
+
+            comparisonList.forEach(system => {
+                const card = document.createElement('div');
+                card.className = 'comparison-card';
+                card.innerHTML = `
+                    <button class="remove-btn" data-name="${system.name}">&times;</button>
+                    <h4>${system.name}</h4>
+                    <p><strong>Manufacturer:</strong> ${system.manufacturer}</p>
+                    <p><strong>Year:</strong> ${system.yearIntroduced}</p>
+                    <p><strong>Open Source:</strong> ${system.openSource ? 'Yes' : 'No'}</p>
+                    ${(system.technologies || []).length > 0 ? `<p><strong>Technologies:</strong></p><ul>${(system.technologies || []).map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
+                    ${(system.behaviors || []).length > 0 ? `<p><strong>Behaviors:</strong></p><ul>${(system.behaviors || []).map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
+                    <p><a href="${system.url}" target="_blank">More Info</a></p>
+                `;
+                comparisonAreaEl.appendChild(card);
+            });
+
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    const nameToRemove = e.target.dataset.name;
+                    comparisonList = comparisonList.filter(s => s.name !== nameToRemove);
+                    renderComparison();
+                    updateRadarChart();
+                });
+            });
+        }
+
+        function renderTimeline(filteredSystems = systems) {
+            timelineViewEl.innerHTML = '';
+            if (filteredSystems.length === 0) return;
+
+            const years = filteredSystems.map(s => s.yearIntroduced);
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            const yearRange = (maxYear - minYear) || 1; // Prevent division by zero
+
+            // Draw year labels
+            const labelsToShow = new Set([minYear, maxYear]);
+            // Add intermediate labels on 5-year intervals if space allows
+            for (let year = minYear; year <= maxYear; year++) {
+                if (year % 5 === 0) {
+                    labelsToShow.add(year);
+                }
+            }
+            for (const year of [...labelsToShow].sort()) {
+                const yPos = yearRange === 1 ? 50 : ((year - minYear) / yearRange) * 100;
+                const yearLabel = document.createElement('div');
+                yearLabel.className = 'timeline-year';
+                yearLabel.textContent = year;
+                yearLabel.style.top = `calc(${yPos}% - 6px)`; // Center label on line
+                timelineViewEl.appendChild(yearLabel);
+            }
+
+            filteredSystems.forEach(system => {
+                const yPos = yearRange === 1 ? 50 : ((system.yearIntroduced - minYear) / yearRange) * 100;
+                const marker = document.createElement('div');
+                marker.className = 'timeline-marker';
+                marker.style.top = `${yPos}%`;
+                marker.innerHTML = `<span class="tooltip">${system.name} (${system.yearIntroduced})</span>`;
+                timelineViewEl.appendChild(marker);
+            });
+        }
+
+        // --- Radar Chart ---
+        function getRadarData(system) {
+            // Normalize scores 0-10
+            const behavioralBreadth = Math.min((system.behaviors || []).length, 10);
+            const physiologyIntegration = Math.min((system.physiology || []).length * 2, 10); // Give more weight
+            const groupHousing = system.groupHousing ? 10 : 2;
+            const openness = system.openSource ? 10 : 2;
+            return [behavioralBreadth, physiologyIntegration, groupHousing, openness];
+        }
+
+        function initRadarChart() {
+            const ctx = document.getElementById('radar-chart').getContext('2d');
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Behavioral Breadth', 'Physiology Integration', 'Group Housing', 'Openness'],
+                    datasets: []
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'System Capabilities Comparison'
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateRadarChart() {
+            const datasets = comparisonList.map((system, index) => {
+                const colors = [
+                    'rgba(255, 99, 132, 0.4)',
+                    'rgba(54, 162, 235, 0.4)',
+                    'rgba(255, 206, 86, 0.4)',
+                    'rgba(75, 192, 192, 0.4)',
+                    'rgba(153, 102, 255, 0.4)'
+                ];
+                const borderColors = [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 206, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)'
+                ];
+                return {
+                    label: system.name,
+                    data: getRadarData(system),
+                    backgroundColor: colors[index % colors.length],
+                    borderColor: borderColors[index % borderColors.length],
+                    borderWidth: 1
+                };
+            });
+
+            radarChart.data.datasets = datasets;
+            radarChart.update();
+        }
+
+        // --- Export Functions ---
+        function exportCSV() {
+            if (comparisonList.length === 0) {
+                alert("Please add systems to the comparison area first.");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            const headers = ["Feature", ...comparisonList.map(s => s.name)];
+            csvContent += headers.join(",") + "\r\n";
+
+            const features = ["Manufacturer", "Year Introduced", "Open Source", "Group Housing", "Technologies", "Behaviors", "Physiology"];
+            features.forEach(feature => {
+                const row = [feature];
+                comparisonList.forEach(system => {
+                    let value;
+                    switch(feature) {
+                        case "Manufacturer": value = system.manufacturer; break;
+                        case "Year Introduced": value = system.yearIntroduced; break;
+                        case "Open Source": value = system.openSource ? 'Yes' : 'No'; break;
+                        case "Group Housing": value = system.groupHousing ? 'Yes' : 'No'; break;
+                        case "Technologies": value = (system.technologies || []).join('; '); break;
+                        case "Behaviors": value = (system.behaviors || []).join('; '); break;
+                        case "Physiology": value = (system.physiology || []).join('; '); break;
+                    }
+                    row.push(`"${value}"`);
+                });
+                csvContent += row.join(",") + "\r\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "hcm_system_comparison.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function exportPDF() {
+            if (comparisonList.length === 0) {
+                alert("Please add systems to the comparison area first.");
+                return;
+            }
+            
+            const { jsPDF } = window.jspdf;
+            const comparisonPanel = document.getElementById('comparison-panel');
+            
+            html2canvas(comparisonPanel).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({
+                    orientation: 'landscape',
+                });
+                const imgProps= pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                pdf.text("HCM System Comparison", 14, 15);
+                pdf.addImage(imgData, 'PNG', 10, 20, pdfWidth - 20, pdfHeight - 20);
+                pdf.save("hcm_system_comparison.pdf");
+            });
+        }
+
+    });
+    </script>
+</body>
+</html>

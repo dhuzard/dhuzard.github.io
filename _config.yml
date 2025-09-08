@@ -24,8 +24,10 @@ search: true
 #Headers page
 header_pages:
   - / # New home page
-  - _pages/posts.md # Link to your blog posts
+  - _pages/posts.md # Blog
   - _pages/projects.md # Link to your projects page
+  - _pages/hcm-explorer.md # Link to the new app
+  - _pages/cv.md # CV
 
 
 # Build settings
@@ -136,12 +138,3 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
-
-# HTML head snippets
-head_scripts:
-  - <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  - <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  - <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  - <link rel="manifest" href="/site.webmanifest">
-  - <meta name="msapplication-TileColor" content="#da532c">
-  - <meta name="theme-color" content="#ffffff">
