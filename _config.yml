@@ -27,6 +27,7 @@ header_pages:
   - _pages/posts.md # Blog
   - _pages/projects.md # Link to your projects page
   - _pages/hcm-explorer.md # Link to the new app
+  - _pages/hcm-ontology-mapper.md # Link to the new app
   - _pages/cv.md # CV
 
 
@@ -46,14 +47,15 @@ include:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - assets/hcmo-mapping/hcm-mapper/node_modules/
 
 # Plugins (previously gems:)
 plugins:

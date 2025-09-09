@@ -1,0 +1,117 @@
+{
+  "@context": "hcm-context.jsonld",
+  "@graph": [
+    {
+      "id": "hcm:System",
+      "type": "rdfs:Class",
+      "label": "System",
+      "description": "An HCM system composed of an enclosure, hardware, and software."
+    },
+    {
+      "id": "hcm:Enclosure",
+      "type": "rdfs:Class",
+      "label": "Enclosure",
+      "description": "The physical cage/environment where animals live."
+    },
+    {
+      "id": "hcm:Hardware",
+      "type": "rdfs:Class",
+      "label": "Hardware",
+      "description": "Computational and mechatronic components operated by the system."
+    },
+    {
+      "id": "hcm:Software",
+      "type": "rdfs:Class",
+      "label": "Software",
+      "description": "Software that configures, controls, and processes data for the system."
+    },
+    {
+      "id": "hcm:Animal",
+      "type": "rdfs:Class",
+      "label": "Animal",
+      "description": "An animal subject housed in an enclosure."
+    },
+    {
+      "id": "hcm:Sensor",
+      "type": "rdfs:Class",
+      "label": "Sensor",
+      "description": "A device that captures signals relevant to behavior or physiology."
+    },
+    {
+      "id": "hcm:Actuator",
+      "type": "rdfs:Class",
+      "label": "Actuator",
+      "description": "A device that elicits or modifies behavior via stimuli (e.g., light, sound, reward)."
+    },
+    {
+      "id": "hcm:BehaviorOrPhysiology",
+      "type": "rdfs:Class",
+      "label": "Behavior or Physiology",
+      "description": "The monitored target domain (e.g., activity, sleep, grooming, HR)."
+    },
+    {
+      "id": "hcm:PhysicalSpace",
+      "type": "rdfs:Class",
+      "label": "Physical Space",
+      "description": "The spatial container for the enclosure with measurable dimensions."
+    },
+    {
+      "id": "hcm:CircadianRhythm",
+      "type": "rdfs:Class",
+      "label": "Circadian Rhythm",
+      "description": "A rhythm with period > 24h that may extend indefinitely with limited human interaction."
+    },
+    {
+      "id": "hcm:Need",
+      "type": "rdfs:Class",
+      "label": "Need",
+      "description": "A basic requirement for thriving in the enclosure."
+    },
+    { "id": "hcm:Food", "type": "rdfs:Class", "rdfs:subClassOf": "hcm:Need", "label": "Food" },
+    { "id": "hcm:Water", "type": "rdfs:Class", "rdfs:subClassOf": "hcm:Need", "label": "Water" },
+    { "id": "hcm:SocialContact", "type": "rdfs:Class", "rdfs:subClassOf": "hcm:Need", "label": "Social Contact" },
+    { "id": "hcm:SafetyFromThreat", "type": "rdfs:Class", "rdfs:subClassOf": "hcm:Need", "label": "Safety From Threat" },
+    { "id": "hcm:EnvironmentalEnrichment", "type": "rdfs:Class", "rdfs:subClassOf": "hcm:Need", "label": "Environmental Enrichment" },
+    {
+      "id": "hcm:NeedsPlan",
+      "type": "rdfs:Class",
+      "label": "Needs Plan",
+      "description": "An ordered plan of needs (Food, Water, Social Contact, Safety, Enrichment)."
+    },
+    {
+      "id": "hcm:Dimensions",
+      "type": "rdfs:Class",
+      "label": "Dimensions",
+      "description": "Width, length, and height with units."
+    },
+
+    { "id": "hcm:hasEnclosure", "type": "rdf:Property", "rdfs:domain": "hcm:System", "rdfs:range": "hcm:Enclosure" },
+    { "id": "hcm:hasHardware", "type": "rdf:Property", "rdfs:domain": "hcm:System", "rdfs:range": "hcm:Hardware" },
+    { "id": "hcm:hasSoftware", "type": "rdf:Property", "rdfs:domain": "hcm:System", "rdfs:range": "hcm:Software" },
+    { "id": "hcm:monitors", "type": "rdf:Property", "rdfs:domain": "hcm:System", "rdfs:range": "hcm:BehaviorOrPhysiology" },
+
+    { "id": "hcm:hasSensor", "type": "rdf:Property", "rdfs:domain": "hcm:Hardware", "rdfs:range": "hcm:Sensor" },
+    { "id": "hcm:hasActuator", "type": "rdf:Property", "rdfs:domain": "hcm:Hardware", "rdfs:range": "hcm:Actuator" },
+    { "id": "hcm:communicatesWith", "type": "rdf:Property", "rdfs:domain": "hcm:Hardware", "rdfs:range": "hcm:Software" },
+
+    { "id": "hcm:captures", "type": "rdf:Property", "rdfs:domain": "hcm:Sensor", "rdfs:range": "hcm:BehaviorOrPhysiology" },
+    { "id": "hcm:elicits", "type": "rdf:Property", "rdfs:domain": "hcm:Actuator", "rdfs:range": "hcm:BehaviorOrPhysiology" },
+
+    { "id": "hcm:livesIn", "type": "rdf:Property", "rdfs:domain": "hcm:Animal", "rdfs:range": "hcm:Enclosure" },
+    { "id": "hcm:hasPhysicalSpace", "type": "rdf:Property", "rdfs:domain": "hcm:Enclosure", "rdfs:range": "hcm:PhysicalSpace" },
+    { "id": "hcm:hasDimensions", "type": "rdf:Property", "rdfs:domain": "hcm:PhysicalSpace", "rdfs:range": "hcm:Dimensions" },
+
+    { "id": "hcm:hasCircadianRhythm", "type": "rdf:Property", "rdfs:domain": "hcm:System", "rdfs:range": "hcm:CircadianRhythm" },
+    { "id": "hcm:period", "type": "rdf:Property", "rdfs:domain": "hcm:CircadianRhythm", "rdfs:range": "xsd:duration" },
+    { "id": "hcm:extendsIndefinitely", "type": "rdf:Property", "rdfs:domain": "hcm:CircadianRhythm", "rdfs:range": "xsd:boolean" },
+    { "id": "hcm:limitedHumanInteraction", "type": "rdf:Property", "rdfs:domain": "hcm:System", "rdfs:range": "xsd:boolean" },
+
+    { "id": "hcm:hasNeedsPlan", "type": "rdf:Property", "rdfs:domain": "hcm:Enclosure", "rdfs:range": "hcm:NeedsPlan" },
+    { "id": "hcm:hasNeedItem", "type": "rdf:Property", "rdfs:domain": "hcm:NeedsPlan", "rdfs:range": "hcm:Need" },
+    { "id": "hcm:needsItemOf", "type": "rdf:Property", "rdfs:domain": "hcm:Need", "rdfs:range": "hcm:NeedsPlan" },
+
+    { "id": "hcm:producedBy", "type": "rdf:Property" },
+    { "id": "hcm:commercialSupplier", "type": "rdf:Property" },
+    { "id": "hcm:laboratory", "type": "rdf:Property" }
+  ]
+}

@@ -1,0 +1,86 @@
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 800px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.form-section h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 5px;
+}
+
+.form-section h3 {
+  margin-top: 15px;
+  color: #444;
+}
+
+input[type='text'],
+input[type='checkbox'] {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+input[type='text'] {
+    width: calc(100% - 20px);
+    padding: 8px;
+}
+
+label {
+    display: block;
+}
+
+.dynamic-list .list-item {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.add-item {
+  margin-top: 10px;
+}
+
+.add-item input {
+  width: calc(50% - 55px);
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.button-group button, .add-item button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #61dafb;
+  color: white;
+  cursor: pointer;
+}
+
+.button-group button:hover, .add-item button:hover {
+  background-color: #21a1f1;
+}

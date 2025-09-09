@@ -4,6 +4,8 @@ nav_title: "HCM Explorer"
 permalink: /hcm-explorer-page/
 layout: single
 author_profile: false
+header:
+  teaser: /assets/hcm-explorer/HCM_explorer.png 
 ---
 
 <p>Welcome to the Home Cage Monitoring (HCM) System Explorer. This experimental tool allows you to filter, search, and compare various HCM systems based on their technologies and capabilities.</p>

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hcm-mapper-app/static/css/main.02c543fe.css",
+    "main.js": "/hcm-mapper-app/static/js/main.f4bf39c2.js",
+    "static/js/453.7b9c487c.chunk.js": "/hcm-mapper-app/static/js/453.7b9c487c.chunk.js",
+    "index.html": "/hcm-mapper-app/index.html",
+    "main.02c543fe.css.map": "/hcm-mapper-app/static/css/main.02c543fe.css.map",
+    "main.f4bf39c2.js.map": "/hcm-mapper-app/static/js/main.f4bf39c2.js.map",
+    "453.7b9c487c.chunk.js.map": "/hcm-mapper-app/static/js/453.7b9c487c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02c543fe.css",
+    "static/js/main.f4bf39c2.js"
+  ]
+}

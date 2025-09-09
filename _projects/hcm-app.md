@@ -4,6 +4,8 @@ nav_title: "HCM Integrator"
 permalink: /hcm-app/
 layout: single
 author_profile: false
+header:
+  teaser: /assets/hcm-app/HCM_integrator.png 
 ---
 
 <p>Welcome to the Home Cage Monitoring (HCM) Integrator. This experimental tool allows you to explore the integration of different HCM systems and their corresponding data outputs.</p>

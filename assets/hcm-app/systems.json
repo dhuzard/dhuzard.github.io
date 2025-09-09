@@ -1,0 +1,83 @@
+[
+  {
+    "id": "urn:sys:alpha-01",
+    "name": "HCM System Alpha-01",
+    "vendor": "Acme HCM Ltd.",
+    "color": "border-blue-500",
+    "hasEnclosure": {
+      "id": "urn:enc:homecage-42",
+      "type": "Enclosure",
+      "label": "Standard IVC Cage",
+      "hasPhysicalSpace": {
+        "id": "urn:space:cage-42",
+        "type": "PhysicalSpace",
+        "hasDimensions": { "width": 20, "length": 35, "height": 15, "unitText": "cm" }
+      }
+    },
+    "hasHardware": {
+      "id": "urn:hw:stack-9000",
+      "type": "Hardware",
+      "label": "Edge Node + Cage Sensors",
+      "hasSensor": [
+        { "id": "urn:sensor:cam-top", "type": "Sensor", "label": "Top camera", "sensorType": "video" },
+        { "id": "urn:sensor:rfid", "type": "Sensor", "label": "RFID antenna", "sensorType": "rfid" },
+        { "id": "urn:sensor:loadcell", "type": "Sensor", "label": "Load cell", "sensorType": "loadcell" }
+      ],
+      "hasActuator": [
+        { "id": "urn:actuator:led", "type": "Actuator", "label": "LED light" }
+      ]
+    },
+    "hasSoftware": {
+      "id": "urn:sw:stack-9000",
+      "type": "Software",
+      "label": "HCM Processing Stack",
+      "softwareVersion": "1.8.0"
+    },
+    "datasets": [
+      { "id": "alpha_loco", "label": "Alpha Locomotion 10min", "mbo": ["inactive", "walk", "run"] }
+    ],
+    "project": {
+      "@context": "https://schema.org/", "@id": "https://example.org/project/alpha-demo", "@type": ["Dataset", "mrpo:Project"],
+      "project.title": "Alpha system validation", "species": "Mus musculus", "strain": "C57BL/6J", "n": 16, "protocol_id": "PROTO-ALPHA", "startAt": "2025-10-01"
+    }
+  },
+  {
+    "id": "urn:sys:beta-02",
+    "name": "HCM System Beta-02",
+    "vendor": "Beta Systems Inc.",
+    "color": "border-green-500",
+    "hasEnclosure": {
+      "id": "urn:enc:homecage-77",
+      "type": "Enclosure",
+      "label": "Enriched Cage",
+      "hasPhysicalSpace": {
+        "id": "urn:space:cage-77",
+        "type": "PhysicalSpace",
+        "hasDimensions": { "width": 25, "length": 40, "height": 20, "unitText": "cm" }
+      }
+    },
+    "hasHardware": {
+      "id": "urn:hw:stack-9001",
+      "type": "Hardware",
+      "label": "Advanced Node",
+      "hasSensor": [
+        { "id": "urn:sensor:cam-side", "type": "Sensor", "label": "Side camera", "sensorType": "video" },
+        { "id": "urn:sensor:mic", "type": "Sensor", "label": "Microphone", "sensorType": "mic" }
+      ],
+      "hasActuator": []
+    },
+    "hasSoftware": {
+      "id": "urn:sw:stack-9001",
+      "type": "Software",
+      "label": "Behavioral Analysis Suite",
+      "softwareVersion": "2.1.0"
+    },
+    "datasets": [
+      { "id": "beta_audio", "label": "Beta Auditory Analysis", "mbo": ["inactive"] }
+    ],
+    "project": {
+      "@context": "https://schema.org/", "@id": "https://example.org/project/beta-demo", "@type": ["Dataset", "mrpo:Project"],
+      "project.title": "Beta system vocalization study", "species": "Mus musculus", "strain": "FVB", "n": 12, "protocol_id": "PROTO-BETA", "startAt": "2025-11-01"
+    }
+  }
+]

@@ -1,0 +1,362 @@
+[
+    {
+        "@id": "http://example.org/hcm#Actuator",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#hasDimensions",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Enclosure"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#Dimensions"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#TimeInterval",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#develops",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Laboratory"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#System"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#needs",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Animal"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#Environment"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#modulates",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Environment"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#CircadianRhythm"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#appliesTo",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#TimeInterval"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#Experiment"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Researcher",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#residesIn",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Animal"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#Enclosure"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Enclosure",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Laboratory",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#hasComponent",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#System"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#Enclosure"
+            },
+            {
+                "@id": "http://example.org/hcm#Hardware"
+            },
+            {
+                "@id": "http://example.org/hcm#Software"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#exhibitsBehavior",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Animal"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#BehaviorAndPhysiology"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#hasWidth",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Dimensions"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#float"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#isManufacturedBy",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#System"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#CommercialSupplier"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#constrains",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#TimeInterval"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#DataCollection"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Hardware",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Dimensions",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#CommercialSupplier",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#hasHeight",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Dimensions"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#float"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Sensor",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#DataCollection",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Environment",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Experiment",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#performs",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Software"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#DataCollection"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#hasLength",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#Dimensions"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#float"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Software",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#collectsInformationOn",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://example.org/hcm#System"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://example.org/hcm#Animal"
+            }
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#System",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#BehaviorAndPhysiology",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#CircadianRhythm",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#DataStorage",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    },
+    {
+        "@id": "http://example.org/hcm#Animal",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Class"
+        ]
+    }
+]
