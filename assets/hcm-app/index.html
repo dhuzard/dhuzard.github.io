@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HCM Integrator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+
+  <div id="root"></div>
+  <script type="text/babel">
+        const { useMemo, useState } = React;
+
+    // --- Minimal in-browser PoC for your GitHub Pages ---
+    // One-file React app that:
+    // 1) Lists a small catalog of Home‑Cage Monitoring (HCM) systems
+    // 2) Shows which ontology facets (HCMO, MBO, MRPO) each system touches
+    // 3) Displays example datasets & behavior derivations per system
+    // 4) Surfaces JSON‑LD for transparency & future extension
+    // Tailwind classes are used for quick, clean styling.
+
+    // ----------------------
+    // Sample Ontology Facets
+    // ----------------------
+    const ONTO_HCMO = {
+      id: "HCMO",
+      label: "Home‑Cage Monitoring Ontology",
+      facets: {
+        sensors: [
+          { id: "pir", label: "PIR" },
+          { id: "loadcell", label: "Load Cell" },
+          { id: "rfid", label: "RFID" },
+          { id: "video", label: "Video" },
+          { id: "ir", label: "IR Illumination" },
+          { id: "mic", label: "Microphone" },
+        ],
+        hardware: [
+          { id: "cage", label: "Cage Form Factor" },
+          { id: "antennas", label: "RFID Antennas" },
+          { id: "camera", label: "Camera Module" },
+          { id: "scale", label: "Integrated Scale" },
+        ],
+      },
+    };
+
+    const ONTO_MBO = {
+      id: "MBO",
+      label: "Mouse Behavior Ontology",
+      behaviors: [
+        { id: "inactive", label: "Inactive" },
+        { id: "walk", label: "Walking" },
+        { id: "run", label: "Running" },
+        { id: "turn", label: "Turning" },
+      ],
+    };
+
+    const ONTO_MRPO = {
+      id: "MRPO",
+      label: "Metadata in Preclinical Research Ontology",
+      fields: [
+        { id: "project.title", label: "Project Title" },
+        { id: "species", label: "Species" },
+        { id: "strain", label: "Strain" },
+        { id: "n", label: "N (per group)" },
+        { id: "protocol_id", label: "Protocol ID" },
+        { id: "startAt", label: "Start Date" },
+      ],
+    };
+
+    // ---------------------------------
+    // Mapping: sensors → derivable MBO
+    // ---------------------------------
+    const SENSOR_TO_BEHAVIORS = {
+      pir: ["inactive", "walk"],
+      loadcell: ["inactive", "walk", "run"],
+      rfid: ["inactive"],
+      video: ["inactive", "walk", "run", "turn"],
+      ir: [], // illumination helper, not directly deriving behavior
+      mic: [], // placeholder
+    };
+
+    // ----------------------------------
+    // Minimal Catalog: 3 example systems
+    // ----------------------------------
+    const CATALOG = [
+      {
+        id: "lmt",
+        name: "Live Mouse Tracker (LMT)",
+        vendor: "CNRS/INSERM (research)",
+        sensors: ["video", "ir"],
+        hardware: ["camera", "cage"],
+        datasets: [
+          {
+            id: "lmt_loco",
+            label: "LMT Locomotion 5min",
+            mbo: ["inactive", "walk", "run", "turn"],
+          },
+        ],
+        project: {
+          "@context": "https://schema.org/",
+          "@id": "https://example.org/project/lmt-demo",
+          "@type": ["Dataset", "mrpo:Project"],
+          "project.title": "Exploratory locomotion in group-housed mice",
+          species: "Mus musculus",
+          strain: "C57BL/6J",
+          n: 8,
+          protocol_id: "PROTO-001",
+          startAt: "2025-09-01",
+        },
+      },
+      {
+        id: "dvc",
+        name: "DVC® by Tecniplast",
+        vendor: "Tecniplast",
+        sensors: ["loadcell", "pir", "rfid"],
+        hardware: ["scale", "antennas", "cage"],
+        datasets: [
+          {
+            id: "dvc_activity_24h",
+            label: "DVC Activity 24h",
+            mbo: ["inactive", "walk", "run"],
+          },
+        ],
+        project: {
+          "@context": "https://schema.org/",
+          "@id": "https://example.org/project/dvc-demo",
+          "@type": ["Dataset", "mrpo:Project"],
+          "project.title": "Circadian activity profiling",
+          species: "Mus musculus",
+          strain: "CD-1",
+          n: 24,
+          protocol_id: "PROTO-042",
+          startAt: "2025-06-10",
+        },
+      },
+      {
+        id: "hcs",
+        name: "HomeCageScan®",
+        vendor: "CleverSys Inc.",
+        sensors: ["video"],
+        hardware: ["camera", "cage"],
+        datasets: [
+          {
+            id: "hcs_basic",
+            label: "Basic Activity Set",
+            mbo: ["inactive", "walk"],
+          },
+        ],
+        project: {
+          "@context": "https://schema.org/",
+          "@id": "https://example.org/project/hcs-demo",
+          "@type": ["Dataset", "mrpo:Project"],
+          "project.title": "Baseline activity screening",
+          species: "Mus musculus",
+          strain: "BALB/c",
+          n: 12,
+          protocol_id: "PROTO-017",
+          startAt: "2025-08-20",
+        },
+      },
+    ];
+
+    // Utility: compute union of behaviors derivable from a sensor set
+    function behaviorsFromSensors(sensors) {
+      const set = new Set();
+      sensors.forEach((s) => SENSOR_TO_BEHAVIORS[s]?.forEach((b) => set.add(b)));
+      return Array.from(set);
+    }
+
+    function Section({ title, children }) {
+      return (
+        <div className="mb-6">
+          <div className="text-lg font-semibold mb-2">{title}</div>
+          <div className="rounded-2xl border p-3 shadow-sm bg-white">{children}</div>
+        </div>
+      );
+    }
+
+    function Badge({ label, active }) {
+      return (
+        <span
+          className={`inline-block px-2 py-1 mr-2 mb-2 rounded-full text-xs border ${
+            active ? "bg-black text-white border-black" : "bg-gray-50 text-gray-700 border-gray-200"
+          }`}
+        >
+          {label}
+        </span>
+      );
+    }
+
+    function JSONBlock({ obj }) {
+      return (
+        <pre className="text-xs bg-gray-50 rounded-xl p-3 overflow-auto max-h-64">
+          {JSON.stringify(obj, null, 2)}
+        </pre>
+      );
+    }
+
+    function App() {
+      const [selectedIds, setSelectedIds] = useState([CATALOG[0].id]);
+      const selected = useMemo(
+        () => CATALOG.filter((c) => selectedIds.includes(c.id)),
+        [selectedIds]
+      );
+
+      const activeSensors = useMemo(
+        () => Array.from(new Set(selected.flatMap((s) => s.sensors))),
+        [selected]
+      );
+      const activeHardware = useMemo(
+        () => Array.from(new Set(selected.flatMap((s) => s.hardware))),
+        [selected]
+      );
+      const unionBehaviors = useMemo(() => behaviorsFromSensors(activeSensors), [activeSensors]);
+      const datasets = useMemo(() => selected.flatMap((s) => s.datasets), [selected]);
+
+      return (
+        <div className="min-h-screen w-full bg-gray-100 p-6">
+          <div className="max-w-6xl mx-auto">
+                  
+      
+            <header className="mb-6">
+              <h1 className="text-2xl font-bold">HCM Integrator · Minimal PoC</h1>
+              <p className="text-sm text-gray-600">
+                Static React app designed for GitHub Pages. Select systems to see which ontology facets are covered
+                and what behaviors/datasets become available. JSON‑LD shows how to serialize entities for future
+                Linked Data / SHACL validation.
+              </p>
+            </header>
+
+            <header>
+                    <p>Disclaimer: this is an experimental app! Created only as a proof of concept.</p>
+            </header>
+
+            {/* Catalog selector */}
+            <Section title="Catalog · Select Systems">
+              <div className="flex flex-wrap items-center gap-2">
+                {CATALOG.map((item) => {
+                  const active = selectedIds.includes(item.id);
+                  return (
+                    <button
+                      key={item.id}
+                      className={`px-3 py-2 rounded-2xl border text-sm shadow-sm transition ${
+                        active ? "bg-black text-white border-black" : "bg-white hover:bg-gray-50"
+                      }`}
+                      onClick={() =>
+                        setSelectedIds((prev) =>
+                          prev.includes(item.id)
+                            ? prev.filter((id) => id !== item.id)
+                            : [...prev, item.id]
+                        )
+                      }
+                    >
+                      <div className="font-medium">{item.name}</div>
+                      <div className="text-xs opacity-75">{item.vendor}</div>
+                    </button>
+                  );
+                })}
+              </div>
+            </Section>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* HCMO Facets */}
+              <Section title="HCMO · Sensors & Hardware">
+                <div>
+                  <div className="mb-2 text-sm font-medium">Sensors</div>
+                  <div>
+                    {ONTO_HCMO.facets.sensors.map((s) => (
+                      <Badge key={s.id} label={s.label} active={activeSensors.includes(s.id)} />
+                    ))}
+                  </div>
+                  <div className="mt-4 mb-2 text-sm font-medium">Hardware</div>
+                  <div>
+                    {ONTO_HCMO.facets.hardware.map((h) => (
+                      <Badge key={h.id} label={h.label} active={activeHardware.includes(h.id)} />
+                    ))}
+                  </div>
+                </div>
+              </Section>
+
+              {/* MBO Behaviors */}
+              <Section title="MBO · Behaviors Enabled by Selected Sensors">
+                <div>
+                  {ONTO_MBO.behaviors.map((b) => (
+                    <Badge key={b.id} label={b.label} active={unionBehaviors.includes(b.id)} />
+                  ))}
+                </div>
+              </Section>
+
+              {/* MRPO Fields */}
+              <Section title="MRPO · Project Metadata Fields (filled in examples)">
+                <div className="text-sm text-gray-600 mb-3">
+                  Shown fields are commonly required. Switch systems to see example projects.
+                </div>
+                <div className="space-y-3">
+                  {selected.map((sys) => (
+                    <div key={sys.id} className="rounded-xl border p-3 bg-white">
+                      <div className="text-sm font-semibold mb-1">{sys.name}</div>
+                      <div>
+                        {ONTO_MRPO.fields.map((f) => (
+                          <div key={f.id} className="flex items-center text-xs mb-1">
+                            <span className="w-40 text-gray-500">{f.label}</span>
+                            <span className="font-mono truncate">{(sys.project)[f.id] ?? "—"}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            </div>
+
+            {/* Datasets & Behavior Coverage */}
+            <Section title="Derived Datasets & Coverage">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {datasets.map((ds) => (
+                  <div key={ds.id} className="rounded-xl border p-3 bg-white">
+                    <div className="text-sm font-semibold mb-1">{ds.label}</div>
+                    <div className="text-xs mb-2 text-gray-500">Behaviors in dataset</div>
+                    <div>
+                      {ONTO_MBO.behaviors.map((b) => (
+                        <Badge key={b.id} label={b.label} active={ds.mbo.includes(b.id)} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Section>
+
+            {/* JSON-LD Transparency */}
+            <Section title="JSON‑LD · Selected Projects">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {selected.map((sys) => (
+                  <div key={sys.id} className="rounded-xl border p-3 bg-white">
+                    <div className="text-sm font-semibold mb-2">{sys.name}</div>
+                    <JSONBlock obj={sys.project} />
+                  </div>
+                ))}
+              </div>
+            </Section>
+
+            <footer className="text-xs text-gray-500 mt-8">
+              Tip: Host this file as a static build on GitHub Pages (e.g., Vite + React). Replace sample data with your
+              real JSON‑LD catalogs and MRPO shapes; wire in SHACL validation in‑browser if needed.
+            </footer>
+          </div>
+        </div>
+      );
+    }
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<App />);
+  </script>
+</body>
+</html>
