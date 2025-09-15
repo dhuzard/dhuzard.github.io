@@ -20,8 +20,10 @@ I am a neuroscientist with over a decade of experience leading multidisciplinary
 - **Bachelor’s in Life Sciences**, EPFL, 2011
 
 ## Experience
+- **Founder, CEO, CSO**, of MAPP ([Metadatapp](www.metadatapp.net)), 2025-present
+- **Lead Scientist** (Founder) of, [NeuroNautix](www.neuronautix.com), 12.2024-present
 - **Moderator**, of [TheBehaviourForum](www.thebehaviourforum.org), 2023-...
-- **Freelance Member**, COST-TEATIME, 2023-...
+- **Freelance Member**, COST-TEATIME, 02.2023-11.2025
 - **Senior Postdoctoral scientist**, Bourinet & François Labs, [IGF](www.igf.cnrs.fr), 2021-2024
 - **Postdoctoral scientist**, Jeanneteau Lab, IGF, 2019-2021
 - **PhD Candidate**, Sandi Lab, EPFL, 2014-2018
