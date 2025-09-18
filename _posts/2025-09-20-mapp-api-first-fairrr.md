@@ -15,7 +15,12 @@ header:
   image: /assets/images/MAPP-Logo-color.png
   teaser: /assets/images/MAPP-Logo-color.png
 excerpt: MAPP turns scattered records into structured, shareable, machine‑readable metadata—operationalizing FAIRRR with standards, identifiers, and provenance.
+toc: true
+toc_label: On this page
 ---
+
+> This article is part of the FAIRRR series: [1](/Blog/fairrr-ethics-of-metadata/) · [2](/Blog/fairrr-explained-metrics-outcomes/) · [3](/Blog/mapp-api-first-fairrr/) · [4](/Blog/case-study-hcm-mapp-ontology/) · [5](/Blog/fairrr-playbook-30-days/)
+{: .notice--info}
 
 This is Post 3 of 5 in the FAIRRR series. Previous: [FAIRRR, Explained](/Blog/fairrr-explained-metrics-outcomes/) • Next: [Case Study—HCM with MAPP + Ontology Mapping](/Blog/case-study-hcm-mapp-ontology/)
 
@@ -66,4 +71,3 @@ Example payload sketch (illustrative):
 - Validations that keep data FAIR by design.
 
 Series navigation: Previous ← [FAIRRR, Explained](/Blog/fairrr-explained-metrics-outcomes/) • Next → [Case Study—HCM with MAPP + Ontology Mapping](/Blog/case-study-hcm-mapp-ontology/)
-

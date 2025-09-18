@@ -15,7 +15,12 @@ header:
   image: /assets/images/ChatGPT_02_40_23PM.png
   teaser: /assets/images/ChatGPT_02_40_23PM.png
 excerpt: Poor metadata drives irreproducibility and unnecessary animal use. FAIRRR reframes metadata as a scientific and ethical responsibility—and MAPP makes it operational.
+toc: true
+toc_label: On this page
 ---
+
+> This article is part of the FAIRRR series: [1](/Blog/fairrr-ethics-of-metadata/) · [2](/Blog/fairrr-explained-metrics-outcomes/) · [3](/Blog/mapp-api-first-fairrr/) · [4](/Blog/case-study-hcm-mapp-ontology/) · [5](/Blog/fairrr-playbook-30-days/)
+{: .notice--info}
 
 This is Post 1 of 5 in the FAIRRR series. Next: [FAIRRR, Explained—From Principles to Measurable Outcomes](/Blog/fairrr-explained-metrics-outcomes/)
 
@@ -64,4 +69,3 @@ What that means ethically:
 - Related: [The Mouse Behavior Ontology (MBO) as a Unified Language](/Blog/mbo-unified-language/)
 
 Series navigation: Next → [FAIRRR, Explained—From Principles to Measurable Outcomes](/Blog/fairrr-explained-metrics-outcomes/)
-

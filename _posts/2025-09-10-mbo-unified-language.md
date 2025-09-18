@@ -13,6 +13,8 @@ author: HD + (Gemini Code Assist)
 header:
   image: /assets/images/ChatGPT02_35_16PM.png
   teaser: /assets/images/ChatGPT02_35_16PM.png
+toc: true
+toc_label: On this page
 ---
 
 The field of Human-Computer Measurement (HCM), especially concerning animal behavior, is experiencing rapid growth. This expansion, while promising, has also introduced significant challenges: a **proliferation of systems and definitions** and a resulting **lack of comparability** across different studies and platforms. This fragmentation makes it incredibly difficult to integrate large datasets and draw consistent, reliable conclusions.

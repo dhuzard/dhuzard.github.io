@@ -3,6 +3,28 @@ layout: home
 permalink: /
 classes: wide
 author_profile: true
+feature_row:
+  - image_path: /assets/images/MAPP-Logo-color.png
+    alt: MAPP
+    title: MAPP — MetaDatApp
+    excerpt: API‑first platform for preclinical metadata management.
+    url: https://www.metadatapp.net
+    btn_label: Visit
+    btn_class: btn--primary
+  - image_path: /assets/hcmo-mapping/hcm-mapper/HCM-mapper.png
+    alt: HCM Ontology Mapper
+    title: HCM Ontology Mapper
+    excerpt: Map device outputs and labels to shared ontologies for comparability.
+    url: /projects/hcm-ontology-mapper/
+    btn_label: Learn more
+    btn_class: btn--primary
+  - image_path: /assets/images/NeuroNautix-Moustraunot_nobg.png
+    alt: NeuroNautix
+    title: NeuroNautix
+    excerpt: Consulting in behavioral research, HCM, and FAIR metadata.
+    url: https://www.neuronautix.com
+    btn_label: Services
+    btn_class: btn--primary
 ---
 <img src="/assets/images/Mathematical Portrait on Glass.png" alt="When I'll be old, I'll be a Mousetraunot!" width="250" style="display:block; margin:auto;">
 
@@ -26,15 +48,17 @@ My interests/expertise are:
 - I love **Home Cage monitoring** technologies and the way integrating various sensors may lead to the most accurate and usefull digital biomarkers in preclinical research.
 - I am an expert in **behavior**: protocols and analysis. I'm administrator of [TheBehaviourForum](https://www.thebehaviourforum.org/)
 - I know Python coding and data analysis (*Pandas*, *Scipy*, *Seaborn*, *statsmodel*, *Dabest*, *ipywidget*, ...).
-- I developed one python library ([*LWTools* - **LMT-Widget-Tool**](https://pypi.org/project/LWTools/)) to help non-python-experts analyze [**live mouse tracker**](www.livemoustracker.org) data.
+ - I developed one python library ([*LWTools* - **LMT-Widget-Tool**](https://pypi.org/project/LWTools/)) to help non-python-experts analyze [**live mouse tracker**](https://www.livemoustracker.org) data.
 - I combine behavioral tests with **physiological** parameters, such as **ECG/HRV** and **Skin-Nerve** recordings.
-- I developp a API-first platform for better metadata management in preclinical reseach: [MAPP](www.metadatapp.net).
+ - I developp a API-first platform for better metadata management in preclinical reseach: [MAPP](https://www.metadatapp.net).
 
 My ultimate goal is to improve the way preclinical behavioral research could benefit translational and clinical research.
 
 <img src="/assets/images/NeuroNautix-Moustraunot_nobg.png" alt="When I'll be old, I'll be a Mousetraunot!" width="400" style="display:block; margin:auto;">
 
 ---
+
+{% include feature_row %}
 
 ## Non-Academic Experience
 

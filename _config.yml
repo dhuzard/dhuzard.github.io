@@ -20,10 +20,19 @@ twitter_username: dhuzard
 github_username: DHuzard
 minimal_mistakes_skin: "neon"
 search: true
+url: "https://dhuzard.github.io"
+baseurl: ""
+locale: en
+breadcrumbs: true
+
+# Open Graph / Twitter card defaults
+og_image: "/assets/images/dhuzard_profile_2025.jpg"
+twitter:
+  username: dhuzard
+  card: summary_large_image
 
 #Headers page
 header_pages:
-  - / # New home page
   - _pages/posts.md # Blog
   - _pages/projects.md # Link to your projects page
   - _pages/hcm-explorer.md # Link to the new app
@@ -39,7 +48,7 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 future: true
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Paris # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
@@ -65,6 +74,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 author:
   name : "Damien Huzard"
@@ -90,7 +100,7 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://www.linkedin.com/in/dhuzard"
+      url: "https://x.com/DHuzard"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/dhuzard"

@@ -12,8 +12,10 @@ tags:
   - open-science
 author: HD + (Gemini Code Assist)
 header:
-  image: /assets/images/ChatGPT_02_40_23PM.png.
+  image: /assets/images/ChatGPT_02_40_23PM.png
   teaser: /assets/images/ChatGPT_02_40_23PM.png
+toc: true
+toc_label: On this page
 ---
 
 Preclinical research stands at a critical juncture, facing mounting pressure from regulators, a persistent reproducibility crisis, and evolving ethical considerations regarding animal welfare. At the heart of these challenges, and indeed their solution, lies **metadata management**. A recent presentation titled "Enhancing Metadata Management for Reproducibility in Preclinical Research" by Damien Huzard of Neuro Nautix, introduces the MAPP platform as a crucial step towards a more transparent, robust, and ethical scientific future.

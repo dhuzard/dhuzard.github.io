@@ -15,7 +15,12 @@ header:
   image: /assets/images/ChatGPT02_35_16PM.png
   teaser: /assets/images/ChatGPT02_35_16PM.png
 excerpt: A pragmatic rollout plan with roles, milestones, and proof points—so you can adopt FAIRRR in a month without boiling the ocean.
+toc: true
+toc_label: On this page
 ---
+
+> This article is part of the FAIRRR series: [1](/Blog/fairrr-ethics-of-metadata/) · [2](/Blog/fairrr-explained-metrics-outcomes/) · [3](/Blog/mapp-api-first-fairrr/) · [4](/Blog/case-study-hcm-mapp-ontology/) · [5](/Blog/fairrr-playbook-30-days/)
+{: .notice--info}
 
 This is Post 5 of 5 in the FAIRRR series. Previous: [Case Study—HCM with MAPP + Ontology Mapping](/Blog/case-study-hcm-mapp-ontology/)
 
@@ -56,4 +61,3 @@ This is Post 5 of 5 in the FAIRRR series. Previous: [Case Study—HCM with MAPP 
 - An SOP addendum and a simple FAIRRR dashboard.
 
 Series navigation: Previous ← [Case Study—HCM with MAPP + Ontology Mapping](/Blog/case-study-hcm-mapp-ontology/) • Start → [The Metadata Gap Is an Ethics Gap](/Blog/fairrr-ethics-of-metadata/)
-

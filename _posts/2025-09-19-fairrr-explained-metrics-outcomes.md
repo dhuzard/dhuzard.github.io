@@ -15,7 +15,12 @@ header:
   image: /assets/images/ChatGPT_02_40_23PM.png
   teaser: /assets/images/ChatGPT_02_40_23PM.png
 excerpt: Turn FAIRRR into concrete lab behaviors and outcome metrics you can track—and see how better metadata directly supports the 3Rs.
+toc: true
+toc_label: On this page
 ---
+
+> This article is part of the FAIRRR series: [1](/Blog/fairrr-ethics-of-metadata/) · [2](/Blog/fairrr-explained-metrics-outcomes/) · [3](/Blog/mapp-api-first-fairrr/) · [4](/Blog/case-study-hcm-mapp-ontology/) · [5](/Blog/fairrr-playbook-30-days/)
+{: .notice--info}
 
 This is Post 2 of 5 in the FAIRRR series. Previous: [The Metadata Gap Is an Ethics Gap](/Blog/fairrr-ethics-of-metadata/) • Next: [Inside MAPP—API‑First FAIRRR](/Blog/mapp-api-first-fairrr/)
 
@@ -61,4 +66,3 @@ This is Post 2 of 5 in the FAIRRR series. Previous: [The Metadata Gap Is an Ethi
 MAPP bakes these practices into templates, identifiers, ontologies, and APIs, and exposes exports for repositories and reviewers. That makes FAIRRR measurable—not aspirational.
 
 Series navigation: Previous ← [The Metadata Gap Is an Ethics Gap](/Blog/fairrr-ethics-of-metadata/) • Next → [Inside MAPP—API‑First FAIRRR](/Blog/mapp-api-first-fairrr/)
-

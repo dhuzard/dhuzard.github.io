@@ -15,7 +15,12 @@ header:
   image: /assets/hcmo-mapping/hcm-mapper/HCM-mapper.png
   teaser: /assets/hcmo-mapping/hcm-mapper/HCM-mapper.png
 excerpt: A concrete example: modeling devices, behaviors, and provenance in Home Cage Monitoring to unlock reuse, comparability, and fewer animals.
+toc: true
+toc_label: On this page
 ---
+
+> This article is part of the FAIRRR series: [1](/Blog/fairrr-ethics-of-metadata/) · [2](/Blog/fairrr-explained-metrics-outcomes/) · [3](/Blog/mapp-api-first-fairrr/) · [4](/Blog/case-study-hcm-mapp-ontology/) · [5](/Blog/fairrr-playbook-30-days/)
+{: .notice--info}
 
 This is Post 4 of 5 in the FAIRRR series. Previous: [Inside MAPP—API‑First FAIRRR](/Blog/mapp-api-first-fairrr/) • Next: [The 30‑Day FAIRRR Playbook](/Blog/fairrr-playbook-30-days/)
 
@@ -52,4 +57,3 @@ Tie each behavior/outcome to its generating pipeline version and parameters. Tha
 Related projects: [/projects/hcm-ontology-mapper/](/projects/hcm-ontology-mapper/) • [/projects/hcm-explorer/](/projects/hcm-explorer/)
 
 Series navigation: Previous ← [Inside MAPP—API‑First FAIRRR](/Blog/mapp-api-first-fairrr/) • Next → [The 30‑Day FAIRRR Playbook](/Blog/fairrr-playbook-30-days/)
-
