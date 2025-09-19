@@ -14,7 +14,7 @@ author: HD + (Codex)
 header:
   image: /assets/hcmo-mapping/hcm-mapper/HCM-mapper.png
   teaser: /assets/hcmo-mapping/hcm-mapper/HCM-mapper.png
-excerpt: A concrete example: modeling devices, behaviors, and provenance in Home Cage Monitoring to unlock reuse, comparability, and fewer animals.
+excerpt: "A concrete example: modeling devices, behaviors, and provenance in Home Cage Monitoring to unlock reuse, comparability, and fewer animals."
 toc: true
 toc_label: On this page
 ---
