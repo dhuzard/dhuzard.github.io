@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindmap Viewer — GitHub Pages Ready</title>
+  <style>
+    :root { --bg:#0b1020; --fg:#e7eefc; --muted:#9bb0d9; --accent:#7cd1ff; --node:#16213e; --edge:#3759a6; }
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,Segoe UI,Inter,Arial,sans-serif}
+    .topbar{position:sticky;top:0;background:#0b1020ee;backdrop-filter:blur(6px);z-index:10;border-bottom:1px solid #1c254b}
+    .wrap{max-width:1200px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .brand{font-weight:700;letter-spacing:.3px}
+    button,.btn{background:#16213e;color:var(--fg);border:1px solid #27366b;border-radius:10px;padding:8px 12px;cursor:pointer}
+    button:hover{background:#1b2852}
+    input[type="file"], .text-input{color:var(--muted)}
+    .panel{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .row{display:flex;gap:10px;align-items:center}
+    .grow{flex:1}
+    .container{height:calc(100% - 64px)}
+    .stage{position:relative;height:100%;}
+    .canvas{position:absolute;inset:0;}
+    .hud{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:6px}
+    .badge{font-size:12px;color:var(--muted)}
+    .legend{position:absolute;left:12px;bottom:12px;color:var(--muted);}
+    .node{fill:var(--node);stroke:#2b3b73;stroke-width:1.2px}
+    .edge{stroke:var(--edge);stroke-width:1.2px;fill:none;opacity:.9}
+    .label{fill:var(--fg);font-size:12px}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#13203f;color:#cfe2ff;border:1px solid #2a3a75;font-size:11px}
+    .search{background:#0f1733;border:1px solid #27366b;border-radius:10px;color:var(--fg);padding:8px 10px}
+    .small{font-size:12px;color:var(--muted)}
+    a{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand">Mindmap Viewer</div>
+      <div class="panel">
+        <label class="btn" for="fileInput">Load XML</label>
+        <input id="fileInput" type="file" accept=".xml" style="display:none" />
+        <button id="btnSample">Load /public/mindmap.xml</button>
+        <button id="btnExpand">Expand all</button>
+        <button id="btnCollapse">Collapse all</button>
+        <button id="btnFit">Fit to view</button>
+      </div>
+      <div class="row grow">
+        <input id="search" class="search grow" placeholder="Search nodes… (regex ok)" />
+        <span id="matchInfo" class="small">0 matches</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stage" id="stage">
+      <svg class="canvas" id="svg" xmlns="http://www.w3.org/2000/svg">
+        <g id="viewport">
+          <!-- edges go here -->
+          <g id="edges"></g>
+          <!-- nodes go here -->
+          <g id="nodes"></g>
+        </g>
+      </svg>
+      <div class="hud">
+        <button id="zoomIn">＋</button>
+        <button id="zoomOut">－</button>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="legend small">
+        Drag to pan • Wheel to zoom • Click node to collapse/expand
+      </div>
+    </div>
+  </div>
+
+  <!-- React 18 via UMD for portability on GitHub Pages (no build step) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script>
+  // Minimal reactive state (no JSX to keep it single-file + buildless)
+  (function(){
+    const svg = document.getElementById('svg');
+    const vp = document.getElementById('viewport');
+    const edgesG = document.getElementById('edges');
+    const nodesG = document.getElementById('nodes');
+    const fileInput = document.getElementById('fileInput');
+    const btnSample = document.getElementById('btnSample');
+    const btnExpand = document.getElementById('btnExpand');
+    const btnCollapse = document.getElementById('btnCollapse');
+    const btnFit = document.getElementById('btnFit');
+    const zoomIn = document.getElementById('zoomIn');
+    const zoomOut = document.getElementById('zoomOut');
+    const reset = document.getElementById('reset');
+    const search = document.getElementById('search');
+    const matchInfo = document.getElementById('matchInfo');
+
+    let tree = null; // {id,text,level,children,collapsed}
+    let layout = []; // nodes with x,y
+    let vpx = 0, vpy = 0, scale = 1;
+
+    function parseMindmapXML(xmlText){
+      const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
+      const root = doc.querySelector('mindmap > node');
+      function walk(el){
+        const id = el.getAttribute('id') || Math.random().toString(36).slice(2);
+        const n = {
+          id,
+          text: el.getAttribute('text') || '∅',
+          level: +(el.getAttribute('level')||0),
+          children: [],
+          collapsed: false,
+        };
+        el.querySelectorAll(':scope > node').forEach(ch => n.children.push(walk(ch)));
+        return n;
+      }
+      return walk(root);
+    }
+
+    function eachVisible(node, fn, depth=0){
+      fn(node, depth);
+      if(!node.collapsed){
+        for(const ch of node.children) eachVisible(ch, fn, depth+1);
+      }
+    }
+
+    function layoutTree(root){
+      const nodes = [];
+      let y = 0;
+      eachVisible(root, (n, depth)=>{
+        nodes.push({ id:n.id, node:n, x: depth * 220, y: y*60 });
+        y++;
+      });
+      return nodes;
+    }
+
+    function edgesFromLayout(root, lay){
+      const pos = new Map(lay.map(d=>[d.id, d]));
+      const edges = [];
+      function rec(n){
+        const p = pos.get(n.id);
+        if(!n.collapsed){
+          for(const ch of n.children){
+            const c = pos.get(ch.id);
+            if(c){
+              const x1=p.x+140, y1=p.y; // right side of parent box
+              const x2=c.x, y2=c.y;     // left side of child box
+              const mx=(x1+x2)/2;
+              const d=`M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+              edges.push({from:n.id,to:ch.id,d});
+            }
+            rec(ch);
+          }
+        }
+      }
+      rec(root);
+      return edges;
+    }
+
+    function render(){
+      if(!tree) return;
+      layout = layoutTree(tree);
+      const edges = edgesFromLayout(tree, layout);
+
+      // Resize SVG to container
+      const rect = svg.getBoundingClientRect();
+      svg.setAttribute('width', rect.width);
+      svg.setAttribute('height', rect.height);
+
+      // Apply viewport transform
+      vp.setAttribute('transform', `translate(${vpx},${vpy}) scale(${scale})`);
+
+      // Edges
+      edgesG.innerHTML = '';
+      for(const e of edges){
+        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+        path.setAttribute('d', e.d);
+        path.setAttribute('class','edge');
+        edgesG.appendChild(path);
+      }
+
+      // Nodes
+      nodesG.innerHTML = '';
+      for(const d of layout){
+        const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+        g.setAttribute('transform', `translate(${d.x},${d.y})`);
+
+        const boxW=140, boxH=34, r=10;
+        const rectN = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        rectN.setAttribute('width', boxW);
+        rectN.setAttribute('height', boxH);
+        rectN.setAttribute('rx', r);
+        rectN.setAttribute('class','node');
+        rectN.style.cursor='pointer';
+        rectN.addEventListener('click', ()=>{ d.node.collapsed = !d.node.collapsed; render(); });
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+        text.setAttribute('x', 10); text.setAttribute('y', 21);
+        text.setAttribute('class','label');
+        text.textContent = d.node.text;
+
+        const badge = document.createElementNS('http://www.w3.org/2000/svg','text');
+        badge.setAttribute('x', boxW-12); badge.setAttribute('y', 21);
+        badge.setAttribute('text-anchor','end');
+        badge.setAttribute('class','label');
+        badge.style.fill = '#9bb0d9';
+        if(d.node.children.length){
+          badge.textContent = d.node.collapsed ? `▶ ${d.node.children.length}` : `▼ ${d.node.children.length}`;
+        }
+
+        g.appendChild(rectN);
+        g.appendChild(text);
+        g.appendChild(badge);
+        nodesG.appendChild(g);
+      }
+
+      updateSearch();
+    }
+
+    function expandAll(n){ n.collapsed=false; n.children.forEach(expandAll); }
+    function collapseAll(n){ if(n.children.length){ n.collapsed=true; n.children.forEach(collapseAll);} }
+
+    function fitView(){
+      if(!tree) return;
+      const xs = layout.map(d=>d.x), ys = layout.map(d=>d.y);
+      const minX=Math.min(...xs), maxX=Math.max(...xs)+160;
+      const minY=Math.min(...ys)-20, maxY=Math.max(...ys)+60;
+      const w=maxX-minX, h=maxY-minY;
+      const vb=svg.getBoundingClientRect();
+      const sx = vb.width / Math.max(1,w);
+      const sy = vb.height / Math.max(1,h);
+      scale = Math.min(sx, sy) * 0.95;
+      vpx = (vb.width - w*scale)/2 - minX*scale;
+      vpy = (vb.height - h*scale)/2 - minY*scale;
+      render();
+    }
+
+    // Panning + zooming
+    (function(){
+      let dragging=false, lastX=0, lastY=0;
+      svg.addEventListener('pointerdown', (e)=>{ dragging=true; lastX=e.clientX; lastY=e.clientY; svg.setPointerCapture(e.pointerId); });
+      svg.addEventListener('pointermove', (e)=>{
+        if(!dragging) return;
+        const dx=e.clientX-lastX, dy=e.clientY-lastY;
+        vpx += dx; vpy += dy; lastX=e.clientX; lastY=e.clientY; render();
+      });
+      svg.addEventListener('pointerup', ()=> dragging=false);
+      svg.addEventListener('wheel', (e)=>{
+        e.preventDefault();
+        const factor = (e.deltaY>0) ? 0.9 : 1.1;
+        const pt = svg.createSVGPoint();
+        pt.x = e.clientX; pt.y = e.clientY;
+        const ctm = svg.getScreenCTM();
+        const p = pt.matrixTransform(ctm.inverse());
+        vpx = p.x - (p.x - vpx) * factor;
+        vpy = p.y - (p.y - vpy) * factor;
+        scale *= factor; render();
+      }, {passive:false});
+    })();
+
+    // Search
+    function updateSearch(){
+      if(!tree) return;
+      const q = search.value.trim();
+      let rx=null; let count=0;
+      if(q){
+        try{ rx = new RegExp(q, 'i'); } catch{ rx=null; }
+      }
+      // highlight by adding stroke on boxes whose text matches
+      const nodeGs = nodesG.querySelectorAll('g');
+      nodeGs.forEach((g)=>{
+        const label = g.querySelector('text');
+        const rect = g.querySelector('rect');
+        const t = label.textContent || '';
+        if(rx && rx.test(t)) { rect.setAttribute('stroke','#80ffea'); rect.setAttribute('stroke-width','2'); count++; }
+        else { rect.setAttribute('stroke','#2b3b73'); rect.setAttribute('stroke-width','1.2'); }
+      });
+      matchInfo.textContent = (rx? count:0) + ' matches';
+    }
+
+    search.addEventListener('input', updateSearch);
+
+    // Controls
+    btnExpand.addEventListener('click', ()=>{ if(tree){ expandAll(tree); render(); }});
+    btnCollapse.addEventListener('click', ()=>{ if(tree){ collapseAll(tree); render(); }});
+    btnFit.addEventListener('click', fitView);
+    zoomIn.addEventListener('click', ()=>{ scale*=1.15; render(); });
+    zoomOut.addEventListener('click', ()=>{ scale/=1.15; render(); });
+    reset.addEventListener('click', ()=>{ scale=1; vpx=0; vpy=0; render(); });
+
+    fileInput.addEventListener('change', async (e)=>{
+      const f = e.target.files?.[0]; if(!f) return;
+      const text = await f.text();
+      tree = parseMindmapXML(text);
+      render();
+      fitView();
+    });
+
+    btnSample.addEventListener('click', async ()=>{
+      try{
+        const res = await fetch('./mindmap.xml');
+        const text = await res.text();
+        tree = parseMindmapXML(text);
+        render();
+        fitView();
+      }catch(err){ alert('Could not fetch /mindmap.xml — place your file in the repository root or /public/.'); }
+    });
+
+    // Resize observer to keep SVG in sync
+    new ResizeObserver(()=> render()).observe(document.getElementById('stage'));
+
+    // Welcome state
+    const welcome = `\n⚡ Mindmap Viewer — How to use\n\n1) Click “Load XML” and select your mind map file.\n   Or place it at /public/mindmap.xml and press the button.\n2) Drag to pan, wheel to zoom.\n3) Click nodes to collapse/expand.\n4) Use search to highlight matches (regex ok).\n`;
+    console.log(welcome);
+  })();
+  </script>
+</body>
+</html>
