@@ -19,8 +19,23 @@ body {
     max-width: 1400px;
     margin: auto;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: 20px;
+}
+.main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+#systems-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 360px;
+    flex: 0 0 auto;
+    overflow: hidden;
+    margin-bottom: 60px; /* extra separation from comparison area */
 }
 header {
     grid-column: 1 / -1;
@@ -41,12 +56,6 @@ header h1 {
 }
 #filters-panel {
     overflow-y: auto;
-}
-.main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 0; /* Prevents flex items from overflowing */
 }
 .filter-group {
     margin-bottom: 20px;
@@ -76,24 +85,29 @@ header h1 {
     box-sizing: border-box;
 }
 #system-list {
-    max-height: 400px;
+    flex: 1 1 auto;
+    overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-auto-rows: minmax(80px, auto);
+    gap: 8px;
 }
 .system-item {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    margin-bottom: 5px;
-    cursor: grab;
+    cursor: pointer;
     background-color: #f1f3f5;
     font-size: 0.9rem;
     text-align: center;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 .system-item:hover {
     background-color: #e9ecef;
+}
+.system-item.selected {
+    background-color: #d5e8ff;
+    border-color: var(--primary-color);
 }
 #comparison-area {
     min-height: 200px;
@@ -103,6 +117,12 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
+    position: relative;
+    isolation: isolate;
+}
+.comparison-card {
+    position: relative;
+    z-index: 1;
 }
 .comparison-card {
     background: var(--card-bg);
@@ -190,6 +210,12 @@ header h1 {
 }
 #export-buttons button:hover {
     opacity: 0.9;
+}
+#comparison-panel {
+    position: relative;
+    overflow: hidden; /* keeps floating details inside the panel */
+    margin-top: 80px; /* push it further down away from systems grid */
+    flex: 0 0 auto;
 }
 
 @media (max-width: 768px) {

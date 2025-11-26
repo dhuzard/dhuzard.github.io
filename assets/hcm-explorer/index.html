@@ -1,4 +1,3 @@
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,30 +19,39 @@
 
     <div class="hcm-container">
         <div id="filters-panel" class="panel">
-            <h2>Systems</h2>
-            <input type="text" id="search-box" placeholder="Search systems...">
-            <div id="system-list"></div>
-            
+            <h2>Filters</h2>
             <div class="filter-group">
-                <h3>Filter by Technology</h3>
+                <h3>Technology</h3>
                 <div id="tech-filters"></div>
             </div>
             <div class="filter-group">
-                <h3>Filter by Behavior</h3>
-                <div id="behavior-filters"></div>
+                <h3>Category</h3>
+                <div id="category-filters"></div>
+            </div>
+            <div class="filter-group">
+                <h3>Species</h3>
+                <div id="species-filters"></div>
             </div>
             <div class="filter-group">
                 <h3>Other</h3>
-                <label>
-                    <input type="checkbox" id="open-source-filter"> Open Source
-                </label>
+                <div id="type-filters"></div>
+                <div id="cage-filters"></div>
+                <div id="implementation-filters"></div>
+                <div id="opensource-filters"></div>
+                <div id="ml-filters"></div>
             </div>
         </div>
 
-        <div class="main-content">
+        <div class="main-column">
+            <div id="systems-panel" class="panel">
+                <h2>Systems</h2>
+                <input type="text" id="search-box" placeholder="Search systems...">
+                <div id="system-list"></div>
+            </div>
+
             <div id="comparison-panel" class="panel">
                 <h2>Comparison Area</h2>
-                <div id="comparison-area"><p>Drag systems from the list on the left to compare them here.</p></div>
+                <div id="comparison-area"><p>Click systems above to compare them here.</p></div>
                 <div id="export-buttons">
                     <button id="export-csv">Export as CSV</button>
                     <button id="export-pdf">Export as PDF</button>
@@ -56,9 +64,10 @@
             </div>
 
             <div class="panel">
-                <h2>Introduction Timeline</h2>
-                <div id="timeline-view"></div>
+                <h2>Capabilities Scorecard</h2>
+                <canvas id="scorecard-chart"></canvas>
             </div>
+
         </div>
     </div>
 
@@ -66,63 +75,98 @@
     document.addEventListener('DOMContentLoaded', () => {
         let systems = [];
         let allTechnologies = new Set();
-        let allBehaviors = new Set();
+        let allCategories = new Set();
+        let allSpecies = new Set();
         let comparisonList = [];
         let radarChart;
+        let scorecardChart;
 
         const systemListEl = document.getElementById('system-list');
         const techFiltersEl = document.getElementById('tech-filters');
-        const behaviorFiltersEl = document.getElementById('behavior-filters');
-        const openSourceFilterEl = document.getElementById('open-source-filter');
+        const categoryFiltersEl = document.getElementById('category-filters');
+        const speciesFiltersEl = document.getElementById('species-filters');
+        const typeFiltersEl = document.getElementById('type-filters');
+        const cageFiltersEl = document.getElementById('cage-filters');
+        const implementationFiltersEl = document.getElementById('implementation-filters');
+        const opensourceFiltersEl = document.getElementById('opensource-filters');
+        const mlFiltersEl = document.getElementById('ml-filters');
         const searchBoxEl = document.getElementById('search-box');
         const comparisonAreaEl = document.getElementById('comparison-area');
-        const timelineViewEl = document.getElementById('timeline-view');
 
         // Fetch data
-        fetch('systems.json')
-            .then(response => response.json())
-            .then(data => {
-                systems = data;
+        fetch('systems_new.json')
+            .then(response => response.text())
+            .then(text => {
+                // File starts with a non-JSON header line "json file"
+                const cleaned = text.split('\n').slice(1).join('\n');
+                const data = JSON.parse(cleaned);
+                systems = (data.systems || []).map(normalizeSystem);
                 initialize();
             })
             .catch(error => {
-                console.error("Error loading systems.json:", error);
+                console.error("Error loading systems_new.json:", error);
                 systemListEl.innerHTML = '<p style="color: red;">Could not load system data. Please check the console for errors.</p>';
             });
+
+        function normalizeYesNo(value) {
+            if (typeof value !== 'string') return false;
+            return value.trim().toLowerCase() === 'yes';
+        }
+
+        function deriveGroupHousing(animalsNumber = '') {
+            const val = animalsNumber.toString().toLowerCase();
+            if (!val) return false;
+            if (val.includes('group')) return true;
+            if (val.includes('single')) return false;
+            const parsed = parseInt(val, 10);
+            if (!isNaN(parsed)) return parsed > 1;
+            return false;
+        }
+
+        function normalizeSystem(system) {
+            const opensourceBool = normalizeYesNo(system.opensource);
+            const mlBool = normalizeYesNo(system.ml);
+            const behaviors = system.categories || [];
+            const physiology = system.measures || [];
+            return {
+                ...system,
+                behaviors,
+                physiology,
+                manufacturer: system.maker_name || '',
+                openSource: opensourceBool,
+                mlFlag: mlBool,
+                groupHousing: deriveGroupHousing(system.animals_number),
+                yearIntroduced: null // not available in new dataset
+            };
+        }
 
         function initialize() {
             // Populate filter options
             systems.forEach(system => {
                 (system.technologies || []).forEach(tech => allTechnologies.add(tech));
-                (system.behaviors || []).forEach(behavior => allBehaviors.add(behavior));
+                (system.behaviors || []).forEach(cat => allCategories.add(cat));
+                (system.species || []).forEach(spec => allSpecies.add(spec));
             });
 
             renderCheckboxes(allTechnologies, techFiltersEl, 'tech');
-            renderCheckboxes(allBehaviors, behaviorFiltersEl, 'behavior');
+            renderCheckboxes(allCategories, categoryFiltersEl, 'category');
+            renderCheckboxes(allSpecies, speciesFiltersEl, 'species');
+            renderCheckboxes(new Set((systems.map(s => s.type || '').filter(Boolean))), typeFiltersEl, 'type');
+            renderCheckboxes(new Set((systems.map(s => s.cage || '').filter(Boolean))), cageFiltersEl, 'cage');
+            renderCheckboxes(new Set((systems.map(s => s.implementation || '').filter(Boolean))), implementationFiltersEl, 'implementation');
+            renderCheckboxes(new Set(['Yes', 'No']), opensourceFiltersEl, 'opensource');
+            renderCheckboxes(new Set(['Yes', 'No']), mlFiltersEl, 'ml');
 
             // Initial render
             renderSystemList();
-            renderTimeline();
+            initScorecardChart();
             initRadarChart();
 
             // Add event listeners
-            document.querySelectorAll('#tech-filters input, #behavior-filters input, #open-source-filter').forEach(el => {
+            document.querySelectorAll('#tech-filters input, #category-filters input, #species-filters input, #type-filters input, #cage-filters input, #implementation-filters input, #opensource-filters input, #ml-filters input').forEach(el => {
                 el.addEventListener('change', renderSystemList);
             });
             searchBoxEl.addEventListener('input', renderSystemList);
-
-            // Drag and drop for comparison
-            comparisonAreaEl.addEventListener('dragover', e => e.preventDefault());
-            comparisonAreaEl.addEventListener('drop', e => {
-                e.preventDefault();
-                const systemName = e.dataTransfer.getData('text/plain');
-                const system = systems.find(s => s.name === systemName);
-                if (system && !comparisonList.some(s => s.name === system.name)) {
-                    comparisonList.push(system);
-                    renderComparison();
-                    updateRadarChart();
-                }
-            });
 
             // Export buttons
             document.getElementById('export-csv').addEventListener('click', exportCSV);
@@ -148,53 +192,82 @@
 
         function renderSystemList() {
             const selectedTechs = getSelectedFilters('tech');
-            const selectedBehaviors = getSelectedFilters('behavior');
-            const isOpenSource = openSourceFilterEl.checked;
+            const selectedCategories = getSelectedFilters('category');
+            const selectedSpecies = getSelectedFilters('species');
+            const selectedTypes = getSelectedFilters('type');
+            const selectedCages = getSelectedFilters('cage');
+            const selectedImplementations = getSelectedFilters('implementation');
+            const selectedOpensource = getSelectedFilters('opensource');
+            const selectedMl = getSelectedFilters('ml');
             const searchTerm = searchBoxEl.value.toLowerCase();
 
             const filteredSystems = systems.filter(system => {
-                const matchesSearch = system.name.toLowerCase().includes(searchTerm);
+                const matchesSearch = system.name.toLowerCase().includes(searchTerm) || (system.description || '').toLowerCase().includes(searchTerm);
                 const matchesTech = selectedTechs.length === 0 || selectedTechs.every(tech => (system.technologies || []).includes(tech));
-                const matchesBehavior = selectedBehaviors.length === 0 || selectedBehaviors.every(behavior => (system.behaviors || []).includes(behavior));
-                const matchesOpenSource = !isOpenSource || system.openSource;
+                const matchesCategory = selectedCategories.length === 0 || selectedCategories.every(cat => (system.behaviors || []).includes(cat));
+                const matchesSpecies = selectedSpecies.length === 0 || selectedSpecies.every(spec => (system.species || []).includes(spec));
+                const matchesType = selectedTypes.length === 0 || selectedTypes.includes(system.type || '');
+                const matchesCage = selectedCages.length === 0 || selectedCages.includes(system.cage || '');
+                const matchesImplementation = selectedImplementations.length === 0 || selectedImplementations.includes(system.implementation || '');
+                const matchesOpensource = selectedOpensource.length === 0 || selectedOpensource.includes(system.openSource ? 'Yes' : 'No');
+                const matchesMl = selectedMl.length === 0 || selectedMl.includes(system.mlFlag ? 'Yes' : 'No');
 
-                return matchesSearch && matchesTech && matchesBehavior && matchesOpenSource;
+                return matchesSearch && matchesTech && matchesCategory && matchesSpecies && matchesType && matchesCage && matchesImplementation && matchesOpensource && matchesMl;
             });
 
             systemListEl.innerHTML = '';
             filteredSystems.forEach(system => {
                 const itemEl = document.createElement('div');
                 itemEl.className = 'system-item';
+                if (comparisonList.some(s => s.name === system.name)) {
+                    itemEl.classList.add('selected');
+                }
                 itemEl.textContent = system.name;
-                itemEl.draggable = true;
-                itemEl.addEventListener('dragstart', e => {
-                    e.dataTransfer.setData('text/plain', system.name);
+                itemEl.addEventListener('click', () => {
+                    const alreadySelected = comparisonList.some(s => s.name === system.name);
+                    if (alreadySelected) {
+                        comparisonList = comparisonList.filter(s => s.name !== system.name);
+                    } else {
+                        comparisonList.push(system);
+                    }
+                    renderSystemList();
+                    renderComparison();
+                    updateRadarChart();
+                    updateScorecardChart();
                 });
                 systemListEl.appendChild(itemEl);
             });
-            
-            renderTimeline(filteredSystems);
         }
 
         function renderComparison() {
             comparisonAreaEl.innerHTML = '';
             if (comparisonList.length === 0) {
-                comparisonAreaEl.innerHTML = '<p>Drag systems from the list on the left to compare them here.</p>';
+                comparisonAreaEl.innerHTML = '<p>Click systems above to compare them here.</p>';
                 return; // Exit the function since there are no cards to render
             }
 
             comparisonList.forEach(system => {
                 const card = document.createElement('div');
                 card.className = 'comparison-card';
+                const resourcesList = (system.resources || []).map(r => `<li>${r.class ? `${r.class}: ` : ''}<a href="${r.url}" target="_blank">${r.name}</a>${r.note ? ` (${r.note})` : ''}</li>`).join('');
+                const usersList = (system.users || []).map(u => `<li>${[u.firstname, u.name].filter(Boolean).join(' ')}${u.email ? ` — ${u.email}` : ''}${u.affiliation ? ` — ${u.affiliation}` : ''}</li>`).join('');
                 card.innerHTML = `
                     <button class="remove-btn" data-name="${system.name}">&times;</button>
                     <h4>${system.name}</h4>
-                    <p><strong>Manufacturer:</strong> ${system.manufacturer}</p>
-                    <p><strong>Year:</strong> ${system.yearIntroduced}</p>
-                    <p><strong>Open Source:</strong> ${system.openSource ? 'Yes' : 'No'}</p>
+                    <p>${system.description || ''}</p>
+                    <p><strong>Maker:</strong> ${system.manufacturer || 'n/a'}</p>
+                    <p><strong>Type:</strong> ${system.type || 'n/a'} | <strong>Implementation:</strong> ${system.implementation || 'n/a'} ${system.implementation_note ? `(${system.implementation_note})` : ''}</p>
+                    <p><strong>Cage:</strong> ${system.cage || 'n/a'} | <strong>Animals:</strong> ${system.animals_number || 'n/a'}</p>
+                    <p><strong>Open Source:</strong> ${system.openSource ? 'Yes' : 'No'} ${system.opensource_note ? `(${system.opensource_note})` : ''}</p>
+                    <p><strong>ML:</strong> ${system.mlFlag ? 'Yes' : 'No'} ${system.ml_note ? `(${system.ml_note})` : ''}</p>
+                    ${(system.species || []).length > 0 ? `<p><strong>Species:</strong> ${(system.species || []).join(', ')}</p>` : ''}
                     ${(system.technologies || []).length > 0 ? `<p><strong>Technologies:</strong></p><ul>${(system.technologies || []).map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
-                    ${(system.behaviors || []).length > 0 ? `<p><strong>Behaviors:</strong></p><ul>${(system.behaviors || []).map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
-                    <p><a href="${system.url}" target="_blank">More Info</a></p>
+                    ${(system.behaviors || []).length > 0 ? `<p><strong>Categories:</strong></p><ul>${(system.behaviors || []).map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
+                    ${(system.physiology || []).length > 0 ? `<p><strong>Measures:</strong></p><ul>${(system.physiology || []).map(m => `<li>${m}</li>`).join('')}</ul>` : ''}
+                    ${system.addons ? `<p><strong>Addons:</strong> ${system.addons}</p>` : ''}
+                    ${resourcesList ? `<p><strong>Resources:</strong></p><ul>${resourcesList}</ul>` : ''}
+                    ${usersList ? `<p><strong>Users:</strong></p><ul>${usersList}</ul>` : ''}
+                    ${system.url ? `<p><a href="${system.url}" target="_blank">More Info</a></p>` : ''}
                 `;
                 comparisonAreaEl.appendChild(card);
             });
@@ -205,62 +278,18 @@
                     comparisonList = comparisonList.filter(s => s.name !== nameToRemove);
                     renderComparison();
                     updateRadarChart();
+                    updateScorecardChart();
                 });
             });
         }
 
-        function renderTimeline(filteredSystems = systems) {
-            timelineViewEl.innerHTML = '';
-            if (filteredSystems.length === 0) return;
-
-            const years = filteredSystems.map(s => s.yearIntroduced);
-            const minYear = Math.min(...years);
-            const maxYear = Math.max(...years);
-            const yearRange = (maxYear - minYear) || 1; // Prevent division by zero
-
-            // Draw year labels
-            const labelsToShow = new Set([minYear, maxYear]);
-            // Add intermediate labels on 5-year intervals if space allows
-            for (let year = minYear; year <= maxYear; year++) {
-                if (year % 5 === 0) {
-                    labelsToShow.add(year);
-                }
-            }
-            for (const year of [...labelsToShow].sort()) {
-                const yPos = yearRange === 1 ? 50 : ((year - minYear) / yearRange) * 100;
-                const yearLabel = document.createElement('div');
-                yearLabel.className = 'timeline-year';
-                yearLabel.textContent = year;
-                yearLabel.style.top = `calc(${yPos}% - 6px)`; // Center label on line
-                timelineViewEl.appendChild(yearLabel);
-            }
-
-            filteredSystems.forEach(system => {
-                const yPos = yearRange === 1 ? 50 : ((system.yearIntroduced - minYear) / yearRange) * 100;
-                const marker = document.createElement('div');
-                marker.className = 'timeline-marker';
-                marker.style.top = `${yPos}%`;
-                marker.innerHTML = `<span class="tooltip">${system.name} (${system.yearIntroduced})</span>`;
-                timelineViewEl.appendChild(marker);
-            });
-        }
-
-        // --- Radar Chart ---
-        function getRadarData(system) {
-            // Normalize scores 0-10
-            const behavioralBreadth = Math.min((system.behaviors || []).length, 10);
-            const physiologyIntegration = Math.min((system.physiology || []).length * 2, 10); // Give more weight
-            const groupHousing = system.groupHousing ? 10 : 2;
-            const openness = system.openSource ? 10 : 2;
-            return [behavioralBreadth, physiologyIntegration, groupHousing, openness];
-        }
-
+        // --- Radar Chart (10-parameter) ---
         function initRadarChart() {
             const ctx = document.getElementById('radar-chart').getContext('2d');
             radarChart = new Chart(ctx, {
                 type: 'radar',
                 data: {
-                    labels: ['Behavioral Breadth', 'Physiology Integration', 'Group Housing', 'Openness'],
+                    labels: scoreLabels,
                     datasets: []
                 },
                 options: {
@@ -279,7 +308,7 @@
                         },
                         title: {
                             display: true,
-                            text: 'System Capabilities Comparison'
+                            text: 'System Capabilities (10 parameters)'
                         }
                     }
                 }
@@ -304,7 +333,7 @@
                 ];
                 return {
                     label: system.name,
-                    data: getRadarData(system),
+                    data: getScorecardData(system),
                     backgroundColor: colors[index % colors.length],
                     borderColor: borderColors[index % borderColors.length],
                     borderWidth: 1
@@ -313,6 +342,132 @@
 
             radarChart.data.datasets = datasets;
             radarChart.update();
+        }
+
+        // --- Scorecard Chart (10-parameter bar chart) ---
+        const scoreLabels = [
+            'Category Breadth',
+            'Technology Breadth',
+            'Species Versatility',
+            'Openness & Buildability',
+            'ML/Automation Depth',
+            'Multi-Modal Coverage',
+            'Housing Flexibility',
+            'Implementation Complexity',
+            'Validation & Community',
+            'Ethical & Welfare Load'
+        ];
+
+        function getScorecardData(system) {
+            const catCount = (system.behaviors || []).length;
+            const techCount = (system.technologies || []).length;
+            const speciesCount = (system.species || []).length;
+
+            const categoryBreadth = Math.min(catCount, 10);
+            const technologyBreadth = Math.min(techCount * 2, 10);
+            const speciesVersatility = Math.min(speciesCount * 3, 10);
+
+            const openness = system.openSource ? 10 : 2;
+
+            const hasRichInput = (system.technologies || []).some(t =>
+                t.toLowerCase().includes('video') || t.toLowerCase().includes('audio')
+            );
+            let mlDepth = 3;
+            if (system.mlFlag) {
+                mlDepth = hasRichInput ? 10 : 8;
+            }
+
+            const multiModalCoverage = Math.min(10, 0.5 * catCount + techCount);
+
+            const animals = (system.animals_number || '').toLowerCase();
+            const cage = (system.cage || '').toLowerCase();
+            const supportsSingle = animals.includes('single');
+            const supportsGroup = animals.includes('group') || animals.includes('6') || animals.includes('2') || animals.includes('3') || animals.includes('4') || animals.includes('5') || animals.includes('multiple');
+            let housingFlex = 4;
+            if (supportsSingle && supportsGroup) housingFlex = 7;
+            else if (supportsGroup && !supportsSingle) housingFlex = 5;
+            else if (supportsSingle && !supportsGroup) housingFlex = 4;
+            if (cage.includes('modified') || cage.includes('standard/modified')) housingFlex = Math.min(10, housingFlex + 2);
+
+            const implementation = (system.implementation || '').toLowerCase();
+            let implComplexity = 7;
+            if (implementation.includes('software')) implComplexity = 10;
+            if (implementation.includes('hardware/software')) implComplexity = 5;
+            if (implementation === 'hardware') implComplexity = 7;
+            if (system.addons) implComplexity = Math.max(3, implComplexity - 2);
+
+            const validationCount = (system.users || []).length + (system.resources || []).length;
+            let validation = 0;
+            if (validationCount >= 10) validation = 10;
+            else if (validationCount >= 4) validation = 8;
+            else if (validationCount >= 1) validation = 4;
+
+            const invasiveTech = (system.technologies || []).some(t => t.toLowerCase().includes('electric shock'));
+            const cageModified = cage.includes('modified');
+            let welfare = 10;
+            if (invasiveTech) welfare = 3;
+            else if (cageModified) welfare = 7;
+
+            return [
+                categoryBreadth,
+                technologyBreadth,
+                speciesVersatility,
+                openness,
+                mlDepth,
+                multiModalCoverage,
+                housingFlex,
+                implComplexity,
+                validation,
+                welfare
+            ];
+        }
+
+        function initScorecardChart() {
+            const ctx = document.getElementById('scorecard-chart').getContext('2d');
+            scorecardChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: scoreLabels,
+                    datasets: []
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                        x: { suggestedMin: 0, suggestedMax: 10, ticks: { stepSize: 2 } }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: { display: true, text: 'Capabilities Scorecard (0–10)' }
+                    }
+                }
+            });
+        }
+
+        function updateScorecardChart() {
+            const colors = [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(75, 192, 192, 0.6)',
+                'rgba(153, 102, 255, 0.6)'
+            ];
+            const borderColors = [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 206, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(153, 102, 255)'
+            ];
+            const datasets = comparisonList.map((system, index) => ({
+                label: system.name,
+                data: getScorecardData(system),
+                backgroundColor: colors[index % colors.length],
+                borderColor: borderColors[index % borderColors.length],
+                borderWidth: 1
+            }));
+            scorecardChart.data.datasets = datasets;
+            scorecardChart.update();
         }
 
         // --- Export Functions ---
@@ -326,21 +481,29 @@
             const headers = ["Feature", ...comparisonList.map(s => s.name)];
             csvContent += headers.join(",") + "\r\n";
 
-            const features = ["Manufacturer", "Year Introduced", "Open Source", "Group Housing", "Technologies", "Behaviors", "Physiology"];
+            const features = ["Manufacturer", "Type", "Implementation", "Cage", "Animals Number", "Open Source", "ML", "Technologies", "Categories", "Measures", "Species", "Addons", "Resources", "Users", "URL"];
             features.forEach(feature => {
                 const row = [feature];
                 comparisonList.forEach(system => {
                     let value;
                     switch(feature) {
                         case "Manufacturer": value = system.manufacturer; break;
-                        case "Year Introduced": value = system.yearIntroduced; break;
+                        case "Type": value = system.type; break;
+                        case "Implementation": value = system.implementation; break;
+                        case "Cage": value = system.cage; break;
+                        case "Animals Number": value = system.animals_number; break;
                         case "Open Source": value = system.openSource ? 'Yes' : 'No'; break;
-                        case "Group Housing": value = system.groupHousing ? 'Yes' : 'No'; break;
+                        case "ML": value = system.mlFlag ? 'Yes' : 'No'; break;
                         case "Technologies": value = (system.technologies || []).join('; '); break;
-                        case "Behaviors": value = (system.behaviors || []).join('; '); break;
-                        case "Physiology": value = (system.physiology || []).join('; '); break;
+                        case "Categories": value = (system.behaviors || []).join('; '); break;
+                        case "Measures": value = (system.physiology || []).join('; '); break;
+                        case "Species": value = (system.species || []).join('; '); break;
+                        case "Addons": value = system.addons || ''; break;
+                        case "Resources": value = (system.resources || []).map(r => `${r.class ? r.class + ': ' : ''}${r.name}${r.url ? ' (' + r.url + ')' : ''}`).join(' | '); break;
+                        case "Users": value = (system.users || []).map(u => `${[u.firstname, u.name].filter(Boolean).join(' ')}${u.email ? ' - ' + u.email : ''}${u.affiliation ? ' - ' + u.affiliation : ''}`).join(' | '); break;
+                        case "URL": value = system.url || ''; break;
                     }
-                    row.push(`"${value}"`);
+                    row.push(`"${value || ''}"`);
                 });
                 csvContent += row.join(",") + "\r\n";
             });

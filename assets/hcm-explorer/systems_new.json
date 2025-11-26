@@ -1,0 +1,4842 @@
+json file
+{
+    "generated_at": "2025-11-25 14:54:23",
+    "systems": [
+        {
+            "system_id": 1,
+            "name": "Actimetrics cages",
+            "description": "Running wheel wages and motion sensors",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/actimetrics.com\/products\/clocklab\/running-wheel-cages\/",
+            "addons": "no",
+            "maker_name": "Actimetrics",
+            "categories": [
+                "food intake",
+                "water intake",
+                "rearing",
+                "circadian activity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 140,
+                    "class": "Article",
+                    "name": "Ishii, Int J Neurosci, 2019",
+                    "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/30010457\/",
+                    "note": ""
+                },
+                {
+                    "id": 141,
+                    "class": "List of References",
+                    "name": "A sampling of over 3000 papers that have made use of Actimetrics systems",
+                    "url": "https:\/\/actimetrics.com\/references\/",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 2,
+            "name": "ANY-maze tracking system",
+            "description": "Video tracking system",
+            "cage": "standard\/modified",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "Opensource available on demand",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.any-maze.com\/",
+            "addons": "video tracking system designed to automate testing in a wide range of behavioral apparatus; including water maze\/ Barnes maze\/ elevated plus maze\/ zero maze\/ maze\/ y-maze\/ radial arm maze\/ multi unit open field\/ single unit open field\/ place preference\/ home cage\/ and Forced Swim Test. One can track the head; body or tail. It tracks movement; distance made; freezing; immobility; preference behavior; anxiety; depression; time spent in selected locations; distance travelled; average speed.",
+            "maker_name": "ANY-maze",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "food intake",
+                "water intake",
+                "balance",
+                "ataxia",
+                "horizontal locomotor activity",
+                "climbing",
+                "wheel running",
+                "maternal care",
+                "fear conditioning",
+                "active avoidance",
+                "working memory",
+                "spatial learning and memory",
+                "motivation",
+                "impulsivity",
+                "taste preference"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [
+                "grooming",
+                "USV frequency"
+            ],
+            "resources": [
+                {
+                    "id": 119,
+                    "class": "Article",
+                    "name": "Pezzanite, Ann Transl Med. 2023",
+                    "url": "https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC10316095\/",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 36,
+                    "firstname": "Masa",
+                    "name": "Cater",
+                    "email": "masa.cater@bf.uni-lj.si",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 37,
+                    "firstname": "Melissa",
+                    "name": "Long",
+                    "email": "melissa.long@charite.de",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 3,
+            "name": "Automated Training System (ATS) for the 5-choice serial reaction time task (5CSRTT)",
+            "description": "Automated Training System (ATS) for the 5-choice serial reaction time task (5CSRTT)",
+            "cage": "modified",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/sanworks.io\/shop\/products.php?productFamily=bpod",
+            "addons": "wireless optogenetics (integration with Neurolux commercial system)",
+            "maker_name": "Hangya Laboratory",
+            "categories": [
+                "water intake",
+                "attention ",
+                "working memory",
+                "motivation",
+                "impulsivity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 5,
+                    "class": "Article",
+                    "name": "Birtalan, Sci Rep, 2020",
+                    "url": "https:\/\/www.nature.com\/articles\/s41598-020-79290-2",
+                    "note": ""
+                },
+                {
+                    "id": 122,
+                    "class": "Webinar",
+                    "name": "Efficient, stress-free learning of mice in a fully automated training system by Kornel Demeter",
+                    "url": "https:\/\/www.youtube.com\/watch?v=EU4pewNI_QU",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 13,
+                    "firstname": "Balazs",
+                    "name": "Hangya",
+                    "email": "hangya.balazs@koki.hu",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 27,
+                    "firstname": "Kornel",
+                    "name": "Demeter",
+                    "email": "demeter.kornel@koki.hu",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 4,
+            "name": "Automated Visible Burrow System (VBS)",
+            "description": "Automated version of a Visible Burrow System (VBS)",
+            "cage": "modified",
+            "animals_number": "6",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "Cage design and analysis scripts is opensource but video and RFID tracking system not",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "",
+            "addons": "",
+            "maker_name": "Charite University; Humboldt University",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "group dynamics",
+                "horizontal locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "video",
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [
+                "activity",
+                "average food intake",
+                "balance"
+            ],
+            "resources": [
+                {
+                    "id": 6,
+                    "class": "Article",
+                    "name": "Alonso, iScience, 2023",
+                    "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/36798444\/",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 1,
+                    "firstname": "Pawel",
+                    "name": "Boguszewski",
+                    "email": "p.boguszewski@nencki.edu.pl",
+                    "affiliation": "Neurobiology Centre, Nencki Institute Polish Academy of Sciences, Poland",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 5,
+            "name": "AVERT (Acoustic Vocalisation Early Response Technology)",
+            "description": "Ultrasonic vocalisations (USVs) recorded over 24 hours within a home-cage",
+            "cage": "modified",
+            "animals_number": "group",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "",
+            "addons": "",
+            "maker_name": "Mary Lyon Centre at MRC Harwell",
+            "categories": [
+                "aggressive behavior",
+                "USVs communication"
+            ],
+            "technologies": [
+                "audio recording",
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 120,
+                    "class": "Article",
+                    "name": "Hobson, Curr Protoc Mouse Biol, 2020",
+                    "url": "https:\/\/currentprotocols.onlinelibrary.wiley.com\/doi\/10.1002\/cpmo.80",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 45,
+                    "firstname": "Sonia",
+                    "name": "Bains",
+                    "email": "r.bains@har.mrc.ac.uk",
+                    "affiliation": "Mary Lyon Centre, Medical Research Council, UK",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 6,
+            "name": "Avisoft Bioacoustics",
+            "description": "Bioacoustics sound analysis software",
+            "cage": "standard\/modified",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "http:\/\/www.avisoft.com\/",
+            "addons": "",
+            "maker_name": "Avisoft",
+            "categories": [
+                "USVs communication"
+            ],
+            "technologies": [
+                "audio recording"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 7,
+                    "class": "Article",
+                    "name": "Scattoni, PLoS One, 2008",
+                    "url": "https:\/\/doi.org\/10.1371\/journal.pone.0003067",
+                    "note": ""
+                },
+                {
+                    "id": 8,
+                    "class": "Article",
+                    "name": "Berz, iScience, 2021",
+                    "url": "https:\/\/doi.org\/10.1016\/j.isci.2021.102426",
+                    "note": ""
+                },
+                {
+                    "id": 9,
+                    "class": "Article",
+                    "name": "W\u00f6hr, Prog Neuropsychopharmacol Biol Psychiatry, 2020",
+                    "url": "https:\/\/doi.org\/10.1016\/j.pnpbp.2019.109849",
+                    "note": ""
+                },
+                {
+                    "id": 10,
+                    "class": "Article",
+                    "name": "Fendt, Sci Rep, 2018",
+                    "url": "https:\/\/doi.org\/10.1038\/s41598-018-28927-4",
+                    "note": ""
+                },
+                {
+                    "id": 11,
+                    "class": "Article",
+                    "name": "Parker, F1000Research, 2022,",
+                    "url": "https:\/\/doi.org\/10.12688\/f1000research.111170.1",
+                    "note": ""
+                },
+                {
+                    "id": 12,
+                    "class": "Article",
+                    "name": "W\u00f6hr, Brain Sci, 2021",
+                    "url": "https:\/\/doi.org\/10.3390\/brainsci11060724",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 34,
+                    "firstname": "Maria Luisa",
+                    "name": "Scattoni",
+                    "email": "marialuisa.scattoni@iss.it",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 7,
+            "name": "Batlogger M",
+            "description": "Active acoustic monitoring",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.batlogger.com\/en\/products\/batlogger_m\/",
+            "addons": "",
+            "maker_name": "Elekon",
+            "categories": [
+                "USVs communication"
+            ],
+            "technologies": [
+                "audio recording"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 13,
+                    "class": "Article",
+                    "name": "B\u00f6l\u00fckbas, Sci Rep, 2020",
+                    "url": "https:\/\/doi.org\/10.1038\/s41598-020-80087-6",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "rat"
+            ]
+        },
+        {
+            "system_id": 8,
+            "name": "CLAMS (Comprehensive Lab Animal Monitoring System)",
+            "description": "Multiparamter scoring can be attached to homecages",
+            "cage": "standard\/modified",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.colinst.com\/products\/clams-hc-comprehensive-lab-animal-monitoring-system-for-home-cages",
+            "addons": "",
+            "maker_name": "Columbus Instruments",
+            "categories": [
+                "food intake",
+                "water intake",
+                "calorimetry",
+                "horizontal locomotor activity",
+                "rearing"
+            ],
+            "technologies": [
+                "infrared (IR) beam break"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 14,
+                    "class": "Article",
+                    "name": "Lindahl, Cell Rep, 2014",
+                    "url": "https:\/\/doi.org\/10.1016\/j.celrep.2014.03.023",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 24,
+                    "firstname": "Jan",
+                    "name": "Rozman",
+                    "email": "jan.rozman@uni.lu",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 9,
+            "name": "CombiCage",
+            "description": "The system can be built by combining any operant box (in which the 5-CSRTT can be programmed) and any home cage that is connected to it. The experienced user has combined a phenotyper homecage and a MEDNPW-5M-5-hole nosepoke for mouse (Med Associates) but other labs have worked with different providers.",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/med-associates.com\/product-category\/operant-conditioning-general-behavior\/",
+            "addons": "MedAssociate components",
+            "maker_name": "Phenotyper\/Home cage + MEDNPW-5M 5-hole nosepoke for mouse",
+            "categories": [
+                "food intake",
+                "water intake",
+                "attention ",
+                "working memory",
+                "motivation",
+                "impulsivity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 15,
+                    "class": "Article",
+                    "name": "Bruinsma, Psychopharmacology, 2019",
+                    "url": "https:\/\/doi.org\/10.1007\/s00213-019-05189-0",
+                    "note": ""
+                },
+                {
+                    "id": 16,
+                    "class": "Article",
+                    "name": "van Heusden, Front Behav Neurosci, 2021",
+                    "url": "https:\/\/doi.org\/doi:10.3389\/fnbeh.2021.655449",
+                    "note": ""
+                },
+                {
+                    "id": 17,
+                    "class": "Article",
+                    "name": "Remmelink,Sci Rep, 2017",
+                    "url": "https:\/\/www.nature.com\/articles\/srep42519",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 33,
+                    "firstname": "Maarten",
+                    "name": "Loos",
+                    "email": "maarten.loos@sylics.com",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 39,
+                    "firstname": "Nathan",
+                    "name": "Marchant",
+                    "email": "n.marchant@amsterdamumc.nl",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 10,
+            "name": "COMPASS (Continuous Open Mouse Phenotyping of Activity and Sleep Status)",
+            "description": "PIR (passive infrared) measurement of activity in homecages",
+            "cage": "modified",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "",
+            "addons": "circadian cabinet",
+            "maker_name": "Sleep and Circadian Neuroscience Institute (SCNi) Nuffield Department of Clinical Neurosciences University of Oxford",
+            "categories": [
+                "circadian activity"
+            ],
+            "technologies": [
+                "passive infrared (PIR)"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 18,
+                    "class": "Article",
+                    "name": "Brown, Wellcome Open Res, 2016",
+                    "url": "https:\/\/doi.org\/10.12688\/wellcomeopenres.9892.2",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 47,
+                    "firstname": "Stuart",
+                    "name": "Peirson",
+                    "email": "stuart.peirson@eye.ox.ac.uk",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 11,
+            "name": "DeepLabCut",
+            "description": "Software package for animal pose estimation",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "DIY",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "http:\/\/www.mackenziemathislab.org\/deeplabcut",
+            "addons": "SimBa - doi: 10.17605\/OSF.IO\/RWHTD",
+            "maker_name": "Mathis Group & Mathis Lab",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "horizontal locomotor activity",
+                "vertical locomotor activity",
+                "immobility\/freezing",
+                "maternal care"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 19,
+                    "class": "Article",
+                    "name": "Winters, Sci Rep, 2022",
+                    "url": "https:\/\/doi.org\/10.1038\/s41598-022-05641-w",
+                    "note": ""
+                },
+                {
+                    "id": 20,
+                    "class": "Article",
+                    "name": "Mathis, Nat Neurosci, 2018",
+                    "url": "https:\/\/doi.org\/10.1038\/s41593-018-0209-y",
+                    "note": ""
+                },
+                {
+                    "id": 21,
+                    "class": "Article",
+                    "name": "Neira, Alcoholism: Clin Exp Res, 2022",
+                    "url": "https:\/\/doi.org\/10.1111\/acer.14901",
+                    "note": ""
+                },
+                {
+                    "id": 128,
+                    "class": "Source Code",
+                    "name": "DeepLabCut",
+                    "url": "https:\/\/deeplabcut.github.io\/DeepLabCut\/README.html",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 15,
+                    "firstname": "Carmen",
+                    "name": "Winters",
+                    "email": "carmenwinters@hotmail.com",
+                    "affiliation": "",
+                    "note": ""
+                },
+                {
+                    "id": 16,
+                    "firstname": "Claire",
+                    "name": "Witham",
+                    "email": "c.witham@har.mrc.ac.uk",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 12,
+            "name": "DualCage",
+            "description": "Automated homecage",
+            "cage": "modified",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "Previously Bioserve (currently out of business)",
+            "addons": "all USB-controlled hardware from any provider can be used",
+            "maker_name": "Stiedl Lab\/Biobserve",
+            "categories": [
+                "fear conditioning",
+                "fear extinction",
+                "passive avoidance",
+                "neophobia"
+            ],
+            "technologies": [
+                "video",
+                "pellet dispenser",
+                "electric shock"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 22,
+                    "class": "Protocol",
+                    "name": "Kas, Neuromethods, 2011",
+                    "url": "https:\/\/doi.org\/10.1007\/978-1-61779-313-4_1",
+                    "note": ""
+                },
+                {
+                    "id": 23,
+                    "class": "Article",
+                    "name": "Aoki, Nat Commun, 2017",
+                    "url": "https:\/\/doi.org\/10.1038\/s41467-017-01371-0",
+                    "note": ""
+                },
+                {
+                    "id": 25,
+                    "class": "Article",
+                    "name": "Hager, Front Behav Neurosci, 2014",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2014.00314",
+                    "note": ""
+                },
+                {
+                    "id": 26,
+                    "class": "Article",
+                    "name": "Caglayan, Front Behav Neurosci, 2021",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2021.777767",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 40,
+                    "firstname": "Oliver",
+                    "name": "Stiedl",
+                    "email": "oliver.stiedl@vu.nl",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 13,
+            "name": "DVC (Digital Ventilated Cages)",
+            "description": "Homecage monitoring system",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/digitalcage-tecniplast.com\/",
+            "addons": "video cameras; running wheel",
+            "maker_name": "Tecniplast S.p.A.",
+            "categories": [
+                "horizontal locomotor activity",
+                "wheel running",
+                "place avoidance",
+                "circadian activity"
+            ],
+            "technologies": [
+                "electromagnetic field (EMF)",
+                "capacitance sensing"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 27,
+                    "class": "Article",
+                    "name": "Iannello, Heliyon, 2019",
+                    "url": "https:\/\/doi.org\/10.1016\/j.heliyon.2019.e01454",
+                    "note": ""
+                },
+                {
+                    "id": 28,
+                    "class": "Article",
+                    "name": "Fuochi, Lab Anim, 2021",
+                    "url": "https:\/\/doi.org\/10.1038\/s41684-021-00793-0",
+                    "note": ""
+                },
+                {
+                    "id": 29,
+                    "class": "Article",
+                    "name": "Pernold, PLoS One, 2019",
+                    "url": "https:\/\/doi.org\/10.1371\/journal.pone.0211063",
+                    "note": ""
+                },
+                {
+                    "id": 30,
+                    "class": "Article",
+                    "name": "Ulfhake, PLoS One, 2022",
+                    "url": "https:\/\/doi.org\/10.1371\/journal.pone.0267281",
+                    "note": ""
+                },
+                {
+                    "id": 31,
+                    "class": "Article",
+                    "name": "Voikar, Front Behav Neurosci, 2020",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2020.575434",
+                    "note": ""
+                },
+                {
+                    "id": 32,
+                    "class": "Article",
+                    "name": "Golini, Front Neurosci, 2020",
+                    "url": "https:\/\/doi.org\/10.3389\/fnins.2020.00896",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 38,
+                    "firstname": "Michael",
+                    "name": "Tsoory",
+                    "email": "Michael.Tsoory@weizmann.ac.il",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 44,
+                    "firstname": "Silvia",
+                    "name": "Mandillo",
+                    "email": "silvia.mandillo@cnr.it",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 47,
+                    "firstname": "Stuart",
+                    "name": "Peirson",
+                    "email": "stuart.peirson@eye.ox.ac.uk",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 14,
+            "name": "Eco-HAB",
+            "description": "Automated tracking in four-compartment apparatus with shadowed areas and narrow tunnels resembling natural burrows",
+            "cage": "modified",
+            "animals_number": "15",
+            "type": "",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "http:\/\/pmbogusz.net\/index.php?a=rfidlite",
+            "addons": "for testing social hierarchy",
+            "maker_name": "Knapska Lab",
+            "categories": [
+                "affiliative behavior",
+                "group dynamics",
+                "horizontal locomotor activity"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 33,
+                    "class": "Article",
+                    "name": "Pu\u015bcian, eLife, 2016",
+                    "url": "https:\/\/doi.org\/10.7554\/eLife.19532",
+                    "note": ""
+                },
+                {
+                    "id": 117,
+                    "class": "Webinar",
+                    "name": "Eco-HAB system: measuring social behavior and hierarchy in mice by Alicja Pu\u015bcian",
+                    "url": "https:\/\/www.youtube.com\/watch?v=-2lCOQoJHzY",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 19,
+                    "firstname": "Ewelina",
+                    "name": "Knapska",
+                    "email": "e.knapska@nencki.edu.pl",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 28,
+                    "firstname": "Ksenia",
+                    "name": "Meyza",
+                    "email": "k.meyza@nencki.edu.pl",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 15,
+            "name": "EthoVision XT",
+            "description": "Video tracking software",
+            "cage": "",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "https:\/\/www.noldus.com\/ethovision-xt",
+            "addons": "the system is built so you need to buy add-ons for special cases (multi-arena; mice; hardware control)",
+            "maker_name": "Noldus",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "food intake",
+                "water intake",
+                "balance",
+                "ataxia",
+                "horizontal locomotor activity",
+                "climbing",
+                "wheel running",
+                "rearing",
+                "maternal care",
+                "fear conditioning",
+                "passive avoidance",
+                "working memory",
+                "spatial learning and memory",
+                "motivation",
+                "impulsivity",
+                "place avoidance",
+                "taste preference",
+                "circadian activity",
+                "grooming"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 34,
+                    "class": "Article",
+                    "name": "Han, Toxicol Res, 2022",
+                    "url": "https:\/\/link.springer.com\/article\/10.1007\/s43188-021-00104-2#Sec2",
+                    "note": ""
+                },
+                {
+                    "id": 35,
+                    "class": "Article",
+                    "name": "Morel, Nat Commun, 2022",
+                    "url": "https:\/\/www.nature.com\/articles\/s41467-022-29155-1",
+                    "note": ""
+                },
+                {
+                    "id": 36,
+                    "class": "Article",
+                    "name": "Tsao, Sci Rep, 2022",
+                    "url": "https:\/\/www.nature.com\/articles\/s41598-021-03155-5",
+                    "note": ""
+                },
+                {
+                    "id": 37,
+                    "class": "Manufacturer resources",
+                    "name": "EthoVision XT",
+                    "url": "https:\/\/www.noldus.com\/ethovision-xt\/resources",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 1,
+                    "firstname": "Pawel",
+                    "name": "Boguszewski",
+                    "email": "p.boguszewski@nencki.edu.pl",
+                    "affiliation": "Neurobiology Centre, Nencki Institute Polish Academy of Sciences, Poland",
+                    "note": ""
+                },
+                {
+                    "id": 28,
+                    "firstname": "Ksenia",
+                    "name": "Meyza",
+                    "email": "k.meyza@nencki.edu.pl",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 30,
+                    "firstname": "Leonardo",
+                    "name": "Restivo",
+                    "email": "leonardo.restivo@unil.ch",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 41,
+                    "firstname": "Ozge",
+                    "name": "Sungur",
+                    "email": "oezge.sungur@kuleuven.be",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 16,
+            "name": "Feeding Experimentation Device (FED3)",
+            "description": "Food intake and operant behavior monitoring system",
+            "cage": "standard\/modified",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/kravitzlab.com\/fed3",
+            "addons": "BNC to connect to e.g. ephys; opto hardware",
+            "maker_name": "Kravitz Lab",
+            "categories": [
+                "food intake",
+                "motivation",
+                "impulsivity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break",
+                "pellet dispenser"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 105,
+                    "class": "Article",
+                    "name": "Bridget, eLife, 2021",
+                    "url": "https:\/\/doi.org\/10.7554\/eLife.66173",
+                    "note": ""
+                },
+                {
+                    "id": 106,
+                    "class": "Source Code",
+                    "name": "KravitzLabDevices\/FED3",
+                    "url": "https:\/\/github.com\/KravitzLabDevices\/FED3",
+                    "note": ""
+                },
+                {
+                    "id": 107,
+                    "class": "Preprint",
+                    "name": "Taghipourbibalan, biorxiv, 2025",
+                    "url": "https:\/\/www.biorxiv.org\/content\/10.1101\/2025.07.24.666497v2",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 51,
+                    "firstname": "Alexxai",
+                    "name": "Kravitz",
+                    "email": "alexxai@wustl.edu",
+                    "affiliation": "",
+                    "note": ""
+                },
+                {
+                    "id": 52,
+                    "firstname": "James",
+                    "name": "McCutcheon",
+                    "email": "j.mccutcheon@uit.no",
+                    "affiliation": "",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 17,
+            "name": "Figure-8 Maze - Automated",
+            "description": "Automated Figure-8 Maze can be attached to homecage",
+            "cage": "standard\/modified",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "",
+            "addons": "MBiobserve software with customized hardware",
+            "maker_name": "August B Smit Lab\/Biobserve",
+            "categories": [
+                "spatial learning and memory"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 40,
+                    "class": "Article",
+                    "name": "Manes, Behav Brain Res, 2019",
+                    "url": "https:\/\/doi.org\/10.1016\/j.bbr.2018.06.012",
+                    "note": ""
+                },
+                {
+                    "id": 41,
+                    "class": "Article",
+                    "name": "Molzof, Neurobiol Learn Mem, 2019",
+                    "url": "https:\/\/doi.org\/10.1016\/j.nlm.2019.01.002",
+                    "note": ""
+                },
+                {
+                    "id": 42,
+                    "class": "Article",
+                    "name": "Tang, Prog Neuropsychopharmacol Biol Psychiatry, 2011",
+                    "url": "https:\/\/doi.org\/10.1016\/j.pnpbp.2011.08.006",
+                    "note": ""
+                },
+                {
+                    "id": 43,
+                    "class": "Article",
+                    "name": "van Heusden, Front Behav Neurosci, 2021",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2021.655449",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 40,
+                    "firstname": "Oliver",
+                    "name": "Stiedl",
+                    "email": "oliver.stiedl@vu.nl",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 18,
+            "name": "Home Cage Analyser (HCA)",
+            "description": "Automatic monitoring in homecages of groups of mice",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.actualanalytics.com\/",
+            "addons": "IVC Rack",
+            "maker_name": "Actual Analytics",
+            "categories": [
+                "affiliative behavior",
+                "water intake",
+                "horizontal locomotor activity",
+                "climbing",
+                "circadian activity"
+            ],
+            "technologies": [
+                "video",
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 44,
+                    "class": "Article",
+                    "name": "Hobson, Curr Protoc Mouse Biol, 2020",
+                    "url": "https:\/\/doi.org\/10.1002\/cpmo.80",
+                    "note": ""
+                },
+                {
+                    "id": 45,
+                    "class": "Article",
+                    "name": "Bains, J Neurosci Methods, 2018",
+                    "url": "https:\/\/doi.org\/10.1016\/j.jneumeth.2017.04.014",
+                    "note": ""
+                },
+                {
+                    "id": 46,
+                    "class": "Article",
+                    "name": "Bains, Front Behav Neurosci, 2016",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2016.00106",
+                    "note": ""
+                },
+                {
+                    "id": 131,
+                    "class": "Article",
+                    "name": "Sillito, Front Toxicol, 2025",
+                    "url": "https:\/\/doi.org\/10.3389\/ftox.2025.1655330",
+                    "note": "Validation paper cited by the supplier."
+                }
+            ],
+            "users": [
+                {
+                    "id": 45,
+                    "firstname": "Sonia",
+                    "name": "Bains",
+                    "email": "r.bains@har.mrc.ac.uk",
+                    "affiliation": "Mary Lyon Centre, Medical Research Council, UK",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 19,
+            "name": "HomeCageScan",
+            "description": "Software for automatically studying behaviour in a homecage",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "http:\/\/cleversysinc.com\/CleverSysInc\/csi_products\/homecagescan\/",
+            "addons": "",
+            "maker_name": "CleverSys Inc",
+            "categories": [
+                "water intake",
+                "horizontal locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 47,
+                    "class": "Article",
+                    "name": "Rodr\u00edguez de Los Santos, Proc Natl Acad Sci U S A, 2021",
+                    "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/33402532\/",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 35,
+                    "firstname": "Marion",
+                    "name": "Rivalan",
+                    "email": "marion.rivalan@cnrs.fr",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 20,
+            "name": "Imetronic Actimeter",
+            "description": "Rack to house 8 cages with IR (Infrared) sensor to measure motor activity",
+            "cage": "modified",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.imetronic.com\/devices\/actimeter\/",
+            "addons": "",
+            "maker_name": "Imetronic",
+            "categories": [
+                "horizontal locomotor activity",
+                "vertical locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 48,
+                    "class": "Article",
+                    "name": "Lahogue, Behav Brain Res, 2025",
+                    "url": "https:\/\/doi.org\/10.1016\/j.bbr.2024.115301",
+                    "note": ""
+                },
+                {
+                    "id": 49,
+                    "class": "Article",
+                    "name": "Chofflet, Eur J Pharmacol, 2025",
+                    "url": "https:\/\/doi.org\/10.1016\/j.ejphar.2024.177200",
+                    "note": ""
+                },
+                {
+                    "id": 50,
+                    "class": "Article",
+                    "name": "George, Neurobiol Aging, 2006",
+                    "url": "https:\/\/doi.org\/10.1016\/j.neurobiolaging.2005.10.014",
+                    "note": ""
+                },
+                {
+                    "id": 51,
+                    "class": "Article",
+                    "name": "Rizzolo, Cerebral Cortex, 2021",
+                    "url": "https:\/\/doi.org\/10.1093\/cercor\/bhaa247",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 48,
+                    "firstname": "Valentine",
+                    "name": "Bouet",
+                    "email": "valentine.bouet@unicaen.fr",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 21,
+            "name": "iMouse",
+            "description": "Retrofit Remote camera observation on home cage level with advanced night light system",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "https:\/\/imouse.info\/",
+            "addons": "",
+            "maker_name": "iMouse GmbH (Berlin)",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "group dynamics",
+                "USVs communication",
+                "food intake",
+                "water intake",
+                "urination",
+                "temperature",
+                "calorimetry",
+                "motor coordination",
+                "balance",
+                "ataxia",
+                "horizontal locomotor activity",
+                "climbing",
+                "wheel running",
+                "stretch-attend posture",
+                "maternal care",
+                "fear conditioning",
+                "attention ",
+                "working memory",
+                "spatial learning and memory",
+                "motivation",
+                "place preference",
+                "taste preference",
+                "circadian activity"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 52,
+                    "class": "Preprint",
+                    "name": "\u0141az, biorxiv, 2023",
+                    "url": "https:\/\/www.biorxiv.org\/content\/10.1101\/2023.08.06.552188v1",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 25,
+                    "firstname": "Janine",
+                    "name": "Kah",
+                    "email": " Janine.Kah@mhb-fontane.de",
+                    "affiliation": "",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse",
+                "hamster"
+            ]
+        },
+        {
+            "system_id": 22,
+            "name": "InfraMot",
+            "description": "Infrared motion sensor to measure activity",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.tse-systems.com\/product-details\/inframot\/",
+            "addons": "combined with TSE PhenoMaster",
+            "maker_name": "TSE",
+            "categories": [
+                "horizontal locomotor activity"
+            ],
+            "technologies": [
+                "thermosensor (IR)"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 53,
+                    "class": "Article",
+                    "name": "\u00c5hlgren, Lab Animal, 2019",
+                    "url": "https:\/\/www.nature.com\/articles\/s41684-019-0288-8",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 49,
+                    "firstname": "Vootele",
+                    "name": "Voikar",
+                    "email": "vootele.voikar@helsinki.fi",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 23,
+            "name": "Intellicage",
+            "description": "Homecage for behavioural and cognitive monitoring",
+            "cage": "modified",
+            "animals_number": "16",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.tse-systems.com\/product-details\/intellicage\/",
+            "addons": "Animal Gate",
+            "maker_name": "TSE",
+            "categories": [
+                "water intake",
+                "horizontal locomotor activity",
+                "active avoidance",
+                "working memory",
+                "spatial learning and memory",
+                "motivation",
+                "impulsivity",
+                "taste preference",
+                "circadian activity"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification",
+                "thermosensor"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 54,
+                    "class": "Article",
+                    "name": "Nowak, Behav Brain Res, 2013",
+                    "url": "https:\/\/doi.org\/10.1016\/j.bbr.2012.10.031",
+                    "note": ""
+                },
+                {
+                    "id": 55,
+                    "class": "Article",
+                    "name": "de Hoz, Cereb Cortex, 2018",
+                    "url": "https:\/\/doi.org\/10.1093\/cercor\/bhx060",
+                    "note": ""
+                },
+                {
+                    "id": 56,
+                    "class": "Article",
+                    "name": "Jaholkowski, Learn Mem, 2009",
+                    "url": "https:\/\/doi.org\/10.1101\/lm.1459709",
+                    "note": ""
+                },
+                {
+                    "id": 57,
+                    "class": "Article",
+                    "name": "Knapska, Learn Mem, 2006",
+                    "url": "https:\/\/doi.org\/10.1101\/lm.54706",
+                    "note": ""
+                },
+                {
+                    "id": 58,
+                    "class": "Article",
+                    "name": "Knapska, J Neurosci, 2013",
+                    "url": "https:\/\/doi.org\/10.1523\/JNEUROSCI.5239-12.2013",
+                    "note": ""
+                },
+                {
+                    "id": 59,
+                    "class": "Article",
+                    "name": "Pu\u015bcian, Front Behav Neurosci, 2014",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2014.00140",
+                    "note": ""
+                },
+                {
+                    "id": 123,
+                    "class": "Webinar",
+                    "name": "How to study neural circuits in the IntelliCages? by Ewelina Knapska",
+                    "url": "https:\/\/www.youtube.com\/watch?v=Ql1R520Kg5o",
+                    "note": ""
+                },
+                {
+                    "id": 124,
+                    "class": "Webinar",
+                    "name": "Motivating mice to learn difficult tasks in the IntelliCage without water restriction by David Wolfer",
+                    "url": "https:\/\/www.youtube.com\/watch?v=2_XgtLV0Spg",
+                    "note": ""
+                },
+                {
+                    "id": 125,
+                    "class": "Webinar",
+                    "name": "Biomedical research using IntelliCage by Anna Kyrik",
+                    "url": "https:\/\/www.youtube.com\/watch?v=R7A3ewWL8-o",
+                    "note": ""
+                },
+                {
+                    "id": 126,
+                    "class": "Webinar",
+                    "name": "IntelliCage - my story by Vootele Voikar",
+                    "url": "https:\/\/www.youtube.com\/watch?v=vXnmJ3efW7I",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 21,
+                    "firstname": "Hamid",
+                    "name": "Meziane",
+                    "email": "meziane@igbmc.fr",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 29,
+                    "firstname": "Lars",
+                    "name": "Lewejohann",
+                    "email": "lars.lewejohann@fu-berlin.de",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 24,
+            "name": "LABORAS (Laboratory Animal Behavior Observation Registration and Analysis System)",
+            "description": "Automated behavioural scoring in a homecage",
+            "cage": "modified",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "OS only available in collaboration with Prague Czech Republic",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.metris.nl\/en\/products\/laboras\/laboras_information\/",
+            "addons": "social chamber",
+            "maker_name": "Metris",
+            "categories": [
+                "food intake",
+                "water intake",
+                "horizontal locomotor activity",
+                "climbing",
+                "rearing",
+                "immobility\/freezing",
+                "startle response",
+                "scratching",
+                "grooming"
+            ],
+            "technologies": [
+                "vibration"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 61,
+                    "class": "Article",
+                    "name": "Liu, J Neurosci Methods, 2006",
+                    "url": "https:\/\/doi.org\/10.1016\/j.jneumeth.2005.10.024",
+                    "note": ""
+                },
+                {
+                    "id": 62,
+                    "class": "Article",
+                    "name": "Quinn, J Neurosci Methods, 2003",
+                    "url": "https:\/\/doi.org\/10.1016\/S0165-0270(03)00227-9",
+                    "note": ""
+                },
+                {
+                    "id": 63,
+                    "class": "Article",
+                    "name": "Van de Weerd, Behav Processes, 2001",
+                    "url": "https:\/\/doi.org\/10.1016\/S0376-6357(00)00135-2",
+                    "note": ""
+                },
+                {
+                    "id": 64,
+                    "class": "Article",
+                    "name": "Borb\u00e9lyov\u00e1, Physiol Res, 2019",
+                    "url": "https:\/\/www.biomed.cas.cz\/physiolres\/pdf\/2019\/68_S353.pdf",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 17,
+                    "firstname": "Claudia",
+                    "name": "Pitzer",
+                    "email": "claudia.pitzer@pharma.uni-heidelberg.de",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 25,
+            "name": "Live Mouse tracker",
+            "description": "Tracking and annotating mouse behaviours",
+            "cage": "modified",
+            "animals_number": "4",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "https:\/\/livemousetracker.org",
+            "addons": "Ambient noise; temperature; light; humidity monitoring device",
+            "maker_name": "Fabrice de Chaumont Lab (Institut Pasteur Paris France)",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "group dynamics",
+                "horizontal locomotor activity",
+                "active avoidance",
+                "circadian activity"
+            ],
+            "technologies": [
+                "video",
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 65,
+                    "class": "Article",
+                    "name": "de Chaumont, Nat Biomed Eng, 2019",
+                    "url": "https:\/\/doi.org\/10.1038\/s41551-019-0396-1",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 18,
+                    "firstname": "Elodie",
+                    "name": "Ey",
+                    "email": "eye@igbmc.fr",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 20,
+                    "firstname": "Fabrice",
+                    "name": "de Chaumont",
+                    "email": "fabrice.de-chaumont@pasteur.fr",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 26,
+            "name": "Low-Profile Wireless Running Wheel",
+            "description": "Mouse running wheel that enables quantitative measurements of mouse running levels in most standard IVCs.",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/med-associates.com\/product\/low-profile-wireless-running-wheel\/",
+            "addons": "no",
+            "maker_name": "MedAssociates",
+            "categories": [
+                "wheel running"
+            ],
+            "technologies": [],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 66,
+                    "class": "Article",
+                    "name": "Namdar, J Mol Neurosci, 2020",
+                    "url": "https:\/\/link.springer.com\/article\/10.1007\/s12031-019-01422-9",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 32,
+                    "firstname": "Lior",
+                    "name": "Bikovski",
+                    "email": "liorbiko@tauex.tau.ac.il ",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 27,
+            "name": "Microchip with temperature monitoring",
+            "description": "Eight differential pressure (MR1) sensors enable real-time analysis of in-cage activity\/ temperature\/light levels and humidity data on a cloud dashboard.",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.uidevices.com\/laboratory-animal-temperature\/",
+            "addons": "injector and reader",
+            "maker_name": "Unified Information Devices",
+            "categories": [
+                "temperature"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 67,
+                    "class": "Poster",
+                    "name": "Potts, The Jackson Laboratory, 2021",
+                    "url": "https:\/\/www.uidevices.com\/wp-content\/uploads\/2021\/10\/Evaluating-the-Application-of-Microchips-to-Monitor-Temperature-Change-After-Immunotherapy.pdf",
+                    "note": ""
+                },
+                {
+                    "id": 129,
+                    "class": "Article",
+                    "name": "Jayne, Nat Aging, 2025",
+                    "url": "https:\/\/www.nature.com\/articles\/s43587-025-00830-4",
+                    "note": ""
+                },
+                {
+                    "id": 130,
+                    "class": "Article",
+                    "name": "Wilsterman, PLoS One, 2025",
+                    "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/40471894\/",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 12,
+                    "firstname": "Anna",
+                    "name": "Kiryk",
+                    "email": "a.kiryk@nencki.edu.pl",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 28,
+            "name": "MoPSS (Mouse Position Surveillance System)",
+            "description": "Home-cage for 24\/7 observation periods with shelters food and water and can be used with bedding and enrichments. Can be customised for complex multimodal often short-term observations. Powered by EthoVision XT.",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "http:\/\/www.phenotyping.com",
+            "addons": "Can be combined with multiple modules",
+            "maker_name": "Lewejohann Lab",
+            "categories": [
+                "water intake",
+                "horizontal locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 68,
+                    "class": "Article",
+                    "name": "Habedank, Behav Res, 2022",
+                    "url": "https:\/\/link.springer.com\/article\/10.3758%2Fs13428-021-01593-7",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 14,
+                    "firstname": "Birk",
+                    "name": "Urmersbach",
+                    "email": "birk.urmersbach@bfr.bund.de",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 29,
+                    "firstname": "Lars",
+                    "name": "Lewejohann",
+                    "email": "lars.lewejohann@fu-berlin.de",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 43,
+                    "firstname": "Pia",
+                    "name": "Kahnau",
+                    "email": "Pia.Kahnau@bfr.bund.de",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 29,
+            "name": "MOSHERS (MOuse Smart HoppERS)",
+            "description": "High-resolution metabolic and behavioral phenotyping systems for rodents that enables tight synchronization of metabolic data with behavioral events.",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "",
+            "addons": "",
+            "maker_name": "Research Devices",
+            "categories": [
+                "food intake",
+                "water intake"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [],
+            "users": [
+                {
+                    "id": 45,
+                    "firstname": "Sonia",
+                    "name": "Bains",
+                    "email": "r.bains@har.mrc.ac.uk",
+                    "affiliation": "Mary Lyon Centre, Medical Research Council, UK",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 30,
+            "name": "Mouse E-Motion",
+            "description": "Movement detected by RFID in large wire mesh cage with two levels creating an area of 4.6 m2. Filled with aspen bedding and connected with plastic tubes. Food water and shelter are provided on each level and the upper levels have two nesting boxes.",
+            "cage": "standard\/modified",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "http:\/\/www.infra-e-motion.de\/",
+            "addons": "",
+            "maker_name": "INFRA-E-MOTION GmbH",
+            "categories": [
+                "horizontal locomotor activity"
+            ],
+            "technologies": [
+                "thermosensor (IR)"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 69,
+                    "class": "Article",
+                    "name": "Pfeffer, J Neurosci, 2009",
+                    "url": "https:\/\/doi.org\/10.1523\/JNEUROSCI.0275-09.2009",
+                    "note": ""
+                },
+                {
+                    "id": 70,
+                    "class": "Article",
+                    "name": "Peters, Nat Neurosci, 2005",
+                    "url": "https:\/\/doi.org\/10.1038\/nn1375",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 31,
+            "name": "MOVE",
+            "description": "Software suite to speed-up and standardize motion related data analysis",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.patrick-meuth.de\/move\/",
+            "addons": "",
+            "maker_name": "Hans Christian Pape Lab",
+            "categories": [
+                "horizontal locomotor activity",
+                "immobility\/freezing",
+                "grooming"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 71,
+                    "class": "Article",
+                    "name": "Meuth, Genes Brain Behav, 2013",
+                    "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/23566274\/",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 46,
+                    "firstname": "Stefano",
+                    "name": "Gaburro",
+                    "email": "stefanogaburro@gmail.com",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 32,
+            "name": "M3 - MultiMouseMonitor",
+            "description": "Automated tracking of movements of individuals in groups",
+            "cage": "standard\/modified",
+            "animals_number": "6",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.phenosys.com\/products\/multi-mouse-monitor\/",
+            "addons": "",
+            "maker_name": "PhenoSys GmbH",
+            "categories": [
+                "horizontal locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 72,
+                    "class": "Article",
+                    "name": "Alonso, Behav Brain Res, 2020",
+                    "url": "https:\/\/doi.org\/10.1016\/j.bbr.2019.112188",
+                    "note": ""
+                },
+                {
+                    "id": 73,
+                    "class": "Article",
+                    "name": "Schwab, Eur J Pharmacol, 2024",
+                    "url": "https:\/\/doi.org\/10.1016\/j.ejphar.2024.176505",
+                    "note": ""
+                },
+                {
+                    "id": 74,
+                    "class": "Article",
+                    "name": "Huang, eLife, 2023",
+                    "url": "https:\/\/doi.org\/10.7554\/eLife.84961",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 35,
+                    "firstname": "Marion",
+                    "name": "Rivalan",
+                    "email": "marion.rivalan@cnrs.fr",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 37,
+                    "firstname": "Melissa",
+                    "name": "Long",
+                    "email": "melissa.long@charite.de",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 33,
+            "name": "NeuroMotive",
+            "description": "Tracking system for capturing video",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/blackrockneurotech.com\/wp-content\/uploads\/LB-0336_NeuroMotive_Users_Manual.pdf",
+            "addons": "",
+            "maker_name": "Blackrock Microsystems",
+            "categories": [
+                "maternal care"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 76,
+                    "class": "Article",
+                    "name": "Carcea, Nature, 2021",
+                    "url": "https:\/\/doi.org\/10.1038\/s41586-021-03814-7",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 22,
+                    "firstname": "Ioana",
+                    "name": "Carcea",
+                    "email": "ioana.carcea@rutgers.edu",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 34,
+            "name": "OpenLabCluster",
+            "description": "Identify behaviors based on semi-supervised deep learning methodology",
+            "cage": "",
+            "animals_number": "single",
+            "type": "",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "Cage design and analysis scripts is opensource but video and RFID tracking system not",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "https:\/\/github.com\/shlizee\/OpenLabCluster",
+            "addons": "NA",
+            "maker_name": "Shlizerman Lab",
+            "categories": [
+                "food intake",
+                "water intake",
+                "horizontal locomotor activity",
+                "rearing",
+                "grooming"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 77,
+                    "class": "Preprint",
+                    "name": "Li, biorxiv, 2025",
+                    "url": "https:\/\/doi.org\/10.1101\/2022.10.10.511660",
+                    "note": ""
+                },
+                {
+                    "id": 132,
+                    "class": "Source Code",
+                    "name": "OpenLabCluster",
+                    "url": "https:\/\/github.com\/shlizee\/OpenLabCluster",
+                    "note": ""
+                },
+                {
+                    "id": 133,
+                    "class": "Poster",
+                    "name": "Li, 2025",
+                    "url": "https:\/\/www.ece.uw.edu\/wp-content\/uploads\/2022\/03\/Jingyuan_Li_poster.pdf",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 35,
+            "name": "Pallidus",
+            "description": "Pallidus Smart Sensors (MR1) detect and transmit temperature, light levels, humidity, and activity data from rodent home-cages, displaying data on a cloud dashboard.",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/store.mcci.com\/products\/pallidus-smart-sensor",
+            "addons": "environmental conditions monitor",
+            "maker_name": "Pallidus Sensing LLC",
+            "categories": [
+                "horizontal locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "passive infrared (PIR)"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 78,
+                    "class": "Article",
+                    "name": "Hu, Nat Commun, 2023",
+                    "url": "https:\/\/doi.org\/10.1038\/s41467-023-41849-8",
+                    "note": ""
+                },
+                {
+                    "id": 79,
+                    "class": "Article",
+                    "name": "Slivicki, Addict Biol, 2023",
+                    "url": "https:\/\/doi.org\/10.1111\/adb.13253",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 51,
+                    "firstname": "Alexxai",
+                    "name": "Kravitz",
+                    "email": "alexxai@wustl.edu",
+                    "affiliation": "",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 36,
+            "name": "Phenomaster",
+            "description": "Automated homecage phenotyping",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.tse-systems.com\/service\/phenotype\/",
+            "addons": "",
+            "maker_name": "TSE",
+            "categories": [
+                "food intake",
+                "water intake",
+                "calorimetry",
+                "horizontal locomotor activity",
+                "wheel running",
+                "motivation",
+                "impulsivity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break",
+                "weight"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 82,
+                    "class": "Protocol",
+                    "name": "SOP-PhenoMaster, 2021",
+                    "url": "https:\/\/biomedical-sciences.uq.edu.au\/files\/20155\/SOP-PhenoMaster.pdf",
+                    "note": ""
+                },
+                {
+                    "id": 83,
+                    "class": "Protocol",
+                    "name": "Kim, protocols.io, 2019",
+                    "url": "https:\/\/doi.org\/10.17504\/protocols.io.xwwfpfe",
+                    "note": ""
+                },
+                {
+                    "id": 134,
+                    "class": "Article",
+                    "name": "Efthymiou, Nat Commun, 2023",
+                    "url": "https:\/\/doi.org\/10.1038\/s41467-023-39715-8",
+                    "note": ""
+                },
+                {
+                    "id": 135,
+                    "class": "Article",
+                    "name": "Maggi, Timing & Time Perception, 2014",
+                    "url": "https:\/\/brill.com\/view\/journals\/time\/2\/1\/article-p35_3.xml",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 24,
+                    "firstname": "Jan",
+                    "name": "Rozman",
+                    "email": "jan.rozman@uni.lu",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 31,
+                    "firstname": "Liga",
+                    "name": "Zvejniece",
+                    "email": "liga@farm.osi.lv",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 37,
+            "name": "PhenoRack",
+            "description": "Homecage activity monitoring",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.viewpoint.fr\/product\/rodent\/rodents-behavior-monitoring\/phenorack",
+            "addons": "",
+            "maker_name": "Viewpoint - behavior technology",
+            "categories": [
+                "food intake",
+                "water intake",
+                "horizontal locomotor activity",
+                "circadian activity",
+                "grooming"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 84,
+                    "class": "Article",
+                    "name": "D\u00e9mosth\u00e8nes, Front Neurol, 2022",
+                    "url": "https:\/\/www.frontiersin.org\/articles\/10.3389\/fneur.2021.789432\/full",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 38,
+            "name": "PhenoTyper",
+            "description": "Home-cage for 24\/7 observation periods with shelters and food and water and can be used with bedding and enrichments. Can be customised for complex multimodal often short-term observations. Powered by EthoVision XT.",
+            "cage": "modified",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "You can develop own java scripts",
+            "ml": "Yes",
+            "ml_note": "AI for nose tail detection and ten behaviors",
+            "url": "https:\/\/www.noldus.com\/phenotyper",
+            "addons": "Cognition wall (cognitive flexibility assay)",
+            "maker_name": "Noldus",
+            "categories": [
+                "affiliative behavior",
+                "food intake",
+                "water intake",
+                "horizontal locomotor activity",
+                "rearing",
+                "circadian activity",
+                "grooming"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 85,
+                    "class": "Article",
+                    "name": "Domonkos, Horm Behav, 2017",
+                    "url": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0018506X1630544X?via%3Dihub#s0010",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 30,
+                    "firstname": "Leonardo",
+                    "name": "Restivo",
+                    "email": "leonardo.restivo@unil.ch",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 32,
+                    "firstname": "Lior",
+                    "name": "Bikovski",
+                    "email": "liorbiko@tauex.tau.ac.il ",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 39,
+            "name": "Promethion",
+            "description": "High-resolution metabolic and behavioral phenotyping systems for rodents that enables tight synchronization of metabolic data with behavioral events.",
+            "cage": "modified",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware\/software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.sablesys.com\/products\/promethion-core-line\/",
+            "addons": "",
+            "maker_name": "Sable Systems",
+            "categories": [
+                "food intake",
+                "water intake",
+                "calorimetry",
+                "horizontal locomotor activity"
+            ],
+            "technologies": [
+                "infrared (IR) beam break",
+                "weight"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 86,
+                    "class": "Article",
+                    "name": "Zhenghao, eLife, 2022",
+                    "url": "https:\/\/doi.org\/10.7554\/eLife.72664",
+                    "note": ""
+                },
+                {
+                    "id": 87,
+                    "class": "Article",
+                    "name": "Oraha, Int J Obes, 2022",
+                    "url": "https:\/\/www.nature.com\/articles\/s41366-022-01174-4",
+                    "note": ""
+                },
+                {
+                    "id": 88,
+                    "class": "Article",
+                    "name": "John, Commun Biol, 2022",
+                    "url": "https:\/\/www.nature.com\/articles\/s42003-022-03895-8",
+                    "note": ""
+                },
+                {
+                    "id": 89,
+                    "class": "Article",
+                    "name": "Reho, Front Physiol, 2022",
+                    "url": "https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC8914175\/",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 24,
+                    "firstname": "Jan",
+                    "name": "Rozman",
+                    "email": "jan.rozman@uni.lu",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 40,
+            "name": "RatRec",
+            "description": "Ultrasonic vocalisation (USV) recording",
+            "cage": "standard\/modified",
+            "animals_number": "group",
+            "type": "DIY",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "",
+            "addons": "",
+            "maker_name": "Nencki Institute",
+            "categories": [
+                "USVs communication"
+            ],
+            "technologies": [
+                "audio recording"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 136,
+                    "class": "Article",
+                    "name": "Hamed, Brain Struct Funct, 2018",
+                    "url": "https:\/\/doi.org\/10.1007\/s00429-018-1683-4",
+                    "note": ""
+                },
+                {
+                    "id": 137,
+                    "class": "Article",
+                    "name": "Karwicka, Brain Sci, 2021",
+                    "url": "https:\/\/doi.org\/10.3390\/brainsci11060759",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 9,
+                    "firstname": "Adam",
+                    "name": "Hamed",
+                    "email": "a.hamed@nencki.edu.pl",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 41,
+            "name": "Semi-naturalistic enclosure (SNE)",
+            "description": "Movement detected by RFID in large wire mesh cage with two levels creating an area of 4.6 m2. Filled with aspen bedding and connected with plastic tubes. Food and water and shelter are provided on each level and the upper levels have two nesting boxes.",
+            "cage": "modified",
+            "animals_number": "group",
+            "type": "DIY",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "Source but available on demand",
+            "ml": "No",
+            "ml_note": "",
+            "url": "http:\/\/www.phenotyping.com",
+            "addons": "no (but system can be extended)",
+            "maker_name": "Lewejohann Lab",
+            "categories": [
+                "group dynamics",
+                "horizontal locomotor activity",
+                "circadian activity"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 90,
+                    "class": "Article",
+                    "name": "Freund, Science, 2013",
+                    "url": "https:\/\/doi.org\/10.1126\/science.1235294",
+                    "note": ""
+                },
+                {
+                    "id": 91,
+                    "class": "Article",
+                    "name": "Mieske, Animals, 2021",
+                    "url": "https:\/\/www.mdpi.com\/2076-2615\/11\/10\/3002",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 29,
+                    "firstname": "Lars",
+                    "name": "Lewejohann",
+                    "email": "lars.lewejohann@fu-berlin.de",
+                    "affiliation": "",
+                    "note": null
+                },
+                {
+                    "id": 42,
+                    "firstname": "Paul",
+                    "name": "Mieske",
+                    "email": "paul.mieske@bfr.bund.de",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 42,
+            "name": "SimBA (Simple Behavioral Analysis)",
+            "description": "Pipeline and GUI for developing supervised behavioral classifiers.",
+            "cage": "",
+            "animals_number": "group",
+            "type": "DIY\/commercial",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "Yes",
+            "ml_note": "",
+            "url": "https:\/\/github.com\/sgoldenlab\/simba",
+            "addons": "NA",
+            "maker_name": "Golden Lab",
+            "categories": [
+                "affiliative behavior",
+                "horizontal locomotor activity",
+                "maternal care"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 92,
+                    "class": "Article",
+                    "name": "Goodwin, Nat. Neurosci, 2024",
+                    "url": "https:\/\/doi.org\/10.1038\/s41593-024-01649-9",
+                    "note": ""
+                },
+                {
+                    "id": 93,
+                    "class": "Article",
+                    "name": "Maitland, ACS Pharmacol Transl Sci, 2025",
+                    "url": "https:\/\/doi.org\/10.1101\/2025.04.28.650242",
+                    "note": ""
+                },
+                {
+                    "id": 94,
+                    "class": "Article",
+                    "name": "Correia, Front Behav Neurosci, 2024",
+                    "url": "https:\/\/doi.org\/10.3389\/fnbeh.2024.1340357",
+                    "note": ""
+                },
+                {
+                    "id": 95,
+                    "class": "Article",
+                    "name": "Zhou, Cells, 2024",
+                    "url": "https:\/\/doi.org\/10.3390\/cells13030275",
+                    "note": ""
+                },
+                {
+                    "id": 96,
+                    "class": "Article",
+                    "name": "Goodwin, Nat Neurosci, 2024",
+                    "url": "https:\/\/www.nature.com\/articles\/s41593-024-01649-9#citeas",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 15,
+                    "firstname": "Carmen",
+                    "name": "Winters",
+                    "email": "carmenwinters@hotmail.com",
+                    "affiliation": "",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 43,
+            "name": "Sipper device (Version 2)",
+            "description": "Homecage apparatus for automated photobeam-based detection of licks in a two-bottle choice task.",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "DIY",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "Yes",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/hackaday.io\/project\/160388-automated-mouse-homecage-two-bottle-choice-test-v2",
+            "addons": "no",
+            "maker_name": "Creed Lab",
+            "categories": [
+                "food intake",
+                "water intake"
+            ],
+            "technologies": [
+                "photosensor"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 97,
+                    "class": "Article",
+                    "name": "Vachez, Nat Neurosci, 2021",
+                    "url": "https:\/\/doi.org\/10.1038\/s41593-020-00772-7",
+                    "note": ""
+                },
+                {
+                    "id": 98,
+                    "class": "Article",
+                    "name": "Godynyuk, eNeuro, 2019",
+                    "url": "https:\/\/www.eneuro.org\/content\/6\/5\/ENEURO.0292-19.2019",
+                    "note": ""
+                },
+                {
+                    "id": 108,
+                    "class": "Source Code",
+                    "name": "Automated mouse homecage two-bottle choice test v2",
+                    "url": "https:\/\/hackaday.io\/project\/160388-automated-mouse-homecage-two-bottle-choice-test-v2",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 50,
+                    "firstname": "Meaghan",
+                    "name": "Creed",
+                    "email": "meaghan.creed@wustl.edu",
+                    "affiliation": "",
+                    "note": ""
+                },
+                {
+                    "id": 51,
+                    "firstname": "Alexxai",
+                    "name": "Kravitz",
+                    "email": "alexxai@wustl.edu",
+                    "affiliation": "",
+                    "note": ""
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 44,
+            "name": "SmartWaiter",
+            "description": "Control and monitor feeding and drinking patterns of rodents in their homecages. Control unit can manage a combination of up to 64 feeders\/drinkers using user defined protocols.",
+            "cage": "standard",
+            "animals_number": "single",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.cibertec.es\/en\/component\/ciberteccatalog\/bydiscipline\/168\/328",
+            "addons": "",
+            "maker_name": "Cibertec",
+            "categories": [
+                "food intake"
+            ],
+            "technologies": [
+                "pellet dispenser"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 99,
+                    "class": "Article",
+                    "name": "Ribas-Aulinas, Mol Metab, 2021",
+                    "url": "https:\/\/doi.org\/10.1016\/j.molmet.2021.101162",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 26,
+                    "firstname": "Josep C",
+                    "name": "Jimenez-Chillaron",
+                    "email": "jjimenezc@fsjd.org",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 45,
+            "name": "The Observer XT",
+            "description": "Software for behavioral research. Coding behaviors on a timeline and sequence of events and integrating different data.",
+            "cage": "",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "software",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "",
+            "ml_note": "",
+            "url": "https:\/\/www.noldus.com\/observer-xt",
+            "addons": "NA",
+            "maker_name": "Noldus",
+            "categories": [
+                "affiliative behavior",
+                "aggressive behavior",
+                "food intake",
+                "water intake",
+                "temperature",
+                "balance",
+                "ataxia",
+                "horizontal locomotor activity",
+                "wheel running",
+                "maternal care",
+                "fear conditioning",
+                "passive avoidance",
+                "working memory",
+                "spatial learning and memory",
+                "motivation",
+                "impulsivity",
+                "taste preference",
+                "circadian activity"
+            ],
+            "technologies": [
+                "video"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 138,
+                    "class": "Article",
+                    "name": "van Dam, J Neurosci Methods, 2013",
+                    "url": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0165027013001970?via%3Dihub",
+                    "note": ""
+                },
+                {
+                    "id": 139,
+                    "class": "Article",
+                    "name": "Buscemi, Metabolites, 2022",
+                    "url": "https:\/\/doi.org\/10.3390\/metabo12050465",
+                    "note": ""
+                }
+            ],
+            "users": [
+                {
+                    "id": 30,
+                    "firstname": "Leonardo",
+                    "name": "Restivo",
+                    "email": "leonardo.restivo@unil.ch",
+                    "affiliation": "",
+                    "note": null
+                }
+            ],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 46,
+            "name": "Ugo Basile Activity Cage",
+            "description": "Recording spontaneous locomotor activity in rats and mice (individual or groups) using infrared (I.R.) beams.",
+            "cage": "modified",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/ugobasile.com\/products\/categories\/motory-coordination\/activity-cage-spontaneous-activity-for-mice-and-rats",
+            "addons": "-",
+            "maker_name": "Ugo Basile",
+            "categories": [
+                "horizontal locomotor activity",
+                "vertical locomotor activity",
+                "rearing"
+            ],
+            "technologies": [
+                "infrared (IR) beam break"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 101,
+                    "class": "Article",
+                    "name": "Vlaini\u0107, Neuropharmacology, 2009",
+                    "url": "https:\/\/doi.org\/10.1016\/j.neuropharm.2009.03.010",
+                    "note": ""
+                },
+                {
+                    "id": 102,
+                    "class": "Article",
+                    "name": "Noamesi, Planta Med, 1985",
+                    "url": "https:\/\/doi.org\/10.1055\/s-2007-969471",
+                    "note": ""
+                },
+                {
+                    "id": 103,
+                    "class": "Article",
+                    "name": "Chiri\u021b\u0103, J. Mind Med. Sci,",
+                    "url": "https:\/\/doi.org\/10.22543\/7674.61.P121129",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        },
+        {
+            "system_id": 47,
+            "name": "UID Mouse Matrix",
+            "description": "Automatic continuous and remote monitoring of temperature and activity for group-housed mice while in their home cage environment.",
+            "cage": "standard",
+            "animals_number": "group",
+            "type": "commercial",
+            "implementation": "hardware",
+            "implementation_note": "",
+            "opensource": "No",
+            "opensource_note": "",
+            "ml": "No",
+            "ml_note": "",
+            "url": "https:\/\/www.uidevices.com\/home-cage-monitoring\/",
+            "addons": "IVC rack",
+            "maker_name": "Unified Information Devices",
+            "categories": [
+                "temperature",
+                "horizontal locomotor activity"
+            ],
+            "technologies": [
+                "RFID positioning",
+                "RFID identification"
+            ],
+            "measures": [],
+            "resources": [
+                {
+                    "id": 104,
+                    "class": "Poster",
+                    "name": "Envigo, Accurate animal tracking: From weaning to necropsy, 2019",
+                    "url": "https:\/\/www.uidevices.com\/wp-content\/uploads\/2019\/04\/Accurate_Animal_Tracking_From_Weaning_to_Necropsy.pdf",
+                    "note": ""
+                }
+            ],
+            "users": [],
+            "species": [
+                "rat",
+                "mouse"
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "class": "social behavior",
+            "name": "affiliative behavior",
+            "note": null,
+            "liczba_systemow": 11
+        },
+        {
+            "class": "social behavior",
+            "name": "aggressive behavior",
+            "note": null,
+            "liczba_systemow": 8
+        },
+        {
+            "class": "social behavior",
+            "name": "group dynamics",
+            "note": null,
+            "liczba_systemow": 5
+        },
+        {
+            "class": "social behavior",
+            "name": "USVs communication",
+            "note": null,
+            "liczba_systemow": 5
+        },
+        {
+            "class": "physiological measures",
+            "name": "food intake",
+            "note": null,
+            "liczba_systemow": 17
+        },
+        {
+            "class": "physiological measures",
+            "name": "water intake",
+            "note": null,
+            "liczba_systemow": 20
+        },
+        {
+            "class": "physiological measures",
+            "name": "urination",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "physiological measures",
+            "name": "temperature",
+            "note": null,
+            "liczba_systemow": 4
+        },
+        {
+            "class": "physiological measures",
+            "name": "calorimetry",
+            "note": null,
+            "liczba_systemow": 4
+        },
+        {
+            "class": "sensory-motor function",
+            "name": "motor coordination",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "sensory-motor function",
+            "name": "balance",
+            "note": null,
+            "liczba_systemow": 4
+        },
+        {
+            "class": "sensory-motor function",
+            "name": "ataxia",
+            "note": null,
+            "liczba_systemow": 4
+        },
+        {
+            "class": "exploratory behavior",
+            "name": "horizontal locomotor activity",
+            "note": null,
+            "liczba_systemow": 30
+        },
+        {
+            "class": "exploratory behavior",
+            "name": "vertical locomotor activity",
+            "note": null,
+            "liczba_systemow": 3
+        },
+        {
+            "class": "exploratory behavior",
+            "name": "climbing",
+            "note": null,
+            "liczba_systemow": 5
+        },
+        {
+            "class": "activity",
+            "name": "wheel running",
+            "note": "",
+            "liczba_systemow": 7
+        },
+        {
+            "class": "exploratory behavior",
+            "name": "rearing",
+            "note": null,
+            "liczba_systemow": 7
+        },
+        {
+            "class": "exploratory behavior",
+            "name": "stretch-attend posture",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "exploratory behavior",
+            "name": "immobility\/freezing",
+            "note": null,
+            "liczba_systemow": 3
+        },
+        {
+            "class": "maternal behavior",
+            "name": "maternal care",
+            "note": null,
+            "liczba_systemow": 7
+        },
+        {
+            "class": "fear",
+            "name": "fear conditioning",
+            "note": null,
+            "liczba_systemow": 5
+        },
+        {
+            "class": "fear",
+            "name": "fear extinction",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "fear",
+            "name": "passive avoidance",
+            "note": null,
+            "liczba_systemow": 3
+        },
+        {
+            "class": "fear",
+            "name": "active avoidance",
+            "note": null,
+            "liczba_systemow": 3
+        },
+        {
+            "class": "attention and working memory",
+            "name": "attention ",
+            "note": null,
+            "liczba_systemow": 3
+        },
+        {
+            "class": "attention and working memory",
+            "name": "working memory",
+            "note": null,
+            "liczba_systemow": 7
+        },
+        {
+            "class": "spatial learning and memory",
+            "name": "spatial learning and memory",
+            "note": "",
+            "liczba_systemow": 6
+        },
+        {
+            "class": "anxiety",
+            "name": "neophobia",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "anxiety",
+            "name": "startle response",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "operant learning",
+            "name": "motivation",
+            "note": null,
+            "liczba_systemow": 9
+        },
+        {
+            "class": "operant learning",
+            "name": "impulsivity",
+            "note": null,
+            "liczba_systemow": 8
+        },
+        {
+            "class": "place learning",
+            "name": "place preference",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "place learning",
+            "name": "place avoidance",
+            "note": null,
+            "liczba_systemow": 2
+        },
+        {
+            "class": "taste preference",
+            "name": "taste preference",
+            "note": null,
+            "liczba_systemow": 5
+        },
+        {
+            "class": "activity",
+            "name": "circadian activity",
+            "note": "",
+            "liczba_systemow": 18
+        },
+        {
+            "class": "individual behavior",
+            "name": "scratching",
+            "note": null,
+            "liczba_systemow": 1
+        },
+        {
+            "class": "individual behavior",
+            "name": "grooming",
+            "note": null,
+            "liczba_systemow": 6
+        }
+    ],
+    "technologies": [
+        {
+            "name": "audio recording",
+            "note": "Ultrasonic Vocalisation ",
+            "liczba_systemow": 4
+        },
+        {
+            "name": "video",
+            "note": "video recognition and positioning",
+            "liczba_systemow": 19
+        },
+        {
+            "name": "infrared (IR) beam break",
+            "note": "infra red beam break",
+            "liczba_systemow": 9
+        },
+        {
+            "name": "RFID positioning",
+            "note": "radio frequency identification",
+            "liczba_systemow": 10
+        },
+        {
+            "name": "electromagnetic field (EMF)",
+            "note": "EMF Activity detection",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "RFID identification",
+            "note": "",
+            "liczba_systemow": 10
+        },
+        {
+            "name": "pellet dispenser",
+            "note": "",
+            "liczba_systemow": 3
+        },
+        {
+            "name": "liquid dispenser",
+            "note": "",
+            "liczba_systemow": 0
+        },
+        {
+            "name": "weight",
+            "note": "",
+            "liczba_systemow": 2
+        },
+        {
+            "name": "passive infrared (PIR)",
+            "note": "",
+            "liczba_systemow": 2
+        },
+        {
+            "name": "vibration",
+            "note": "force signal analysis",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "electric shock",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "light stimulus",
+            "note": "",
+            "liczba_systemow": 0
+        },
+        {
+            "name": "air puff",
+            "note": "",
+            "liczba_systemow": 0
+        },
+        {
+            "name": "capacitance sensing",
+            "note": "Touch detection",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "screen",
+            "note": "On screen stimuli presentation ",
+            "liczba_systemow": 0
+        },
+        {
+            "name": "thermosensor",
+            "note": "Temperature Measurement",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "thermosensor (IR)",
+            "note": "",
+            "liczba_systemow": 2
+        },
+        {
+            "name": "photosensor",
+            "note": "",
+            "liczba_systemow": 1
+        }
+    ],
+    "measures": [
+        {
+            "class": "",
+            "name": "grooming",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "",
+            "name": "USV frequency",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "",
+            "name": "activity",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "",
+            "name": "average food intake",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "",
+            "name": "balance",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "",
+            "name": "body length",
+            "liczba_systemow": 0
+        },
+        {
+            "class": "",
+            "name": "digging",
+            "liczba_systemow": 0
+        },
+        {
+            "class": "",
+            "name": "freezing",
+            "liczba_systemow": 0
+        }
+    ],
+    "resources": [
+        {
+            "class": "Article",
+            "name": "Birtalan, Sci Rep, 2020",
+            "url": "https:\/\/www.nature.com\/articles\/s41598-020-79290-2",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Alonso, iScience, 2023",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/36798444\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Scattoni, PLoS One, 2008",
+            "url": "https:\/\/doi.org\/10.1371\/journal.pone.0003067",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Berz, iScience, 2021",
+            "url": "https:\/\/doi.org\/10.1016\/j.isci.2021.102426",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "W\u00f6hr, Prog Neuropsychopharmacol Biol Psychiatry, 2020",
+            "url": "https:\/\/doi.org\/10.1016\/j.pnpbp.2019.109849",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Fendt, Sci Rep, 2018",
+            "url": "https:\/\/doi.org\/10.1038\/s41598-018-28927-4",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Parker, F1000Research, 2022,",
+            "url": "https:\/\/doi.org\/10.12688\/f1000research.111170.1",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "W\u00f6hr, Brain Sci, 2021",
+            "url": "https:\/\/doi.org\/10.3390\/brainsci11060724",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "B\u00f6l\u00fckbas, Sci Rep, 2020",
+            "url": "https:\/\/doi.org\/10.1038\/s41598-020-80087-6",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Lindahl, Cell Rep, 2014",
+            "url": "https:\/\/doi.org\/10.1016\/j.celrep.2014.03.023",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Bruinsma, Psychopharmacology, 2019",
+            "url": "https:\/\/doi.org\/10.1007\/s00213-019-05189-0",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "van Heusden, Front Behav Neurosci, 2021",
+            "url": "https:\/\/doi.org\/doi:10.3389\/fnbeh.2021.655449",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Remmelink,Sci Rep, 2017",
+            "url": "https:\/\/www.nature.com\/articles\/srep42519",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Brown, Wellcome Open Res, 2016",
+            "url": "https:\/\/doi.org\/10.12688\/wellcomeopenres.9892.2",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Winters, Sci Rep, 2022",
+            "url": "https:\/\/doi.org\/10.1038\/s41598-022-05641-w",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Mathis, Nat Neurosci, 2018",
+            "url": "https:\/\/doi.org\/10.1038\/s41593-018-0209-y",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Neira, Alcoholism: Clin Exp Res, 2022",
+            "url": "https:\/\/doi.org\/10.1111\/acer.14901",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Protocol",
+            "name": "Kas, Neuromethods, 2011",
+            "url": "https:\/\/doi.org\/10.1007\/978-1-61779-313-4_1",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Aoki, Nat Commun, 2017",
+            "url": "https:\/\/doi.org\/10.1038\/s41467-017-01371-0",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Hager, Front Behav Neurosci, 2014",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2014.00314",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Caglayan, Front Behav Neurosci, 2021",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2021.777767",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Iannello, Heliyon, 2019",
+            "url": "https:\/\/doi.org\/10.1016\/j.heliyon.2019.e01454",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Fuochi, Lab Anim, 2021",
+            "url": "https:\/\/doi.org\/10.1038\/s41684-021-00793-0",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Pernold, PLoS One, 2019",
+            "url": "https:\/\/doi.org\/10.1371\/journal.pone.0211063",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Ulfhake, PLoS One, 2022",
+            "url": "https:\/\/doi.org\/10.1371\/journal.pone.0267281",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Voikar, Front Behav Neurosci, 2020",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2020.575434",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Golini, Front Neurosci, 2020",
+            "url": "https:\/\/doi.org\/10.3389\/fnins.2020.00896",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Pu\u015bcian, eLife, 2016",
+            "url": "https:\/\/doi.org\/10.7554\/eLife.19532",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Han, Toxicol Res, 2022",
+            "url": "https:\/\/link.springer.com\/article\/10.1007\/s43188-021-00104-2#Sec2",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Morel, Nat Commun, 2022",
+            "url": "https:\/\/www.nature.com\/articles\/s41467-022-29155-1",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Tsao, Sci Rep, 2022",
+            "url": "https:\/\/www.nature.com\/articles\/s41598-021-03155-5",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Manufacturer resources",
+            "name": "EthoVision XT",
+            "url": "https:\/\/www.noldus.com\/ethovision-xt\/resources",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Manes, Behav Brain Res, 2019",
+            "url": "https:\/\/doi.org\/10.1016\/j.bbr.2018.06.012",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Molzof, Neurobiol Learn Mem, 2019",
+            "url": "https:\/\/doi.org\/10.1016\/j.nlm.2019.01.002",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Tang, Prog Neuropsychopharmacol Biol Psychiatry, 2011",
+            "url": "https:\/\/doi.org\/10.1016\/j.pnpbp.2011.08.006",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "van Heusden, Front Behav Neurosci, 2021",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2021.655449",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Hobson, Curr Protoc Mouse Biol, 2020",
+            "url": "https:\/\/doi.org\/10.1002\/cpmo.80",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Bains, J Neurosci Methods, 2018",
+            "url": "https:\/\/doi.org\/10.1016\/j.jneumeth.2017.04.014",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Bains, Front Behav Neurosci, 2016",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2016.00106",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Rodr\u00edguez de Los Santos, Proc Natl Acad Sci U S A, 2021",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/33402532\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Lahogue, Behav Brain Res, 2025",
+            "url": "https:\/\/doi.org\/10.1016\/j.bbr.2024.115301",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Chofflet, Eur J Pharmacol, 2025",
+            "url": "https:\/\/doi.org\/10.1016\/j.ejphar.2024.177200",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "George, Neurobiol Aging, 2006",
+            "url": "https:\/\/doi.org\/10.1016\/j.neurobiolaging.2005.10.014",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Rizzolo, Cerebral Cortex, 2021",
+            "url": "https:\/\/doi.org\/10.1093\/cercor\/bhaa247",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Preprint",
+            "name": "\u0141az, biorxiv, 2023",
+            "url": "https:\/\/www.biorxiv.org\/content\/10.1101\/2023.08.06.552188v1",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "\u00c5hlgren, Lab Animal, 2019",
+            "url": "https:\/\/www.nature.com\/articles\/s41684-019-0288-8",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Nowak, Behav Brain Res, 2013",
+            "url": "https:\/\/doi.org\/10.1016\/j.bbr.2012.10.031",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "de Hoz, Cereb Cortex, 2018",
+            "url": "https:\/\/doi.org\/10.1093\/cercor\/bhx060",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Jaholkowski, Learn Mem, 2009",
+            "url": "https:\/\/doi.org\/10.1101\/lm.1459709",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Knapska, Learn Mem, 2006",
+            "url": "https:\/\/doi.org\/10.1101\/lm.54706",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Knapska, J Neurosci, 2013",
+            "url": "https:\/\/doi.org\/10.1523\/JNEUROSCI.5239-12.2013",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Pu\u015bcian, Front Behav Neurosci, 2014",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2014.00140",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Liu, J Neurosci Methods, 2006",
+            "url": "https:\/\/doi.org\/10.1016\/j.jneumeth.2005.10.024",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Quinn, J Neurosci Methods, 2003",
+            "url": "https:\/\/doi.org\/10.1016\/S0165-0270(03)00227-9",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Van de Weerd, Behav Processes, 2001",
+            "url": "https:\/\/doi.org\/10.1016\/S0376-6357(00)00135-2",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Borb\u00e9lyov\u00e1, Physiol Res, 2019",
+            "url": "https:\/\/www.biomed.cas.cz\/physiolres\/pdf\/2019\/68_S353.pdf",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "de Chaumont, Nat Biomed Eng, 2019",
+            "url": "https:\/\/doi.org\/10.1038\/s41551-019-0396-1",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Namdar, J Mol Neurosci, 2020",
+            "url": "https:\/\/link.springer.com\/article\/10.1007\/s12031-019-01422-9",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Poster",
+            "name": "Potts, The Jackson Laboratory, 2021",
+            "url": "https:\/\/www.uidevices.com\/wp-content\/uploads\/2021\/10\/Evaluating-the-Application-of-Microchips-to-Monitor-Temperature-Change-After-Immunotherapy.pdf",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Habedank, Behav Res, 2022",
+            "url": "https:\/\/link.springer.com\/article\/10.3758%2Fs13428-021-01593-7",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Pfeffer, J Neurosci, 2009",
+            "url": "https:\/\/doi.org\/10.1523\/JNEUROSCI.0275-09.2009",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Peters, Nat Neurosci, 2005",
+            "url": "https:\/\/doi.org\/10.1038\/nn1375",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Meuth, Genes Brain Behav, 2013",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/23566274\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Alonso, Behav Brain Res, 2020",
+            "url": "https:\/\/doi.org\/10.1016\/j.bbr.2019.112188",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Schwab, Eur J Pharmacol, 2024",
+            "url": "https:\/\/doi.org\/10.1016\/j.ejphar.2024.176505",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Huang, eLife, 2023",
+            "url": "https:\/\/doi.org\/10.7554\/eLife.84961",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Carcea, Nature, 2021",
+            "url": "https:\/\/doi.org\/10.1038\/s41586-021-03814-7",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Preprint",
+            "name": "Li, biorxiv, 2025",
+            "url": "https:\/\/doi.org\/10.1101\/2022.10.10.511660",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Hu, Nat Commun, 2023",
+            "url": "https:\/\/doi.org\/10.1038\/s41467-023-41849-8",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Slivicki, Addict Biol, 2023",
+            "url": "https:\/\/doi.org\/10.1111\/adb.13253",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Protocol",
+            "name": "SOP-PhenoMaster, 2021",
+            "url": "https:\/\/biomedical-sciences.uq.edu.au\/files\/20155\/SOP-PhenoMaster.pdf",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Protocol",
+            "name": "Kim, protocols.io, 2019",
+            "url": "https:\/\/doi.org\/10.17504\/protocols.io.xwwfpfe",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "D\u00e9mosth\u00e8nes, Front Neurol, 2022",
+            "url": "https:\/\/www.frontiersin.org\/articles\/10.3389\/fneur.2021.789432\/full",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Domonkos, Horm Behav, 2017",
+            "url": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0018506X1630544X?via%3Dihub#s0010",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Zhenghao, eLife, 2022",
+            "url": "https:\/\/doi.org\/10.7554\/eLife.72664",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Oraha, Int J Obes, 2022",
+            "url": "https:\/\/www.nature.com\/articles\/s41366-022-01174-4",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "John, Commun Biol, 2022",
+            "url": "https:\/\/www.nature.com\/articles\/s42003-022-03895-8",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Reho, Front Physiol, 2022",
+            "url": "https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC8914175\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Freund, Science, 2013",
+            "url": "https:\/\/doi.org\/10.1126\/science.1235294",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Mieske, Animals, 2021",
+            "url": "https:\/\/www.mdpi.com\/2076-2615\/11\/10\/3002",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Goodwin, Nat. Neurosci, 2024",
+            "url": "https:\/\/doi.org\/10.1038\/s41593-024-01649-9",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Maitland, ACS Pharmacol Transl Sci, 2025",
+            "url": "https:\/\/doi.org\/10.1101\/2025.04.28.650242",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Correia, Front Behav Neurosci, 2024",
+            "url": "https:\/\/doi.org\/10.3389\/fnbeh.2024.1340357",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Zhou, Cells, 2024",
+            "url": "https:\/\/doi.org\/10.3390\/cells13030275",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Goodwin, Nat Neurosci, 2024",
+            "url": "https:\/\/www.nature.com\/articles\/s41593-024-01649-9#citeas",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Vachez, Nat Neurosci, 2021",
+            "url": "https:\/\/doi.org\/10.1038\/s41593-020-00772-7",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Godynyuk, eNeuro, 2019",
+            "url": "https:\/\/www.eneuro.org\/content\/6\/5\/ENEURO.0292-19.2019",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Ribas-Aulinas, Mol Metab, 2021",
+            "url": "https:\/\/doi.org\/10.1016\/j.molmet.2021.101162",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Vlaini\u0107, Neuropharmacology, 2009",
+            "url": "https:\/\/doi.org\/10.1016\/j.neuropharm.2009.03.010",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Noamesi, Planta Med, 1985",
+            "url": "https:\/\/doi.org\/10.1055\/s-2007-969471",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Chiri\u021b\u0103, J. Mind Med. Sci,",
+            "url": "https:\/\/doi.org\/10.22543\/7674.61.P121129",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Poster",
+            "name": "Envigo, Accurate animal tracking: From weaning to necropsy, 2019",
+            "url": "https:\/\/www.uidevices.com\/wp-content\/uploads\/2019\/04\/Accurate_Animal_Tracking_From_Weaning_to_Necropsy.pdf",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Bridget, eLife, 2021",
+            "url": "https:\/\/doi.org\/10.7554\/eLife.66173",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Source Code",
+            "name": "KravitzLabDevices\/FED3",
+            "url": "https:\/\/github.com\/KravitzLabDevices\/FED3",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Preprint",
+            "name": "Taghipourbibalan, biorxiv, 2025",
+            "url": "https:\/\/www.biorxiv.org\/content\/10.1101\/2025.07.24.666497v2",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Source Code",
+            "name": "Automated mouse homecage two-bottle choice test v2",
+            "url": "https:\/\/hackaday.io\/project\/160388-automated-mouse-homecage-two-bottle-choice-test-v2",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Webinar",
+            "name": "Eco-HAB system: measuring social behavior and hierarchy in mice by Alicja Pu\u015bcian",
+            "url": "https:\/\/www.youtube.com\/watch?v=-2lCOQoJHzY",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Pezzanite, Ann Transl Med. 2023",
+            "url": "https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC10316095\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Hobson, Curr Protoc Mouse Biol, 2020",
+            "url": "https:\/\/currentprotocols.onlinelibrary.wiley.com\/doi\/10.1002\/cpmo.80",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Webinar",
+            "name": "Efficient, stress-free learning of mice in a fully automated training system by Kornel Demeter",
+            "url": "https:\/\/www.youtube.com\/watch?v=EU4pewNI_QU",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Webinar",
+            "name": "How to study neural circuits in the IntelliCages? by Ewelina Knapska",
+            "url": "https:\/\/www.youtube.com\/watch?v=Ql1R520Kg5o",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Webinar",
+            "name": "Motivating mice to learn difficult tasks in the IntelliCage without water restriction by David Wolfer",
+            "url": "https:\/\/www.youtube.com\/watch?v=2_XgtLV0Spg",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Webinar",
+            "name": "Biomedical research using IntelliCage by Anna Kyrik",
+            "url": "https:\/\/www.youtube.com\/watch?v=R7A3ewWL8-o",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Webinar",
+            "name": "IntelliCage - my story by Vootele Voikar",
+            "url": "https:\/\/www.youtube.com\/watch?v=vXnmJ3efW7I",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Source Code",
+            "name": "DeepLabCut",
+            "url": "https:\/\/deeplabcut.github.io\/DeepLabCut\/README.html",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Jayne, Nat Aging, 2025",
+            "url": "https:\/\/www.nature.com\/articles\/s43587-025-00830-4",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Wilsterman, PLoS One, 2025",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/40471894\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Sillito, Front Toxicol, 2025",
+            "url": "https:\/\/doi.org\/10.3389\/ftox.2025.1655330",
+            "note": "Validation paper cited by the supplier.",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Source Code",
+            "name": "OpenLabCluster",
+            "url": "https:\/\/github.com\/shlizee\/OpenLabCluster",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Poster",
+            "name": "Li, 2025",
+            "url": "https:\/\/www.ece.uw.edu\/wp-content\/uploads\/2022\/03\/Jingyuan_Li_poster.pdf",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Efthymiou, Nat Commun, 2023",
+            "url": "https:\/\/doi.org\/10.1038\/s41467-023-39715-8",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Maggi, Timing & Time Perception, 2014",
+            "url": "https:\/\/brill.com\/view\/journals\/time\/2\/1\/article-p35_3.xml",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Hamed, Brain Struct Funct, 2018",
+            "url": "https:\/\/doi.org\/10.1007\/s00429-018-1683-4",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Karwicka, Brain Sci, 2021",
+            "url": "https:\/\/doi.org\/10.3390\/brainsci11060759",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "van Dam, J Neurosci Methods, 2013",
+            "url": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0165027013001970?via%3Dihub",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Buscemi, Metabolites, 2022",
+            "url": "https:\/\/doi.org\/10.3390\/metabo12050465",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "Article",
+            "name": "Ishii, Int J Neurosci, 2019",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/30010457\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "List of References",
+            "name": "A sampling of over 3000 papers that have made use of Actimetrics systems",
+            "url": "https:\/\/actimetrics.com\/references\/",
+            "note": "",
+            "liczba_systemow": 1
+        },
+        {
+            "class": "DOI",
+            "name": "https:\/\/doi.org\/10.1002\/cpz1.382",
+            "url": "https:\/\/doi.org\/10.1002\/cpz1.382",
+            "note": "",
+            "liczba_systemow": 0
+        },
+        {
+            "class": "DOI",
+            "name": "https:\/\/doi.org\/10.1007\/s00213-019-05189-0",
+            "url": "https:\/\/doi.org\/10.1007\/s00213-019-05189-0",
+            "note": "",
+            "liczba_systemow": 0
+        },
+        {
+            "class": "URL",
+            "name": "https:\/\/www.biorxiv.org\/content\/10.1101\/2020.12.07.408864v1",
+            "url": "https:\/\/www.biorxiv.org\/content\/10.1101\/2020.12.07.408864v1",
+            "note": "",
+            "liczba_systemow": 0
+        },
+        {
+            "class": "DOI",
+            "name": "https:\/\/doi.org\/10.1101\/2020.04.20.050591",
+            "url": "https:\/\/doi.org\/10.1101\/2020.04.20.050591",
+            "note": "",
+            "liczba_systemow": 0
+        }
+    ],
+    "users": [
+        {
+            "firstname": "Pawel",
+            "name": "Boguszewski",
+            "email": "p.boguszewski@nencki.edu.pl",
+            "affiliation": "Neurobiology Centre, Nencki Institute Polish Academy of Sciences, Poland",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Adam",
+            "name": "Hamed",
+            "email": "a.hamed@nencki.edu.pl",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Angela",
+            "name": "Caruso",
+            "email": "angela.caruso@iss.it",
+            "affiliation": "",
+            "liczba_systemow": 0
+        },
+        {
+            "firstname": "Anna",
+            "name": "Kiryk",
+            "email": "a.kiryk@nencki.edu.pl",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Balazs",
+            "name": "Hangya",
+            "email": "hangya.balazs@koki.hu",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Birk",
+            "name": "Urmersbach",
+            "email": "birk.urmersbach@bfr.bund.de",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Carmen",
+            "name": "Winters",
+            "email": "carmenwinters@hotmail.com",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Claire",
+            "name": "Witham",
+            "email": "c.witham@har.mrc.ac.uk",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Claudia",
+            "name": "Pitzer",
+            "email": "claudia.pitzer@pharma.uni-heidelberg.de",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Elodie",
+            "name": "Ey",
+            "email": "eye@igbmc.fr",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Ewelina",
+            "name": "Knapska",
+            "email": "e.knapska@nencki.edu.pl",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Fabrice",
+            "name": "de Chaumont",
+            "email": "fabrice.de-chaumont@pasteur.fr",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Hamid",
+            "name": "Meziane",
+            "email": "meziane@igbmc.fr",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Ioana",
+            "name": "Carcea",
+            "email": "ioana.carcea@rutgers.edu",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Jan",
+            "name": "Rozman",
+            "email": "jan.rozman@uni.lu",
+            "affiliation": "",
+            "liczba_systemow": 3
+        },
+        {
+            "firstname": "Janine",
+            "name": "Kah",
+            "email": " Janine.Kah@mhb-fontane.de",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Josep C",
+            "name": "Jimenez-Chillaron",
+            "email": "jjimenezc@fsjd.org",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Kornel",
+            "name": "Demeter",
+            "email": "demeter.kornel@koki.hu",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Ksenia",
+            "name": "Meyza",
+            "email": "k.meyza@nencki.edu.pl",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Lars",
+            "name": "Lewejohann",
+            "email": "lars.lewejohann@fu-berlin.de",
+            "affiliation": "",
+            "liczba_systemow": 3
+        },
+        {
+            "firstname": "Leonardo",
+            "name": "Restivo",
+            "email": "leonardo.restivo@unil.ch",
+            "affiliation": "",
+            "liczba_systemow": 3
+        },
+        {
+            "firstname": "Liga",
+            "name": "Zvejniece",
+            "email": "liga@farm.osi.lv",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Lior",
+            "name": "Bikovski",
+            "email": "liorbiko@tauex.tau.ac.il ",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Maarten",
+            "name": "Loos",
+            "email": "maarten.loos@sylics.com",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Maria Luisa",
+            "name": "Scattoni",
+            "email": "marialuisa.scattoni@iss.it",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Marion",
+            "name": "Rivalan",
+            "email": "marion.rivalan@cnrs.fr",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Masa",
+            "name": "Cater",
+            "email": "masa.cater@bf.uni-lj.si",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Melissa",
+            "name": "Long",
+            "email": "melissa.long@charite.de",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Michael",
+            "name": "Tsoory",
+            "email": "Michael.Tsoory@weizmann.ac.il",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Nathan",
+            "name": "Marchant",
+            "email": "n.marchant@amsterdamumc.nl",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Oliver",
+            "name": "Stiedl",
+            "email": "oliver.stiedl@vu.nl",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Ozge",
+            "name": "Sungur",
+            "email": "oezge.sungur@kuleuven.be",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Paul",
+            "name": "Mieske",
+            "email": "paul.mieske@bfr.bund.de",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Pia",
+            "name": "Kahnau",
+            "email": "Pia.Kahnau@bfr.bund.de",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Silvia",
+            "name": "Mandillo",
+            "email": "silvia.mandillo@cnr.it",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Sonia",
+            "name": "Bains",
+            "email": "r.bains@har.mrc.ac.uk",
+            "affiliation": "Mary Lyon Centre, Medical Research Council, UK",
+            "liczba_systemow": 3
+        },
+        {
+            "firstname": "Stefano",
+            "name": "Gaburro",
+            "email": "stefanogaburro@gmail.com",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Stuart",
+            "name": "Peirson",
+            "email": "stuart.peirson@eye.ox.ac.uk",
+            "affiliation": "",
+            "liczba_systemow": 2
+        },
+        {
+            "firstname": "Valentine",
+            "name": "Bouet",
+            "email": "valentine.bouet@unicaen.fr",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Vootele",
+            "name": "Voikar",
+            "email": "vootele.voikar@helsinki.fi",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Meaghan",
+            "name": "Creed",
+            "email": "meaghan.creed@wustl.edu",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Alexxai",
+            "name": "Kravitz",
+            "email": "alexxai@wustl.edu",
+            "affiliation": "",
+            "liczba_systemow": 3
+        },
+        {
+            "firstname": "James",
+            "name": "McCutcheon",
+            "email": "j.mccutcheon@uit.no",
+            "affiliation": "",
+            "liczba_systemow": 1
+        },
+        {
+            "firstname": "Federico",
+            "name": "Montechiaro",
+            "email": "federico.montechiaro@ugobasile.com",
+            "affiliation": "Ugo Basile",
+            "liczba_systemow": 0
+        }
+    ],
+    "species": [
+        {
+            "name": "rat",
+            "liczba_systemow": 27
+        },
+        {
+            "name": "mouse",
+            "liczba_systemow": 46
+        },
+        {
+            "name": "hamster",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "zebra fish",
+            "liczba_systemow": 0
+        },
+        {
+            "name": "multiple",
+            "liczba_systemow": 0
+        }
+    ],
+    "makers": [
+        {
+            "name": "Imetronic",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "ANY-maze",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Sanworks",
+            "url": null,
+            "liczba_systemow": 0
+        },
+        {
+            "name": "Charite University; Humboldt University",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Mary Lyon Centre at MRC Harwell",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Avisoft",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Elekon",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Columbus Instruments",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Phenotyper\/Home cage + MEDNPW-5M 5-hole nosepoke for mouse",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Sleep and Circadian Neuroscience Institute (SCNi) Nuffield Department of Clinical Neurosciences University of Oxford",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Mathis Group & Mathis Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Stiedl Lab\/Biobserve",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Tecniplast S.p.A.",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Knapska Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Noldus",
+            "url": null,
+            "liczba_systemow": 3
+        },
+        {
+            "name": "Kravitz Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "August B Smit Lab\/Biobserve",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Actual Analytics",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "CleverSys Inc",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "IIoT-Projects GmbH",
+            "url": null,
+            "liczba_systemow": 0
+        },
+        {
+            "name": "TSE",
+            "url": null,
+            "liczba_systemow": 3
+        },
+        {
+            "name": "Metris",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Fabrice de Chaumont Lab (Institut Pasteur Paris France)",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "MedAssociates",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Unified Information Devices",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Lewejohann Lab",
+            "url": null,
+            "liczba_systemow": 2
+        },
+        {
+            "name": "Research Devices",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "INFRA-E-MOTION GmbH",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Hans Christian Pape Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "PhenoSys GmbH",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Blackrock Microsystems",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Shlizerman Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Pallidus Sensing LLC",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Viewpoint - behavior technology",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Sable Systems",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Nencki Institute",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Golden Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Creed Lab",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Cibertec",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Ugo Basile",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Unified Information Devices",
+            "url": null,
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Hangya Laboratory",
+            "url": "",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "Actimetrics",
+            "url": "",
+            "liczba_systemow": 1
+        },
+        {
+            "name": "iMouse GmbH (Berlin)",
+            "url": "https:\/\/imouse.info\/",
+            "liczba_systemow": 1
+        }
+    ],
+    "cage_summary": [
+        {
+            "cage": "",
+            "liczba_systemow": 4
+        },
+        {
+            "cage": "modified",
+            "liczba_systemow": 14
+        },
+        {
+            "cage": "standard",
+            "liczba_systemow": 21
+        },
+        {
+            "cage": "standard\/modified",
+            "liczba_systemow": 8
+        }
+    ],
+    "type_summary": [
+        {
+            "type": "",
+            "liczba_systemow": 3
+        },
+        {
+            "type": "commercial",
+            "liczba_systemow": 29
+        },
+        {
+            "type": "DIY",
+            "liczba_systemow": 14
+        },
+        {
+            "type": "DIY\/commercial",
+            "liczba_systemow": 1
+        }
+    ],
+    "implementation_summary": [
+        {
+            "implementation": "hardware",
+            "liczba_systemow": 16
+        },
+        {
+            "implementation": "hardware\/software",
+            "liczba_systemow": 23
+        },
+        {
+            "implementation": "software",
+            "liczba_systemow": 8
+        }
+    ],
+    "opensource_summary": [
+        {
+            "opensource": "No",
+            "liczba_systemow": 35
+        },
+        {
+            "opensource": "Yes",
+            "liczba_systemow": 12
+        }
+    ],
+    "ml_summary": [
+        {
+            "ml": "",
+            "liczba_systemow": 1
+        },
+        {
+            "ml": "No",
+            "liczba_systemow": 36
+        },
+        {
+            "ml": "Yes",
+            "liczba_systemow": 10
+        }
+    ]
+}
+
