@@ -266,6 +266,7 @@ Montreal, Canada
 - **2025, May** - NeuroFrance - **Poster** "The Behaviour Forum"
 - **2025, May** - TEATIME Webinar - **Oral presentation** "The use of AI in laboratory research communication"
 - **2025, Jan.** - TEATIME Webinar - **Oral presentation** "The importance of Storytelling in Animal research communication"
+- **2026, Jan.** - VICT3R Webinar - **Participation** "Standardization and reuse of in vivo data" ([Replay](https://www.vict3r.eu/training/#season-2))
 - **2023, Nov.** - SFETD, Saint-Malo - **Oral presentation** in the 'Young Talents' session: "PRIMARY SOMATOSENSORY NEURONS DYSFUNCTION IN A MOUSE MODEL OF AUTISM"
 - **2023, July** - The Festival of Touch, IASAT, Marseille - **Poster**: "PRIMARY SOMATOSENSORY NEURONS DYSFUNCTION IN A MOUSE MODEL OF AUTISM"
 - **2023, May** - Neurofrance, Lyon - **Poster**: "PRIMARY SOMATOSENSORY NEURONS DYSFUNCTION IN A MOUSE MODEL OF AUTISM"
