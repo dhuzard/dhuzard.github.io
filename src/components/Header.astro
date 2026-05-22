@@ -1,0 +1,80 @@
+---
+import { site } from '~/site.config';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => {
+  const normalized = href.replace(/\/$/, '') || '/';
+  if (normalized === '/') return path === '/';
+  return path === normalized || path.startsWith(normalized + '/');
+};
+---
+
+<header class="sticky top-0 z-40 border-b border-ink-100/80 bg-white/80 backdrop-blur dark:border-ink-800/80 dark:bg-ink-950/80">
+  <div class="container-wide flex h-14 items-center justify-between">
+    <a href="/" class="font-serif text-lg font-semibold tracking-tight no-underline">
+      Damien Huzard
+    </a>
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-1 text-sm">
+        {site.nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'rounded-md px-3 py-1.5 no-underline transition-colors',
+                isActive(item.href)
+                  ? 'text-ink-900 dark:text-ink-50 bg-ink-100 dark:bg-ink-800'
+                  : 'text-ink-600 hover:text-ink-900 dark:text-ink-300 dark:hover:text-ink-50',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        class="rounded-md p-2 text-ink-500 hover:bg-ink-100 hover:text-ink-900 dark:text-ink-400 dark:hover:bg-ink-800 dark:hover:text-ink-50"
+      >
+        <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+  <details class="md:hidden border-t border-ink-100 dark:border-ink-800">
+    <summary class="container-wide flex h-10 cursor-pointer items-center justify-between text-sm text-ink-600 dark:text-ink-300">
+      Menu
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <ul class="container-wide flex flex-col gap-1 pb-3 text-sm">
+      {site.nav.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={[
+              'block rounded-md px-3 py-2 no-underline',
+              isActive(item.href)
+                ? 'text-ink-900 dark:text-ink-50 bg-ink-100 dark:bg-ink-800'
+                : 'text-ink-600 hover:text-ink-900 dark:text-ink-300 dark:hover:text-ink-50',
+            ]}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </details>
+</header>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  btn?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>

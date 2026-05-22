@@ -1,0 +1,38 @@
+---
+import Base from '~/layouts/Base.astro';
+import TalkItem from '~/components/TalkItem.astro';
+import { getCollection } from 'astro:content';
+
+const talks = (await getCollection('talks')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+const yearOf = (d: string) => Number(d.slice(0, 4));
+const byYear = talks.reduce<Record<number, typeof talks>>((acc, t) => {
+  const y = yearOf(t.data.date);
+  acc[y] = acc[y] ?? [];
+  acc[y].push(t);
+  return acc;
+}, {});
+const years = Object.keys(byYear)
+  .map((y) => Number(y))
+  .sort((a, b) => b - a);
+---
+
+<Base title="Talks" description="Conferences, invited talks, webinars, and posters by Damien Huzard.">
+  <section class="container-wide py-12 sm:py-16">
+    <p class="section-eyebrow">Presentations</p>
+    <h1 class="mt-2 font-serif text-3xl sm:text-4xl tracking-tight text-ink-900 dark:text-ink-50">Talks</h1>
+    <p class="mt-3 max-w-2xl text-ink-600 dark:text-ink-300">
+      Invited lectures, oral presentations, posters, and webinars at conferences and consortia.
+    </p>
+
+    <div class="mt-10 space-y-12">
+      {years.map((year) => (
+        <section>
+          <h2 class="section-title mb-4">{year}</h2>
+          <div class="grid gap-4">
+            {byYear[year].map((t) => <TalkItem {...t.data} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  year: number;
+  venue: string;
+  authors: string[];
+  me?: string;
+  doi?: string;
+  url?: string;
+  pdf?: string;
+  preprint?: boolean;
+  equalContribution?: string[];
+  tags?: string[];
+}
+
+const {
+  title,
+  year,
+  venue,
+  authors,
+  me = 'Huzard D',
+  doi,
+  url,
+  pdf,
+  preprint = false,
+  equalContribution = [],
+  tags = [],
+} = Astro.props;
+
+const authorLine = authors
+  .map((a) => {
+    const star = equalContribution.includes(a) ? '*' : '';
+    if (a === me) return `<strong>${a}${star}</strong>`;
+    return `${a}${star}`;
+  })
+  .join(', ');
+---
+
+<article class="card">
+  <header class="flex flex-wrap items-baseline justify-between gap-2">
+    <h3 class="font-serif text-lg leading-snug text-ink-900 dark:text-ink-50">{title}</h3>
+    <span class="text-sm text-ink-500 dark:text-ink-400 tabular-nums">{year}</span>
+  </header>
+  <p class="mt-2 text-sm italic text-ink-600 dark:text-ink-300">{venue}</p>
+  <p class="mt-1 text-sm text-ink-600 dark:text-ink-300" set:html={authorLine} />
+  {equalContribution.length > 0 && (
+    <p class="mt-1 text-xs text-ink-500 dark:text-ink-400">* Equal contribution</p>
+  )}
+  <div class="mt-3 flex flex-wrap items-center gap-2">
+    {preprint && <span class="badge">Preprint</span>}
+    {tags.map((t) => <span class="badge">{t}</span>)}
+    {doi && (
+      <a class="text-sm text-accent-600 dark:text-accent-300" href={`https://doi.org/${doi}`}>doi.org/{doi}</a>
+    )}
+    {url && (
+      <a class="text-sm text-accent-600 dark:text-accent-300" href={url}>Source</a>
+    )}
+    {pdf && (
+      <a class="text-sm text-accent-600 dark:text-accent-300" href={pdf}>PDF</a>
+    )}
+  </div>
+</article>
