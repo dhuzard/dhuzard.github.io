@@ -1,0 +1,19 @@
+title: "Data Sharing and Metadata"
+year: 2026
+date: 2026-04-18
+venue: "Home Cage Monitoring in Rodents: A Global Effort"
+authors:
+  - Forrest H
+  - Huzard D
+  - Restivo L
+  - Baran SW
+  - Petit-Demoulière B
+doi: 10.1007/978-3-032-19781-8_10
+url: https://link.springer.com/chapter/10.1007/978-3-032-19781-8_10
+preprint: false
+type: chapter
+tags:
+  - HCM
+  - FAIR
+  - metadata
+  - data-sharing

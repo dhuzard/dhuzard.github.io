@@ -3,6 +3,7 @@ import Base from '~/layouts/Base.astro';
 import Section from '~/components/Section.astro';
 import ExperienceItem from '~/components/ExperienceItem.astro';
 import PaperItem from '~/components/PaperItem.astro';
+import OutputItem from '~/components/OutputItem.astro';
 import { getCollection, render } from 'astro:content';
 
 const experience = (await getCollection('experience')).sort(
@@ -12,6 +13,7 @@ const education = (await getCollection('education')).sort(
   (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)
 );
 const papers = (await getCollection('papers')).sort((a, b) => b.data.year - a.data.year);
+const outputs = (await getCollection('outputs')).sort((a, b) => b.data.date.localeCompare(a.data.date));
 const awards = (await getCollection('awards')).sort((a, b) => b.data.date.localeCompare(a.data.date));
 const press = (await getCollection('press')).sort((a, b) => b.data.date.localeCompare(a.data.date));
 const responsibilities = (await getCollection('responsibilities')).sort((a, b) =>
@@ -46,6 +48,7 @@ const renderedEducation = await Promise.all(
       <div class="mt-5 flex flex-wrap gap-3 text-sm">
         <a class="rounded-md border border-ink-300 px-3 py-1.5 no-underline dark:border-ink-700" href="/assets/PDFs/CV.pdf">Download PDF</a>
         <a class="rounded-md border border-ink-300 px-3 py-1.5 no-underline dark:border-ink-700" href="/papers/">All papers →</a>
+        <a class="rounded-md border border-ink-300 px-3 py-1.5 no-underline dark:border-ink-700" href="/outputs/">All outputs →</a>
         <a class="rounded-md border border-ink-300 px-3 py-1.5 no-underline dark:border-ink-700" href="/talks/">All talks →</a>
       </div>
     </div>
@@ -98,6 +101,14 @@ const renderedEducation = await Promise.all(
     <div class="grid gap-4">
       {papers.map((p) => (
         <PaperItem {...p.data} />
+      ))}
+    </div>
+  </Section>
+
+  <Section eyebrow="ORCID records" title="Outputs" wide description="Software, protocols, roadmaps, and other citable records.">
+    <div class="grid gap-4">
+      {outputs.map((o) => (
+        <OutputItem {...o.data} />
       ))}
     </div>
   </Section>

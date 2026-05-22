@@ -1,0 +1,23 @@
+---
+import Base from '~/layouts/Base.astro';
+import OutputItem from '~/components/OutputItem.astro';
+import { getCollection } from 'astro:content';
+import { site } from '~/site.config';
+
+const outputs = (await getCollection('outputs')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+
+<Base title="Research outputs" description="Protocols, software, roadmaps, and other ORCID-indexed outputs by Damien Huzard.">
+  <section class="container-wide py-12 sm:py-16">
+    <p class="section-eyebrow">Research outputs</p>
+    <h1 class="mt-2 font-serif text-3xl sm:text-4xl tracking-tight text-ink-900 dark:text-ink-50">Outputs</h1>
+    <p class="mt-3 max-w-3xl text-ink-600 dark:text-ink-300">
+      ORCID-linked outputs that are not standard papers (software, protocols, roadmaps, and other citable records).
+      ORCID profile: <a href={`https://orcid.org/${site.orcid}`}>{site.orcid}</a>.
+    </p>
+
+    <div class="mt-10 grid gap-4">
+      {outputs.map((o) => <OutputItem {...o.data} />)}
+    </div>
+  </section>
+</Base>

@@ -1,10 +1,15 @@
 ---
 import Base from '~/layouts/Base.astro';
+import OutputItem from '~/components/OutputItem.astro';
 import { getCollection } from 'astro:content';
 
 const projects = (await getCollection('projects')).sort(
   (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)
 );
+
+const recentOutputs = (await getCollection('outputs'))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date))
+  .slice(0, 4);
 ---
 
 <Base title="Projects" description="Projects and tools by Damien Huzard.">
@@ -30,5 +35,20 @@ const projects = (await getCollection('projects')).sort(
         </a>
       ))}
     </div>
+
+    {recentOutputs.length > 0 && (
+      <section class="mt-14">
+        <h2 class="font-serif text-2xl tracking-tight text-ink-900 dark:text-ink-50">Related outputs</h2>
+        <p class="mt-2 text-sm text-ink-600 dark:text-ink-300">
+          Software, roadmaps, and citable technical outputs connected to these projects.
+        </p>
+        <div class="mt-5 grid gap-4">
+          {recentOutputs.map((o) => (
+            <OutputItem {...o.data} />
+          ))}
+        </div>
+        <p class="mt-4 text-sm"><a href="/outputs/">See all outputs →</a></p>
+      </section>
+    )}
   </section>
 </Base>

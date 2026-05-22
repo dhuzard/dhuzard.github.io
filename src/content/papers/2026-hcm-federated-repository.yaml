@@ -1,0 +1,17 @@
+title: "A FAIR and federated repository prototype for multimodal Home-Cage Monitoring biomedical data"
+year: 2026
+date: 2026-03-25
+venue: Zenodo
+authors:
+  - Huzard D
+  - Bluchet A
+  - Dunglas K
+doi: 10.5281/zenodo.19221771
+url: https://zenodo.org/doi/10.5281/zenodo.19221771
+preprint: true
+type: preprint
+tags:
+  - HCM
+  - FAIR
+  - federated-repository
+  - metadata

@@ -52,6 +52,21 @@ const papers = defineCollection({
   }),
 });
 
+const outputs = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.string(),
+    type: z.enum(['other', 'software', 'protocol', 'roadmap', 'dataset', 'thesis']).default('other'),
+    venue: z.string().optional(),
+    authors: z.array(z.string()).default([]),
+    dois: z.array(z.string()).default([]),
+    url: z.string().url().optional(),
+    source: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
 const talks = defineCollection({
   type: 'data',
   schema: z.object({
@@ -145,6 +160,7 @@ export const collections = {
   experience,
   education,
   papers,
+  outputs,
   talks,
   awards,
   press,

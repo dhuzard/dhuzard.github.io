@@ -23,6 +23,7 @@ export const site = {
     { label: 'About', href: '/' },
     { label: 'CV', href: '/cv/' },
     { label: 'Papers', href: '/papers/' },
+    { label: 'Outputs', href: '/outputs/' },
     { label: 'Talks', href: '/talks/' },
     { label: 'Projects', href: '/projects/' },
     { label: 'Blog', href: '/blog/' },

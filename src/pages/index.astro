@@ -1,8 +1,18 @@
 ---
 import Base from '~/layouts/Base.astro';
 import Section from '~/components/Section.astro';
+import PaperItem from '~/components/PaperItem.astro';
+import TalkItem from '~/components/TalkItem.astro';
 import { getCollection } from 'astro:content';
 import { site } from '~/site.config';
+
+const recentPapers = (await getCollection('papers'))
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 3);
+
+const recentTalks = (await getCollection('talks'))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date))
+  .slice(0, 4);
 
 const projects = (await getCollection('projects'))
   .filter((p) => p.data.featured)
@@ -88,6 +98,46 @@ const expertise = [
         </div>
       ))}
     </div>
+  </Section>
+
+  <Section eyebrow="Recent publications" title="Papers">
+    <div class="flex flex-col gap-4">
+      {recentPapers.map((p) => (
+        <PaperItem
+          title={p.data.title}
+          year={p.data.year}
+          venue={p.data.venue}
+          authors={p.data.authors}
+          me={p.data.me}
+          doi={p.data.doi}
+          url={p.data.url}
+          pdf={p.data.pdf}
+          preprint={p.data.preprint}
+          equalContribution={p.data.equalContribution}
+          tags={p.data.tags}
+        />
+      ))}
+    </div>
+    <p class="text-sm"><a href="/papers/">All publications →</a></p>
+  </Section>
+
+  <Section eyebrow="Recent talks" title="Talks">
+    <div class="grid gap-4 sm:grid-cols-2">
+      {recentTalks.map((t) => (
+        <TalkItem
+          title={t.data.title}
+          date={t.data.date}
+          venue={t.data.venue}
+          location={t.data.location}
+          type={t.data.type}
+          slides={t.data.slides}
+          video={t.data.video}
+          paper={t.data.paper}
+          abstract={t.data.abstract}
+        />
+      ))}
+    </div>
+    <p class="text-sm"><a href="/talks/">All talks →</a></p>
   </Section>
 
   <Section eyebrow="Selected work" title="Projects" wide>
