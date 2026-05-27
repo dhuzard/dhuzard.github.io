@@ -1,5 +1,11 @@
 import { defineCollection, z } from 'astro:content';
 
+// YAML parses bare YYYY-MM-DD as a JS Date and bare years as numbers; normalise both to strings.
+const flexDate = z.preprocess(
+  (v) => (v instanceof Date ? v.toISOString().slice(0, 10) : typeof v === 'number' ? String(v) : v),
+  z.string(),
+);
+
 const experience = defineCollection({
   type: 'content',
   schema: z.object({
@@ -38,7 +44,7 @@ const papers = defineCollection({
   schema: z.object({
     title: z.string(),
     year: z.number(),
-    date: z.coerce.string().optional(),
+    date: flexDate.optional(),
     venue: z.string(),
     authors: z.array(z.string()),
     me: z.string().default('Huzard D'),
@@ -56,7 +62,7 @@ const outputs = defineCollection({
   type: 'data',
   schema: z.object({
     title: z.string(),
-    date: z.coerce.string(),
+    date: flexDate,
     type: z.enum(['other', 'software', 'protocol', 'roadmap', 'dataset', 'thesis']).default('other'),
     venue: z.string().optional(),
     authors: z.array(z.string()).default([]),
@@ -71,7 +77,7 @@ const talks = defineCollection({
   type: 'data',
   schema: z.object({
     title: z.string(),
-    date: z.coerce.string(),
+    date: flexDate,
     venue: z.string(),
     location: z.string().optional(),
     type: z.enum(['oral', 'invited', 'keynote', 'poster', 'webinar', 'short', 'participation']),
