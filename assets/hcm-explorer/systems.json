@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Live Mouse Tracker (LMT)",
+    "technologies": ["RFID", "Video Tracking", "Depth Sensor"],
+    "behaviors": ["Social Interaction", "Locomotion", "Exploration", "Feeding", "Drinking"],
+    "physiology": [],
+    "openSource": true,
+    "groupHousing": true,
+    "yearIntroduced": 2018,
+    "manufacturer": "Institut Pasteur",
+    "url": "http://livemousetracker.org"
+  },
+  {
+    "name": "TSE PhenoMaster",
+    "technologies": ["Infrared Beams", "Metabolic Measurement", "Video Tracking"],
+    "behaviors": ["Locomotion", "Feeding", "Drinking", "Rearing", "Metabolic Activity"],
+    "physiology": ["Metabolism", "Respiration"],
+    "openSource": false,
+    "groupHousing": false,
+    "yearIntroduced": 2002,
+    "manufacturer": "TSE Systems",
+    "url": "https://www.tsesystems.com/products/behavior/phenomaster/"
+  },
+  {
+    "name": "DVC (Digital Ventilated Cage)",
+    "technologies": ["Capacitive Sensors", "Vibration Analysis"],
+    "behaviors": ["Locomotion", "Rearing", "Metabolic Activity"],
+    "physiology": ["Activity Level"],
+    "openSource": false,
+    "groupHousing": true,
+    "yearIntroduced": 2016,
+    "manufacturer": "Tecniplast",
+    "url": "https://www.tecniplast.it/en/dvc.html"
+  },
+  {
+    "name": "ActualHCA™",
+    "technologies": ["Video Tracking", "AI/ML Analysis"],
+    "behaviors": ["Social Interaction", "Locomotion", "Grooming", "Feeding", "Drinking", "Sleep"],
+    "physiology": [],
+    "openSource": false,
+    "groupHousing": true,
+    "yearIntroduced": 2020,
+    "manufacturer": "Actual Analytics",
+    "url": "https://www.actualanalytics.com/"
+  },
+  {
+    "name": "FED3 (Feeding Experimentation Device)",
+    "technologies": ["RFID", "Pellet Dispenser", "Nose-poke sensors"],
+    "behaviors": ["Operant Conditioning", "Feeding"],
+    "physiology": [],
+    "openSource": true,
+    "groupHousing": true,
+    "yearIntroduced": 2019,
+    "manufacturer": "Open Ephys",
+    "url": "https://www.opensourcetools.wiki/doku.php?id=fed3"
+  }
+]

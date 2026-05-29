@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mindmap title="Technologies for Home Cage Monitoring (HCM)" created="2025-10-30T13:26:14.719Z" algorithm="corrected-x-level">
+  <node id="node_0" text="Technologies for Home Cage Monitoring (HCM)" level="0">
+    <node id="node_1" text="Overview and Framework" level="1">
+      <node id="node_4" text="Definition" level="2">
+        <node id="node_19" text="Integrated set of technologies" level="3">
+        </node>
+        <node id="node_20" text="Continuously &amp; automatically observe/record" level="3">
+        </node>
+        <node id="node_21" text="Behavior, physiology, environmental features" level="3">
+        </node>
+        <node id="node_22" text="Hardware (sensors/actuators) &amp; software" level="3">
+        </node>
+      </node>
+      <node id="node_5" text="Monitoring Needs (Parameters)" level="2">
+        <node id="node_23" text="Locomotor activity (Circadian)" level="3">
+        </node>
+        <node id="node_24" text="Individual differentiation/identification" level="3">
+        </node>
+        <node id="node_25" text="Physiological readouts (ECG, EEG, Temp)" level="3">
+        </node>
+        <node id="node_26" text="Environmental parameters (T, H, Light, Noise)" level="3">
+        </node>
+        <node id="node_27" text="Specific behaviors (Rearing, Grooming, Social)" level="3">
+        </node>
+        <node id="node_28" text="Recording events (Eating, Drinking, Location)" level="3">
+        </node>
+        <node id="node_29" text="Welfare (Biomarkers, Posture)" level="3">
+        </node>
+      </node>
+      <node id="node_6" text="Innovation Considerations" level="2">
+        <node id="node_30" text="Miniaturization and Efficiency" level="3">
+        </node>
+        <node id="node_31" text="Integration with Big Data and AI" level="3">
+        </node>
+        <node id="node_32" text="Wearable Technologies" level="3">
+        </node>
+        <node id="node_33" text="Personalized/Customizable Systems" level="3">
+        </node>
+        <node id="node_34" text="Ethical Considerations (Minimal Stress)" level="3">
+        </node>
+        <node id="node_35" text="Interoperable metadata (FAIR, APIs, TTL)" level="3">
+        </node>
+      </node>
+    </node>
+    <node id="node_2" text="Specific HCM Technologies" level="1">
+      <node id="node_7" text="Video-Based Monitoring Systems" level="2">
+        <node id="node_36" text="Technology" level="3">
+          <node id="node_66" text="Standard, IR, Thermal imaging" level="4">
+          </node>
+          <node id="node_67" text="Automated tracking/analysis software" level="4">
+          </node>
+          <node id="node_68" text="Computer vision and ML algorithms" level="4">
+          </node>
+          <node id="node_69" text="Keypoint tracking methods (DeepLabCut, SLEAP)" level="4">
+          </node>
+        </node>
+        <node id="node_37" text="Measurements" level="3">
+          <node id="node_70" text="Locomotion and Activity Patterns (Rearing, Climbing)" level="4">
+          </node>
+          <node id="node_71" text="Social Interactions/Hierarchies" level="4">
+          </node>
+          <node id="node_72" text="Grooming and Self-Care" level="4">
+          </node>
+          <node id="node_73" text="Sleep Patterns/Resting States" level="4">
+          </node>
+          <node id="node_74" text="Eating and Drinking" level="4">
+          </node>
+          <node id="node_75" text="Physiological via Thermal Imaging (Body Temperature)" level="4">
+          </node>
+        </node>
+        <node id="node_38" text="Pros" level="3">
+          <node id="node_76" text="Non-Invasive" level="4">
+          </node>
+          <node id="node_77" text="Rich Behavioral Data (Post-hoc analysis)" level="4">
+          </node>
+          <node id="node_78" text="Adaptability/Flexibility (Single to Multi-camera)" level="4">
+          </node>
+          <node id="node_79" text="Automated Analysis (ML/Computer Vision)" level="4">
+          </node>
+        </node>
+        <node id="node_39" text="Cons" level="3">
+          <node id="node_80" text="Large Data Storage Requirements" level="4">
+          </node>
+          <node id="node_81" text="High Computational Demands" level="4">
+          </node>
+          <node id="node_82" text="Tracking/Individual ID Errors in Groups" level="4">
+          </node>
+          <node id="node_83" text="Visibility/Blind Spots (Occlusion)" level="4">
+          </node>
+          <node id="node_84" text="Radio Frequency Identification (Contactless)" level="4">
+          </node>
+          <node id="node_85" text="Implantable transponder (microchip)" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_8" text="RFID Technology" level="2">
+        <node id="node_40" text="Measurements/Use" level="3">
+          <node id="node_87" text="Individual Identification/Tracking (Group housed)" level="4">
+          </node>
+          <node id="node_88" text="Activity levels" level="4">
+          </node>
+          <node id="node_89" text="Body Temperature (via advanced microchips)" level="4">
+          </node>
+          <node id="node_90" text="Location in cage (via tunnel readers/antenna arrays)" level="4">
+          </node>
+          <node id="node_86" text="LF RFID (124-135 kHz) common for implants" level="4">
+          </node>
+        </node>
+        <node id="node_41" text="Pros/Benefits" level="3">
+          <node id="node_91" text="Reliable ID through bedding/non-metallic enrichment" level="4">
+          </node>
+          <node id="node_92" text="Minimal data volume (Manageable data amounts)" level="4">
+          </node>
+          <node id="node_93" text="Continuous welfare checks (Temperature)" level="4">
+          </node>
+          <node id="node_94" text="Suitable for group-housed settings" level="4">
+          </node>
+        </node>
+        <node id="node_42" text="Challenges" level="3">
+          <node id="node_95" text="Implantation is invasive procedure" level="4">
+          </node>
+          <node id="node_96" text="Imaging interference (MRI, X-Ray)" level="4">
+          </node>
+          <node id="node_97" text="Anti-collision signal interference (Huddling)" level="4">
+          </node>
+          <node id="node_98" text="Array of magnetic/capacitive sensors (underneath cage)" level="4">
+          </node>
+          <node id="node_99" text="Detects perturbations caused by animal body (dielectric changes)" level="4">
+          </node>
+          <node id="node_100" text="Activity Levels (Locomotion, Speed)" level="4">
+          </node>
+          <node id="node_101" text="Rest/Wake Bouts (Sleep Patterns)" level="4">
+          </node>
+          <node id="node_102" text="Wetness and Urination Events (Polyuria)" level="4">
+          </node>
+          <node id="node_103" text="Social Interactions (Aggressive encounters, Group level)" level="4">
+          </node>
+          <node id="node_104" text="Non-Invasive/External sensors" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_9" text="Electromagnetic Field (EMF) Technology" level="2">
+      </node>
+      <node id="node_10" text="Motion-Sensing Technologies" level="2">
+        <node id="node_43" text="Implantable Accelerometers" level="3">
+          <node id="node_112" text="Embedded in telemetry devices" level="4">
+          </node>
+          <node id="node_113" text="High temporal resolution movement patterns (up to 1 kHz)" level="4">
+          </node>
+          <node id="node_114" text="Assess circadian rhythms, gross locomotor activity" level="4">
+          </node>
+          <node id="node_115" text="Compact data, efficient storage" level="4">
+          </node>
+          <node id="node_105" text="Continuous, Real-Time Monitoring" level="4">
+          </node>
+          <node id="node_106" text="Low Data Storage Requirements (e.g., 4MB/cage/day)" level="4">
+          </node>
+          <node id="node_107" text="High Scalability/Suitable for Group Housing" level="4">
+          </node>
+          <node id="node_108" text="Limited Behavioral Resolution (Gross activity only)" level="4">
+          </node>
+          <node id="node_109" text="Cannot provide precise individual data in groups" level="4">
+          </node>
+          <node id="node_110" text="Potential for Signal Interference/Artifacts" level="4">
+          </node>
+          <node id="node_111" text="Requires specialized cage setups" level="4">
+          </node>
+        </node>
+        <node id="node_44" text="Infrared Beam Break Systems" level="3">
+          <node id="node_116" text="Detect movement via IR beam interruptions" level="4">
+          </node>
+          <node id="node_117" text="Provides rudimentary 3D movement (Locomotion, Rearing)" level="4">
+          </node>
+          <node id="node_118" text="High temporal resolution, minimal data storage" level="4">
+          </node>
+          <node id="node_119" text="Software classifies states (Ambulatory, Stereotypic, Resting)" level="4">
+          </node>
+          <node id="node_120" text="Limitations: Singly housed, lacks fine-grained behavior detail" level="4">
+          </node>
+        </node>
+        <node id="node_45" text="Passive Infrared (PIR) Sensors" level="3">
+          <node id="node_121" text="Sensitive to animal&apos;s own IR emissions" level="4">
+          </node>
+          <node id="node_122" text="Simple data output (Movement detected/not detected)" level="4">
+          </node>
+          <node id="node_123" text="Low cost, suitable for DIY HCM" level="4">
+          </node>
+          <node id="node_124" text="Limitations: Optimized for movement, difficult to ascertain continuous presence" level="4">
+          </node>
+          <node id="node_125" text="Based on strain gauge technology" level="4">
+          </node>
+          <node id="node_126" text="Detects minute weight shifts/changes in weight distribution" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_11" text="Load Cells and Pressure Sensors" level="2">
+        <node id="node_46" text="Applications" level="3">
+          <node id="node_128" text="Activity levels/Locomotor patterns" level="4">
+          </node>
+          <node id="node_129" text="Body weight estimations (reducing handling stress)" level="4">
+          </node>
+          <node id="node_130" text="Detection of fine motor behaviors (Scratching bouts - e.g., LABORAS)" level="4">
+          </node>
+          <node id="node_131" text="Group-housed activity trends" level="4">
+          </node>
+          <node id="node_127" text="Typically placed under cage or integrated into floor" level="4">
+          </node>
+          <node id="node_132" text="High sensitivity to environmental vibrations (Noise)" level="4">
+          </node>
+          <node id="node_133" text="Inaccuracies due to bedding/cage movements" level="4">
+          </node>
+          <node id="node_134" text="Requires precise calibration and signal processing" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_12" text="Telemetry Systems" level="2">
+        <node id="node_47" text="Physiological Measurements" level="3">
+          <node id="node_138" text="Bioelectric signals (ECG, EEG, EMG)" level="4">
+          </node>
+          <node id="node_139" text="Pressure (BP, Left Ventricular, Intracranial)" level="4">
+          </node>
+          <node id="node_140" text="Biochemical signals (Blood glucose)" level="4">
+          </node>
+          <node id="node_141" text="Body Temperature and Activity" level="4">
+          </node>
+          <node id="node_142" text="Derived parameters (Respiratory rates)" level="4">
+          </node>
+          <node id="node_135" text="Implantable, miniaturized sensors (transmitters)" level="4">
+          </node>
+          <node id="node_136" text="Wireless transmission to remote transceiver" level="4">
+          </node>
+          <node id="node_137" text="Requires invasive surgical implantation" level="4">
+          </node>
+        </node>
+        <node id="node_48" text="Advantages" level="3">
+          <node id="node_143" text="Most humane for physiological collection (Undisturbed animal)" level="4">
+          </node>
+          <node id="node_144" text="Minimizes stress-induced variability" level="4">
+          </node>
+          <node id="node_145" text="High accuracy/reliability" level="4">
+          </node>
+          <node id="node_146" text="Scalable for multi-rodent studies" level="4">
+          </node>
+          <node id="node_147" text="Invasive surgical procedure required" level="4">
+          </node>
+          <node id="node_148" text="Generates large raw data files (e.g., 1.5GB/subject/7 days)" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_13" text="Metabolic Monitoring Systems" level="2">
+        <node id="node_49" text="Core Technology: Indirect Calorimetry" level="3">
+          <node id="node_151" text="Measures Oxygen Consumption (VO₂)" level="4">
+          </node>
+          <node id="node_152" text="Measures Carbon Dioxide Production (VCO₂)" level="4">
+          </node>
+          <node id="node_153" text="Calculates Metabolic Rate (MR) and Energy Expenditure (EE)" level="4">
+          </node>
+          <node id="node_154" text="Measures Respiratory Exchange Ratio (RER)" level="4">
+          </node>
+          <node id="node_155" text="Requires isolation of animals (Singly housed focus)" level="4">
+          </node>
+          <node id="node_149" text="Requires significant computing capacity" level="4">
+          </node>
+          <node id="node_150" text="High capital/running costs" level="4">
+          </node>
+        </node>
+        <node id="node_50" text="Integration Components" level="3">
+          <node id="node_156" text="Activity Data (e.g., IR beam activity meters)" level="4">
+          </node>
+          <node id="node_157" text="Feeding and Water Intake Records" level="4">
+          </node>
+          <node id="node_158" text="Specialized software for temporal alignment (EE vs. activity)" level="4">
+          </node>
+          <node id="node_159" text="Rich, multidimensional data on metabolic state" level="4">
+          </node>
+          <node id="node_160" text="Reduced stress artifacts (vs. traditional methods)" level="4">
+          </node>
+        </node>
+        <node id="node_51" text="Limitations" level="3">
+          <node id="node_162" text="Complex setup/maintenance (Calibration required)" level="4">
+          </node>
+          <node id="node_163" text="Often requires individual housing" level="4">
+          </node>
+          <node id="node_164" text="Data Management Challenges (Large datasets)" level="4">
+          </node>
+          <node id="node_165" text="Plethysmography limitations in full-volume cages" level="4">
+          </node>
+          <node id="node_161" text="Enhanced experimental relevance (Long-term monitoring)" level="4">
+          </node>
+          <node id="node_166" text="Records Ultrasonic Vocalizations (18 kHz to 110 kHz)" level="4">
+          </node>
+          <node id="node_167" text="Requires specialized microphones" level="4">
+          </node>
+          <node id="node_168" text="Advanced software for segmentation and classification (ML)" level="4">
+          </node>
+          <node id="node_169" text="Communication/Social Dynamics (Hierarchy, Mating)" level="4">
+          </node>
+          <node id="node_170" text="Stress Responses/Affective States (Welfare marker)" level="4">
+          </node>
+          <node id="node_171" text="Drug discovery/Neuropharmacology endpoint" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_14" text="Acoustic Monitoring (USV)" level="2">
+      </node>
+      <node id="node_15" text="Environmental Monitoring" level="2">
+        <node id="node_52" text="Parameters" level="3">
+          <node id="node_177" text="Temperature and Humidity (e.g., SHT45)" level="4">
+          </node>
+          <node id="node_178" text="Light Intensity (Illumination - e.g., TSL25721)" level="4">
+          </node>
+          <node id="node_179" text="Noise Levels and Pressure" level="4">
+          </node>
+          <node id="node_180" text="Gases (CO₂, Ammonia, VOCs)" level="4">
+          </node>
+          <node id="node_181" text="Personnel Entrance (PIR sensor)" level="4">
+          </node>
+          <node id="node_172" text="Neurodevelopmental disorder studies" level="4">
+          </node>
+          <node id="node_173" text="Background Noise Interference" level="4">
+          </node>
+          <node id="node_174" text="Large Data Amounts/High Sampling Rates" level="4">
+          </node>
+          <node id="node_175" text="High Cost of specialized hardware" level="4">
+          </node>
+          <node id="node_176" text="Difficult Individual Identification (Single microphone)" level="4">
+          </node>
+        </node>
+        <node id="node_53" text="System Types" level="3">
+          <node id="node_182" text="Commercial, lab-oriented systems (e.g., Pallidus.io)" level="4">
+          </node>
+          <node id="node_183" text="Repurposed home automation market sensors" level="4">
+          </node>
+          <node id="node_184" text="Lab-developed open-source solutions (e.g., MIROSLAV, MyVivarium)" level="4">
+          </node>
+        </node>
+        <node id="node_54" text="Benefit: Controls for major source of variability" level="3">
+        </node>
+      </node>
+      <node id="node_16" text="Operant Technology in HCM" level="2">
+        <node id="node_55" text="Concept" level="3">
+          <node id="node_185" text="Closed-loop system (Observes and Controls contingencies)" level="4">
+          </node>
+          <node id="node_186" text="Three interactions: Cue -&gt; Response -&gt; Consequence" level="4">
+          </node>
+        </node>
+        <node id="node_56" text="Components" level="3">
+          <node id="node_187" text="Cue (LEDs, Speakers, Olfactometers)" level="4">
+          </node>
+          <node id="node_188" text="Response Sensors (Nosepokes, Lickometers, Load cells, RFID)" level="4">
+          </node>
+          <node id="node_189" text="Consequence/Actuator (Reward: Food/Water; Punishment: Air puffs/Shocks)" level="4">
+          </node>
+        </node>
+        <node id="node_57" text="Benefits (Home Cage Approach)" level="3">
+          <node id="node_190" text="24/7 Sampling (High throughput/trials)" level="4">
+          </node>
+          <node id="node_191" text="Faster Acquisition (e.g., 5-CSRTT in &lt;7 days)" level="4">
+          </node>
+          <node id="node_192" text="Voluntary, Self-Paced Interaction (Low stress)" level="4">
+          </node>
+          <node id="node_193" text="Systems Integration (Aligns with Telemetry, Video)" level="4">
+          </node>
+        </node>
+        <node id="node_58" text="Assessed Cognitive Domains" level="3">
+          <node id="node_194" text="Attention/Impulse Control (5-CSRTT)" level="4">
+          </node>
+          <node id="node_195" text="Cognitive Flexibility (Reversal/Rule-switch)" level="4">
+          </node>
+          <node id="node_196" text="Motivation/Effort Cost (Progressive-ratio)" level="4">
+          </node>
+        </node>
+      </node>
+    </node>
+    <node id="node_3" text="Emerging Technologies and AI" level="1">
+      <node id="node_17" text="Computer Vision and AI-Based Systems" level="2">
+        <node id="node_59" text="Identification Task (Raw Video to Data)" level="3">
+          <node id="node_197" text="Pose Estimation (DeepLabCut, SLEAP, Anipose)" level="4">
+          </node>
+          <node id="node_198" text="Object Detection (YOLO for localization)" level="4">
+          </node>
+          <node id="node_199" text="Semantic Segmentation (SAM for object boundaries)" level="4">
+          </node>
+        </node>
+        <node id="node_60" text="Interpretation Task (Data to Behavior)" level="3">
+          <node id="node_200" text="Supervised Classifiers (SVM, Deep Sequence Models)" level="4">
+          </node>
+          <node id="node_201" text="Unsupervised Segmentation (B-SOiD, VAME, Keypoint MoSeq)" level="4">
+          </node>
+        </node>
+        <node id="node_61" text="3D Tracking" level="3">
+          <node id="node_202" text="Multi-Camera Integration (Triangulation)" level="4">
+          </node>
+          <node id="node_203" text="Advanced models (DANNCE, s-DANNCE)" level="4">
+          </node>
+          <node id="node_204" text="Enhances fidelity (Rearing, Kinematics)" level="4">
+          </node>
+        </node>
+      </node>
+      <node id="node_18" text="Combinations and Integration" level="2">
+        <node id="node_62" text="Multimodal Data Fusion (e.g., RFID + Video)" level="3">
+        </node>
+        <node id="node_63" text="Retrofitting vs. Integrated Set-ups (Shoebox vs. Phenomaster)" level="3">
+        </node>
+        <node id="node_64" text="Embedding Neuroscience Tools (Optogenetics, Wireless Headstages)" level="3">
+        </node>
+        <node id="node_65" text="Cloud-Based Data Collection/Analysis" level="3">
+        </node>
+      </node>
+    </node>
+  </node>
+</mindmap>

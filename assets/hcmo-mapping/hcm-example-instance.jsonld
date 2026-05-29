@@ -1,0 +1,91 @@
+{
+  "@context": "hcm-context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:sys:alpha-01",
+      "type": "System",
+      "label": "HCM System Alpha-01",
+      "monitors": "hcm:BehaviorOrPhysiology",
+      "hasEnclosure": "urn:enc:homecage-42",
+      "hasHardware": "urn:hw:stack-9000",
+      "hasSoftware": "urn:sw:stack-9000",
+      "hasCircadianRhythm": "urn:rhythm:alpha-01",
+      "limitedHumanInteraction": true,
+      "producedBy": "commercialSupplier",
+      "commercialSupplier": "Acme HCM Ltd."
+    },
+
+    {
+      "id": "urn:enc:homecage-42",
+      "type": "Enclosure",
+      "label": "Standard IVC Cage",
+      "hasPhysicalSpace": "urn:space:cage-42",
+      "hasNeedsPlan": "urn:needs:plan-42"
+    },
+    {
+      "id": "urn:space:cage-42",
+      "type": "PhysicalSpace",
+      "hasDimensions": "urn:dim:cage-42"
+    },
+    {
+      "id": "urn:dim:cage-42",
+      "type": "Dimensions",
+      "width": 20.0,
+      "length": 35.0,
+      "height": 15.0,
+      "unitText": "cm"
+    },
+
+    {
+      "id": "urn:needs:plan-42",
+      "type": "NeedsPlan",
+      "hasNeedItem": [
+        { "id": "urn:needs:item-1", "type": "Food", "position": 1, "needsItemOf": "urn:needs:plan-42" },
+        { "id": "urn:needs:item-2", "type": "Water", "position": 2, "needsItemOf": "urn:needs:plan-42" },
+        { "id": "urn:needs:item-3", "type": "SocialContact", "position": 3, "needsItemOf": "urn:needs:plan-42" },
+        { "id": "urn:needs:item-4", "type": "SafetyFromThreat", "position": 4, "needsItemOf": "urn:needs:plan-42" },
+        { "id": "urn:needs:item-5", "type": "EnvironmentalEnrichment", "position": 5, "needsItemOf": "urn:needs:plan-42" }
+      ]
+    },
+
+    {
+      "id": "urn:animal:mouse-A",
+      "type": "Animal",
+      "identifier": "MouseA-123",
+      "livesIn": "urn:enc:homecage-42"
+    },
+
+    {
+      "id": "urn:hw:stack-9000",
+      "type": "Hardware",
+      "label": "Edge Node + Cage Sensors",
+      "hasSensor": ["urn:sensor:cam-top", "urn:sensor:rfid", "urn:sensor:loadcell"],
+      "hasActuator": ["urn:actuator:led", "urn:actuator:beeper"],
+      "communicatesWith": "urn:sw:stack-9000",
+      "model": "EdgeBox-X1",
+      "version": "2.3.1"
+    },
+    { "id": "urn:sensor:cam-top", "type": "Sensor", "label": "Top camera", "captures": "hcm:BehaviorOrPhysiology", "model": "IMX-XYZ" },
+    { "id": "urn:sensor:rfid", "type": "Sensor", "label": "RFID antenna", "captures": "hcm:BehaviorOrPhysiology" },
+    { "id": "urn:sensor:loadcell", "type": "Sensor", "label": "Load cell", "captures": "hcm:BehaviorOrPhysiology" },
+
+    { "id": "urn:actuator:led", "type": "Actuator", "label": "LED light", "elicits": "hcm:BehaviorOrPhysiology" },
+    { "id": "urn:actuator:beeper", "type": "Actuator", "label": "Auditory cue", "elicits": "hcm:BehaviorOrPhysiology" },
+
+    {
+      "id": "urn:sw:stack-9000",
+      "type": "Software",
+      "label": "HCM Processing Stack",
+      "softwareVersion": "1.8.0",
+      "description": "Pose estimation + feature extraction + behavior classification",
+      "hash": "sha256:6b1b...abc"
+    },
+
+    {
+      "id": "urn:rhythm:alpha-01",
+      "type": "CircadianRhythm",
+      "period": "P1DT0H0M0S",
+      "extendsIndefinitely": true
+    }
+  ]
+}

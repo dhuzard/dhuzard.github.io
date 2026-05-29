@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "hcm": "https://w3id.org/hcm-ontology#",
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "id": "@id",
+    "type": "@type",
+
+    "label": "rdfs:label",
+    "description": "schema:description",
+    "name": "schema:name",
+
+    "System": "hcm:System",
+    "Animal": "hcm:Animal",
+    "Enclosure": "hcm:Enclosure",
+    "Hardware": "hcm:Hardware",
+    "Software": "hcm:Software",
+    "Sensor": "hcm:Sensor",
+    "Actuator": "hcm:Actuator",
+    "BehaviorOrPhysiology": "hcm:BehaviorOrPhysiology",
+    "PhysicalSpace": "hcm:PhysicalSpace",
+    "CircadianRhythm": "hcm:CircadianRhythm",
+    "Need": "hcm:Need",
+    "Food": "hcm:Food",
+    "Water": "hcm:Water",
+    "SocialContact": "hcm:SocialContact",
+    "SafetyFromThreat": "hcm:SafetyFromThreat",
+    "EnvironmentalEnrichment": "hcm:EnvironmentalEnrichment",
+    "NeedsPlan": "hcm:NeedsPlan",
+    "Dimensions": "hcm:Dimensions",
+
+    "hasEnclosure": {"@id": "hcm:hasEnclosure", "@type": "@id"},
+    "hasHardware": {"@id": "hcm:hasHardware", "@type": "@id"},
+    "hasSoftware": {"@id": "hcm:hasSoftware", "@type": "@id"},
+    "monitors": {"@id": "hcm:monitors", "@type": "@id"},
+    "captures": {"@id": "hcm:captures", "@type": "@id"},
+    "elicits": {"@id": "hcm:elicits", "@type": "@id"},
+    "communicatesWith": {"@id": "hcm:communicatesWith", "@type": "@id"},
+    "hasSensor": {"@id": "hcm:hasSensor", "@type": "@id"},
+    "hasActuator": {"@id": "hcm:hasActuator", "@type": "@id"},
+    "livesIn": {"@id": "hcm:livesIn", "@type": "@id"},
+    "requiresToThrive": {"@id": "hcm:requiresToThrive", "@type": "@id"},
+    "hasNeedsPlan": {"@id": "hcm:hasNeedsPlan", "@type": "@id"},
+    "hasNeedItem": {"@id": "hcm:hasNeedItem", "@type": "@id"},
+    "position": {"@id": "schema:position", "@type": "xsd:integer"},
+    "needsItemOf": {"@id": "hcm:needsItemOf", "@type": "@id"},
+
+    "hasPhysicalSpace": {"@id": "hcm:hasPhysicalSpace", "@type": "@id"},
+    "hasDimensions": {"@id": "hcm:hasDimensions", "@type": "@id"},
+    "width": {"@id": "schema:width", "@type": "xsd:decimal"},
+    "length": {"@id": "schema:depth", "@type": "xsd:decimal"},
+    "height": {"@id": "schema:height", "@type": "xsd:decimal"},
+    "unitText": "schema:unitText",
+
+    "hasCircadianRhythm": {"@id": "hcm:hasCircadianRhythm", "@type": "@id"},
+    "period": {"@id": "hcm:period", "@type": "xsd:duration"},
+    "extendsIndefinitely": {"@id": "hcm:extendsIndefinitely", "@type": "xsd:boolean"},
+    "limitedHumanInteraction": {"@id": "hcm:limitedHumanInteraction", "@type": "xsd:boolean"},
+
+    "producedBy": {"@id": "hcm:producedBy"},
+    "commercialSupplier": {"@id": "hcm:commercialSupplier"},
+    "laboratory": {"@id": "hcm:laboratory"},
+
+    "identifier": "schema:identifier",
+    "version": "schema:version",
+    "model": "schema:model",
+    "softwareVersion": "schema:softwareVersion",
+    "hash": "schema:checksum"
+  }
+}
