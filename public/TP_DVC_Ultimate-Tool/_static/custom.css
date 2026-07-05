@@ -1,0 +1,28 @@
+/* Small refinements on top of the Furo theme for the DVC Ultimate Tool docs. */
+
+/* Slightly tighter, more readable body measure for long science prose. */
+.content {
+  --content-padding: 1.5em;
+}
+
+/* Make sphinx-design cards feel a touch calmer. */
+.sd-card {
+  border-radius: 10px;
+}
+
+/* Reference/DOI lists: keep them compact and scannable. */
+.doi-list p {
+  margin: 0.15rem 0;
+}
+
+/* A subtle "key term" style for inline glossary terms. */
+.term {
+  font-weight: 600;
+}
+
+/* Keep wide tables from breaking the page layout on narrow screens. */
+.content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}

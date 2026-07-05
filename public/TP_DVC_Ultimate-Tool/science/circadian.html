@@ -1,0 +1,584 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Spatial use of the cage" href="spatial.html"><link rel="prev" title="The science" href="index.html">
+
+    <!-- Generated with Sphinx 9.0.4 and Furo 2025.12.19 -->
+        <title>Circadian rhythms - DVC Ultimate Tool</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c1bf70f7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1f6f5c;
+  --color-brand-content: #1f6f5c;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5fd0ad;
+  --color-brand-content: #5fd0ad;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5fd0ad;
+  --color-brand-content: #5fd0ad;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">DVC Ultimate Tool</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">DVC Ultimate Tool</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting_started/index.html">Getting started</a><input aria-label="Toggle navigation of Getting started" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html">Installing with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/docker.html">Running with Docker (zero setup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/quickstart.html">Quickstart: your first analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/docker.html">Running with Docker (zero setup)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/quickstart.html">Quickstart: your first analysis</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the tool</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../using/index.html">Using the tool</a><input aria-label="Toggle navigation of Using the tool" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using/streamlit_app.html">The guided app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/data_input.html">Data input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/command_line.html">The command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/monitoring.html">Daily monitoring &amp; email alerts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using/streamlit_app.html">The guided app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/data_input.html">Data input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/command_line.html">The command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/monitoring.html">Daily monitoring &amp; email alerts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The science</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">The science</a><input aria-label="Toggle navigation of The science" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Circadian rhythms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spatial.html">Spatial use of the cage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="behavior.html">Sleep &amp; behaviour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="welfare_anomaly.html">Welfare &amp; anomaly detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urine.html">Urine excretion (UrinatoR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai_insights.html">AI insights &amp; literature grounding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">Literature references</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Circadian rhythms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial.html">Spatial use of the cage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behavior.html">Sleep &amp; behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welfare_anomaly.html">Welfare &amp; anomaly detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urine.html">Urine excretion (UrinatoR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ai_insights.html">AI insights &amp; literature grounding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Literature references</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about/index.html">Reference &amp; concepts</a><input aria-label="Toggle navigation of Reference &amp; concepts" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/privacy.html">Privacy &amp; reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/faq.html">Frequently asked questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/privacy.html">Privacy &amp; reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/faq.html">Frequently asked questions</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="circadian-rhythms">
+<h1>Circadian rhythms<a class="headerlink" href="#circadian-rhythms" title="Link to this heading">¶</a></h1>
+<p>The DVC records activity continuously, 24/7, which makes it a natural instrument
+for <strong>chronobiology</strong> — the study of daily (circadian) rhythms. This page covers
+the full circadian battery the tool provides, from the classic cosinor fit to the
+distribution-free actigraphy descriptors and period estimation for free-running
+designs.</p>
+<div class="seealso admonition">
+<p class="admonition-title">The reference validation</p>
+<p>The DVC’s fitness for circadian phenotyping was established by <strong>Tir, Foster &amp;
+Peirson (2025), <em>Scientific Reports</em></strong> — showing DVC activity recovers the
+expected ~24 h period under a light/dark cycle, free-running under constant
+darkness, and detects arrhythmicity in clock-mutant (<em>Cry1/Cry2</em>) mice. Every
+circadian analysis here is grounded in that work. DOI:
+<a class="reference external" href="https://doi.org/10.1038/s41598-025-87530-6">10.1038/s41598-025-87530-6</a>.</p>
+</div>
+<section id="zeitgeber-time-and-the-light-dark-cycle">
+<h2>Zeitgeber time and the light/dark cycle<a class="headerlink" href="#zeitgeber-time-and-the-light-dark-cycle" title="Link to this heading">¶</a></h2>
+<p>All circadian analyses are expressed in <strong>Zeitgeber time (ZT)</strong>, the animal’s
+internal clock reference: <strong>ZT0 = lights-on, ZT12 = lights-off</strong> for a standard
+12:12 cycle. The tool derives ZT from each timestamp using your configured
+light schedule (default lights-on <code class="docutils literal notranslate"><span class="pre">07:00</span></code>, lights-off <code class="docutils literal notranslate"><span class="pre">19:00</span></code>) and handles
+non-12:12 photoperiods and midnight-crossing dark phases correctly.</p>
+</section>
+<section id="cosinor-rhythm-analysis">
+<h2>Cosinor rhythm analysis<a class="headerlink" href="#cosinor-rhythm-analysis" title="Link to this heading">¶</a></h2>
+<p><strong>What it tells you.</strong> The cosinor is the classic model of a daily rhythm: it fits
+a cosine wave to the activity across the day and reports three interpretable
+numbers — the rhythm-adjusted mean level, how large the daily swing is, and <em>when</em>
+the peak occurs. Crucially, this tool also tests <strong>whether a rhythm exists at all</strong>
+and puts <strong>confidence intervals</strong> on the estimates, so a flat, noisy trace can’t
+masquerade as a real rhythm.</p>
+<p><strong>The model.</strong> For each group and metric it fits</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>value = MESOR + amplitude · cos( 2π · (ZT − acrophase) / period )
+</pre></div>
+</div>
+<p>with a default period of 24 h. It uses non-linear least squares (SciPy) when
+available, otherwise a closed-form linear cosinor.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Output</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MESOR</strong></p></td>
+<td><p>The rhythm-adjusted mean (the midline of the fitted cosine — a better “average
+activity” than a raw mean because it accounts for the rhythm).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Amplitude</strong></p></td>
+<td><p>Half the peak-to-trough swing — the strength of the daily rhythm.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Acrophase</strong> (<code class="docutils literal notranslate"><span class="pre">acrophase_ZT</span></code>)</p></td>
+<td><p>The ZT hour at which activity peaks — the <em>timing</em> of the rhythm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">p_rhythm</span></code></strong></p></td>
+<td><p>An F-test that the amplitude is non-zero, i.e. that a rhythm is actually
+present. This is the standard cosinor rhythm-detection test.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Confidence intervals</strong></p></td>
+<td><p>95% CIs for amplitude and acrophase (<code class="docutils literal notranslate"><span class="pre">amplitude_ci_low/high</span></code>,
+<code class="docutils literal notranslate"><span class="pre">acrophase_ci_low/high</span></code>), derived by the delta method. Acrophase CIs can wrap
+around midnight — flagged by <code class="docutils literal notranslate"><span class="pre">acrophase_ci_wraps</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>R²</strong></p></td>
+<td><p>Goodness of fit of the cosine.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Honest confidence intervals</p>
+<p>By default the fit is done at the <strong>subject level</strong> (per-animal ZT-bin means),
+which gives honest residual degrees of freedom and meaningful confidence
+intervals — rather than pooling all raw points, which would understate
+uncertainty.</p>
+</div>
+<p><em>Tool:</em> <code class="docutils literal notranslate"><span class="pre">summarize_circadian_cosinor</span></code>.</p>
+</section>
+<section id="non-parametric-circadian-descriptors-is-iv-ra-m10-l5">
+<h2>Non-parametric circadian descriptors (IS / IV / RA, M10 / L5)<a class="headerlink" href="#non-parametric-circadian-descriptors-is-iv-ra-m10-l5" title="Link to this heading">¶</a></h2>
+<p><strong>Why not just cosinor?</strong> Rodent home-cage activity is <strong>not</strong> a smooth sinusoid —
+it has sharp dark-onset bursts and fragmented rest. The field-standard,
+distribution-free descriptors (from human/animal actigraphy, the <em>van Someren</em>
+family) capture that structure directly and are directly comparable to the
+actigraphy literature.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 78.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>What it measures</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>IS</strong> — interdaily stability</p></td>
+<td><p>How reproducible the 24 h pattern is from one day to the next. Range 0–1;
+higher = more stable. Computed as the between-day variance of the average
+daily profile divided by the overall variance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>IV</strong> — intradaily variability</p></td>
+<td><p>How fragmented the rest/activity rhythm is (frequent switching between rest
+and activity). Higher = more fragmented. Computed from the mean squared
+hour-to-hour difference over the overall variance.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>M10</strong></p></td>
+<td><p>Mean activity during the <strong>most-active 10 hours</strong> of the day.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>L5</strong></p></td>
+<td><p>Mean activity during the <strong>least-active 5 hours</strong> of the day.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RA</strong> — relative amplitude</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(M10</span> <span class="pre">−</span> <span class="pre">L5)</span> <span class="pre">/</span> <span class="pre">(M10</span> <span class="pre">+</span> <span class="pre">L5)</span></code> — a robust, normalised measure of rhythm strength
+that doesn’t assume a sinusoid.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These are often the <strong>single highest-value</strong> circadian readout for genotype or
+treatment effects — a reduced IS or elevated IV can reveal a phenotype that mean
+activity misses entirely.</p>
+<p><em>Tool:</em> <code class="docutils literal notranslate"><span class="pre">summarize_nonparametric_circadian</span></code>.</p>
+</section>
+<section id="activity-bouts-fragmentation">
+<h2>Activity bouts &amp; fragmentation<a class="headerlink" href="#activity-bouts-fragmentation" title="Link to this heading">¶</a></h2>
+<p><strong>What it tells you.</strong> Effects often live in the <em>structure</em> of activity — how it’s
+broken into bouts — even when the 24 h mean is unchanged. This analysis classifies
+each time bin as active or inactive (threshold auto-set to the per-animal median,
+or a value you choose) and summarises the bout structure.</p>
+<p>Outputs include: number of active bouts, mean and maximum active-bout duration
+(minutes), the same for inactive bouts, total active minutes, <strong>fraction of time
+active</strong>, and the mean <strong>daily total</strong> activity.</p>
+<p><em>Tool:</em> <code class="docutils literal notranslate"><span class="pre">summarize_activity_bouts</span></code>.</p>
+</section>
+<section id="light-dark-analysis">
+<h2>Light / dark analysis<a class="headerlink" href="#light-dark-analysis" title="Link to this heading">¶</a></h2>
+<p><strong>What it tells you.</strong> The simplest circadian readout: how much activity happens in
+the dark (active) phase versus the light (rest) phase, and the <strong>dark/light
+ratio</strong> — a basic diurnality index. Means are computed over per-subject phase
+means to avoid pseudo-replication.</p>
+<p><em>Tool:</em> <code class="docutils literal notranslate"><span class="pre">summarize_light_dark</span></code>.
+<em>Grounding:</em> Tir et al. 2025; Tomanelli et al. 2024
+(<a class="reference external" href="https://doi.org/10.3389/fonc.2024.1504938">10.3389/fonc.2024.1504938</a>).</p>
+</section>
+<section id="period-estimation-periodograms">
+<h2>Period estimation &amp; periodograms<a class="headerlink" href="#period-estimation-periodograms" title="Link to this heading">¶</a></h2>
+<p>For <strong>free-running</strong> designs (constant darkness) or <em>tau</em>-mutant lines, the period
+is not fixed at 24 h and must be <strong>estimated</strong> from the data. The tool offers two
+established periodogram methods, both robust to the irregular sampling left by
+exclusions and daily welfare checks.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 66.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Lomb–Scargle periodogram</strong></p></td>
+<td><p>Estimates the dominant period by scanning candidate periods (default
+18–30 h) and finding the strongest spectral peak. Handles uneven sampling
+natively. Returns the estimated period and peak power.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Chi-square (Sokolove–Bushell / Qp) periodogram</strong></p></td>
+<td><p>The standard chronobiology periodogram (as in ActogramJ). For each trial
+period the data are folded and the Qp statistic — the ratio of between-phase
+to total variance — is tested against a chi-square significance threshold,
+giving a per-period <em>p</em>-value and a clear “is this period significant?” line.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Tools:</em> <code class="docutils literal notranslate"><span class="pre">estimate_period</span></code> (Lomb–Scargle), <code class="docutils literal notranslate"><span class="pre">compute_periodogram</span></code> and
+<code class="docutils literal notranslate"><span class="pre">compute_chi_square_periodogram</span></code> (chrono viz).</p>
+</section>
+<section id="actograms-activity-onsets">
+<h2>Actograms &amp; activity onsets<a class="headerlink" href="#actograms-activity-onsets" title="Link to this heading">¶</a></h2>
+<p><strong>Actogram.</strong> The classic visualization of circadian data: a <strong>double-plotted</strong>
+raster with successive days stacked vertically and each day shown twice
+side-by-side, so drifting rhythms read as a diagonal band. This is the first plot
+any chronobiologist looks at.</p>
+<p><strong>Activity onsets.</strong> For each day, the tool detects the <strong>onset</strong> (first time
+activity rises above the day’s mean) and the <strong>acrophase</strong> (the day’s peak time) —
+the day-by-day timing that reveals entrainment, phase shifts and jet-lag
+re-entrainment.</p>
+<p><em>Tools:</em> <code class="docutils literal notranslate"><span class="pre">prepare_actogram_matrix</span></code> / <code class="docutils literal notranslate"><span class="pre">plot_actogram</span></code>, <code class="docutils literal notranslate"><span class="pre">detect_activity_onsets</span></code>.</p>
+</section>
+<section id="group-housed-recordings">
+<h2>Group-housed recordings<a class="headerlink" href="#group-housed-recordings" title="Link to this heading">¶</a></h2>
+<p>DVC signals are <strong>cage-level</strong> (not per-animal). Reassuringly, DVC circadian
+profiles from <strong>group-housed</strong> cages have been shown to be robust, reproducible
+and comparable to conventional individual measurement — enabling
+welfare-friendly, high-throughput longitudinal designs.</p>
+<p><em>Grounding:</em> Sun et al. 2024
+(<a class="reference external" href="https://doi.org/10.3389/fnins.2024.1456307">10.3389/fnins.2024.1456307</a>).</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="spatial.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Spatial use of the cage</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">The science</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, TP_DVC_Ultimate-Tool contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Circadian rhythms</a><ul>
+<li><a class="reference internal" href="#zeitgeber-time-and-the-light-dark-cycle">Zeitgeber time and the light/dark cycle</a></li>
+<li><a class="reference internal" href="#cosinor-rhythm-analysis">Cosinor rhythm analysis</a></li>
+<li><a class="reference internal" href="#non-parametric-circadian-descriptors-is-iv-ra-m10-l5">Non-parametric circadian descriptors (IS / IV / RA, M10 / L5)</a></li>
+<li><a class="reference internal" href="#activity-bouts-fragmentation">Activity bouts &amp; fragmentation</a></li>
+<li><a class="reference internal" href="#light-dark-analysis">Light / dark analysis</a></li>
+<li><a class="reference internal" href="#period-estimation-periodograms">Period estimation &amp; periodograms</a></li>
+<li><a class="reference internal" href="#actograms-activity-onsets">Actograms &amp; activity onsets</a></li>
+<li><a class="reference internal" href="#group-housed-recordings">Group-housed recordings</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=63867087"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f16d66d2"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>
