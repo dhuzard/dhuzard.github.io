@@ -1,6 +1,7 @@
 ---
 import Base from '~/layouts/Base.astro';
 import PaperItem from '~/components/PaperItem.astro';
+import PublicationsSchema from '~/components/PublicationsSchema.astro';
 import { getCollection } from 'astro:content';
 import { site } from '~/site.config';
 
@@ -16,6 +17,7 @@ const years = Object.keys(byYear)
 ---
 
 <Base title="Papers" description="Peer-reviewed papers and preprints by Damien Huzard.">
+  <PublicationsSchema papers={papers.map((p) => p.data)} />
   <section class="container-wide py-12 sm:py-16">
     <p class="section-eyebrow">Publications</p>
     <h1 class="mt-2 font-serif text-3xl sm:text-4xl tracking-tight text-ink-900 dark:text-ink-50">Papers</h1>

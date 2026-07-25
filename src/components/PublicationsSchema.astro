@@ -1,0 +1,56 @@
+---
+import { site } from '~/site.config';
+
+// Emits schema.org ScholarlyArticle JSON-LD for a set of papers so search
+// engines can index each publication as a structured scholarly work, tied to
+// Damien's ORCID iD. Feed it the raw `data` objects from the papers collection.
+interface Paper {
+  title: string;
+  year: number;
+  date?: string;
+  venue: string;
+  authors: string[];
+  me?: string;
+  doi?: string;
+  url?: string;
+  preprint?: boolean;
+  type?: 'article' | 'preprint' | 'review' | 'chapter';
+}
+
+interface Props {
+  papers: Paper[];
+}
+
+const { papers } = Astro.props;
+const orcidUrl = `https://orcid.org/${site.orcid}`;
+
+const toWork = (p: Paper) => {
+  const doiUrl = p.doi ? `https://doi.org/${p.doi}` : undefined;
+  const canonicalUrl = p.url ?? doiUrl;
+  const work: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'ScholarlyArticle',
+    headline: p.title,
+    name: p.title,
+    datePublished: p.date ?? String(p.year),
+    author: p.authors.map((a) =>
+      a === (p.me ?? 'Huzard D')
+        ? { '@type': 'Person', name: site.name, sameAs: orcidUrl, identifier: site.orcid }
+        : { '@type': 'Person', name: a },
+    ),
+    isPartOf: { '@type': 'Periodical', name: p.venue },
+    publicationType: p.preprint || p.type === 'preprint' ? 'Preprint' : 'Journal Article',
+  };
+  if (canonicalUrl) work['@id'] = canonicalUrl;
+  if (canonicalUrl) work.url = canonicalUrl;
+  if (p.doi) {
+    work.identifier = { '@type': 'PropertyValue', propertyID: 'DOI', value: p.doi };
+    work.sameAs = doiUrl;
+  }
+  return work;
+};
+
+const works = papers.map(toWork);
+---
+
+{works.map((w) => <script type="application/ld+json" is:inline set:html={JSON.stringify(w)} />)}
