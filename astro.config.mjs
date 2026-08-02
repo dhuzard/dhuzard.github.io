@@ -31,6 +31,8 @@ export default defineConfig({
     '/Blog/mapp-api-first-fairrr': '/blog/2025-09-20-mapp-api-first-fairrr/',
     '/Blog/case-study-hcm-mapp-ontology': '/blog/2025-09-21-case-study-hcm-mapp-ontology/',
     '/Blog/fairrr-playbook-30-days': '/blog/2025-09-22-fairrr-playbook-30-days/',
+    '/coi': '/declarations/#conflicts-of-interest',
+    '/ai-declaration': '/declarations/#ai-usage',
     '/hcm-app': '/projects/hcm-integrator/',
     '/hcm-explorer-page': '/projects/hcm-explorer/',
     '/hcm-ontology-mapper-page': '/projects/hcm-ontology-mapper/',

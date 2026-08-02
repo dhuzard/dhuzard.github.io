@@ -1,0 +1,153 @@
+---
+import Base from '~/layouts/Base.astro';
+import AiDeclaration from '~/components/AiDeclaration.astro';
+import { declaration } from '~/ai-declaration';
+import { site } from '~/site.config';
+
+const specUrl = `https://ai-declaration.md/en/${declaration.version}`;
+
+const sections = [
+  { href: '#conflicts-of-interest', label: 'Conflicts of interest' },
+  { href: '#ai-usage', label: 'AI usage' },
+];
+---
+
+<Base
+  title="Declarations"
+  description="What could bias my work, and how AI was used to build this site: my conflict-of-interest statement and my AI declaration."
+>
+  <article class="container-prose py-12 sm:py-16">
+    <p class="section-eyebrow">Declarations</p>
+    <h1 class="mt-2 font-serif text-3xl sm:text-4xl tracking-tight">Declarations</h1>
+
+    <div class="prose prose-lg prose-ink dark:prose-invert mt-6">
+      <p>
+        Two things shape work that a reader cannot see from the outside: who I am entangled with, and what
+        wrote the words and the code. Both are declared here. Neither disclosure eliminates bias — it makes
+        it visible and discussable, which is the point.
+      </p>
+    </div>
+
+    <nav class="mt-8 flex flex-wrap gap-2" aria-label="On this page">
+      {
+        sections.map(({ href, label }) => (
+          <a
+            href={href}
+            class="badge no-underline transition hover:bg-accent-50 hover:text-accent-700 dark:hover:bg-accent-950 dark:hover:text-accent-200"
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <section id="conflicts-of-interest" class="mt-14 scroll-mt-24">
+      <h2 class="section-title">Conflicts of interest</h2>
+
+      <div class="prose prose-lg prose-ink dark:prose-invert mt-5">
+        <p>
+          I believe conflict-of-interest disclosure should be the norm across the research ecosystem—not only
+          for those who collaborate with private companies. Financial ties matter, but so do intellectual
+          commitments, methodological preferences, long-standing collaborations, and the social dynamics that
+          shape who we read, cite, and platform. Transparent COI statements help readers interpret work in
+          context and invite everyone—academics included—to reflect on how our incentives and networks
+          influence our science.
+        </p>
+
+        <p>
+          This section documents my current roles, collaborations, and how I manage potential conflicts. If
+          you have questions or see anything that could be clearer, please reach out.
+        </p>
+
+        <h3>Current roles and interests</h3>
+        <ul>
+          <li>
+            Founder, <a href="https://neuronautix.com">NeuroNautix</a> — consulting in behavioral experiments,
+            behavioral scoring, data analysis, and (meta)data handling.
+          </li>
+          <li>
+            Creator, <a href="https://www.metadatapp.net">MAPP (METADATAPP)</a> — an initiative to improve
+            metadata management and make FAIR/Open practices operational in preclinical research.
+          </li>
+        </ul>
+
+        <h3>Open source and release timelines</h3>
+        <p>
+          I am a strong advocate for open science. That said, building a new professional project entirely
+          open source from day one can be difficult. Some components may be released progressively or after
+          stabilization with early partners. My intent is to maximize openness while ensuring sustainability
+          and quality.
+        </p>
+
+        <h3>Current collaborations (non-exhaustive)</h3>
+        <p>
+          In the context of NeuroNautix and MAPP, I currently collaborate with or am in ongoing conversations
+          with: Tecniplast, Olden Labs, Metofico, Cology Biosciences, SoftMouse.NET, Anibio, and eLabFTW
+          (DeltaBlot), among others. I will update this list as relationships evolve. Formal financial
+          relationships (e.g., paid consulting, paid pilots) are disclosed in talks and manuscripts where
+          relevant.
+        </p>
+
+        <h3>How I manage potential conflicts</h3>
+        <ul>
+          <li>
+            <strong>Clear disclosure</strong> — I declare relevant roles, sponsors, and collaborations in
+            talks, posts, and manuscripts.
+          </li>
+          <li>
+            <strong>Separation of evaluation from interest</strong> — When advising on tools or methods, I aim
+            to separate needs assessment from vendor selection; where that isn't possible, I say so
+            explicitly.
+          </li>
+          <li>
+            <strong>Methods transparency</strong> — I document assumptions, analysis choices, and constraints;
+            I share schemas and interfaces so others can reproduce or critique them.
+          </li>
+          <li>
+            <strong>Diverse citation and credit</strong> — I make a deliberate effort to cite across schools,
+            tools, and communities — not just close collaborators or familiar names.
+          </li>
+          <li>
+            <strong>Progressive openness</strong> — I publish specifications, mappings, and exports where
+            possible; when code is not yet public, I share roadmaps and timelines.
+          </li>
+        </ul>
+
+        <h3>Why this matters</h3>
+        <p>
+          Conflicts of interest are not only about money — they are also about ideas, incentives, and
+          communities. Declaring them doesn't eliminate bias, but it makes it visible and discussable. My goal
+          is to help readers place my work in context and to set an example I hope more of us follow.
+        </p>
+      </div>
+    </section>
+
+    <section id="ai-usage" class="mt-16 scroll-mt-24">
+      <h2 class="section-title">AI usage</h2>
+
+      <div class="prose prose-lg prose-ink dark:prose-invert mt-5">
+        <p>
+          The same logic applies to the machine. AI wrote most of the code on this site, and I am not
+          embarrassed by that — but you deserve to know which parts, so you can read them with the right eyes.
+        </p>
+        <p>
+          This follows <a href={specUrl} rel="noopener">AI-DECLARATION.md</a>, an open standard for declaring
+          AI involvement. The authoritative version is the <a href="/ai-declaration.md">machine-readable file</a>
+          at the root of <a href="https://github.com/dhuzard/dhuzard.github.io" rel="noopener">the repository</a>;
+          everything below is rendered from it.
+        </p>
+      </div>
+
+      <div class="mt-8">
+        <AiDeclaration />
+      </div>
+    </section>
+
+    <p class="mt-16 text-sm text-ink-500 dark:text-ink-400">
+      Something look wrong, out of date, or under-declared?
+      <a href={`mailto:${site.email}`}>Tell me</a> — these statements are meant to be held to.
+    </p>
+
+    <p class="mt-6 text-ink-700 dark:text-ink-200">— Damien Huzard</p>
+  </article>
+</Base>

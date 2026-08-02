@@ -77,12 +77,16 @@ Important conventions:
 
 These pages don't contain content — they only iterate over collections. To **change wording or visual structure**, edit the `.astro` file. To **add an entry**, add a content file.
 
-## AI declaration
+## Declarations page
+
+`/declarations/` (`src/pages/declarations.astro`) holds both transparency statements: the
+conflict-of-interest statement (prose, edited in place) and the AI declaration. The old `/coi` and
+`/ai-declaration` URLs redirect to its anchors — see `astro.config.mjs`.
 
 `AI-DECLARATION.md` at the repo root follows the [AI-DECLARATION.md](https://ai-declaration.md/en/0.1.2)
-standard and is the single source of truth: `src/pages/ai-declaration.astro` renders it, and
-`src/pages/ai-declaration.md.ts` serves it verbatim at `/ai-declaration.md`. Parsing and validation live in
-`src/ai-declaration.ts` — an invalid level, an unknown process, or a global `level` lower than the highest
+standard and is the single source of truth for the AI half: `src/components/AiDeclaration.astro` renders it,
+and `src/pages/ai-declaration.md.ts` serves it verbatim at `/ai-declaration.md`. Parsing and validation live
+in `src/ai-declaration.ts` — an invalid level, an unknown process, or a global `level` lower than the highest
 declared level fails the build. If your work materially changes how AI is used here (a new hand-written
 component, a new AI-generated directory), update the declaration in the same commit; don't edit the page to
 say something the file doesn't.
