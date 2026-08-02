@@ -77,6 +77,16 @@ Important conventions:
 
 These pages don't contain content — they only iterate over collections. To **change wording or visual structure**, edit the `.astro` file. To **add an entry**, add a content file.
 
+## AI declaration
+
+`AI-DECLARATION.md` at the repo root follows the [AI-DECLARATION.md](https://ai-declaration.md/en/0.1.2)
+standard and is the single source of truth: `src/pages/ai-declaration.astro` renders it, and
+`src/pages/ai-declaration.md.ts` serves it verbatim at `/ai-declaration.md`. Parsing and validation live in
+`src/ai-declaration.ts` — an invalid level, an unknown process, or a global `level` lower than the highest
+declared level fails the build. If your work materially changes how AI is used here (a new hand-written
+component, a new AI-generated directory), update the declaration in the same commit; don't edit the page to
+say something the file doesn't.
+
 ## Styling
 
 Tailwind utilities first. Reusable patterns live in `src/styles/global.css` under `@layer components` (`.card`, `.badge`, `.section-title`, `.container-prose`, etc.). Dark mode uses the `dark:` variant; toggled by `Header.astro`.

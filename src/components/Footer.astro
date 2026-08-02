@@ -6,7 +6,9 @@ const year = new Date().getFullYear();
 <footer class="mt-24 border-t border-ink-100 py-10 text-sm text-ink-500 dark:border-ink-800 dark:text-ink-400">
   <div class="container-wide flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
     <p>© {year} Damien Huzard. Built with Astro + Tailwind.</p>
-    <ul class="flex items-center gap-4">
+    <ul class="flex flex-wrap items-center gap-4">
+      <li><a href="/ai-declaration/" class="no-underline hover:text-ink-900 dark:hover:text-ink-50">AI Declaration</a></li>
+      <li><a href="/coi/" class="no-underline hover:text-ink-900 dark:hover:text-ink-50">COI</a></li>
       <li><a href={site.social.github} class="no-underline hover:text-ink-900 dark:hover:text-ink-50">GitHub</a></li>
       <li><a href={site.social.linkedin} class="no-underline hover:text-ink-900 dark:hover:text-ink-50">LinkedIn</a></li>
       <li><a href={site.social.twitter} class="no-underline hover:text-ink-900 dark:hover:text-ink-50">X / Twitter</a></li>
