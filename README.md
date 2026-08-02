@@ -1,5 +1,7 @@
 # dhuzard.github.io
 
+[![AI-DECLARATION: auto](https://img.shields.io/badge/䷼%20AI--DECLARATION-auto-ede9fe?labelColor=ede9fe)](./AI-DECLARATION.md)
+
 Personal site for Damien Huzard — neuro-physio-behaviorist, PhD. Built with **Astro 5 + Tailwind + MDX**, deployed to GitHub Pages.
 
 ## Quick start
