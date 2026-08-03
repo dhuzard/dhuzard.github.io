@@ -1,14 +1,13 @@
 {
   "userId": "tviZqssAAAAJ",
   "profileUrl": "https://scholar.google.com/citations?user=tviZqssAAAAJ&hl=en",
-  "updated": null,
-  "source": "seed",
-  "sinceYear": null,
-  "citations": null,
-  "hIndex": null,
-  "i10Index": null,
-  "citationsRecent": null,
-  "hIndexRecent": null,
-  "i10Recent": null,
-  "_note": "Auto-populated by scripts/fetch-scholar.mjs (run via .github/workflows/scholar.yml). You can also fill the numbers here manually — they will be shown until the next successful fetch. Nulls render a graceful 'view on Scholar' fallback instead of fake zeros."
+  "updated": "2026-08-03",
+  "source": "scrape",
+  "sinceYear": 2021,
+  "citations": 1530,
+  "hIndex": 8,
+  "i10Index": 8,
+  "citationsRecent": 1089,
+  "hIndexRecent": 8,
+  "i10Recent": 7
 }
