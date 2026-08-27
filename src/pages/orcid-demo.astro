@@ -1,0 +1,169 @@
+---
+import Base from '~/layouts/Base.astro';
+
+const biosketchUrl =
+  'https://raw.githubusercontent.com/dhuzard/orcid-biosketch/main/generated/biosketch.json';
+---
+
+<Base
+  title="Live ORCID Biosketch Demo"
+  description="A browser-time demonstration of an ORCID-synchronized, machine-readable researcher profile."
+>
+  <section class="border-b border-ink-100 dark:border-ink-800">
+    <div class="container-prose py-14 sm:py-20">
+      <p class="section-eyebrow">ORCID → biosketch → website</p>
+      <h1 class="mt-3 font-serif text-4xl tracking-tight text-ink-900 dark:text-ink-50 sm:text-5xl">
+        Live researcher profile
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink-600 dark:text-ink-300">
+        This page is static, but the profile is not. Your browser retrieves the latest versioned
+        biosketch when you visit—so an ORCID update can reach this website without rebuilding it.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-prose py-10 sm:py-14">
+    <div
+      id="sync-status"
+      class="mb-6 flex items-center gap-2 text-sm text-ink-500 dark:text-ink-400"
+      role="status"
+      aria-live="polite"
+    >
+      <span class="h-2 w-2 animate-pulse rounded-full bg-amber-500" aria-hidden="true"></span>
+      <span>Retrieving the current biosketch…</span>
+    </div>
+
+    <article id="biosketch" class="card hidden" aria-labelledby="profile-name">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p id="profile-headline" class="section-eyebrow"></p>
+          <h2 id="profile-name" class="mt-2 font-serif text-3xl text-ink-900 dark:text-ink-50"></h2>
+        </div>
+        <a
+          id="profile-orcid"
+          class="inline-flex shrink-0 items-center gap-2 rounded-md border border-ink-200 px-3 py-2 text-sm no-underline dark:border-ink-700"
+          rel="me noopener"
+        >
+          <span class="h-3 w-3 rounded-full bg-[#A6CE39]" aria-hidden="true"></span>
+          <span id="profile-orcid-label"></span>
+        </a>
+      </div>
+
+      <div id="profile-biography" class="mt-7 space-y-4 text-ink-700 dark:text-ink-200"></div>
+
+      <dl class="mt-8 grid gap-4 border-t border-ink-100 pt-6 text-sm dark:border-ink-800 sm:grid-cols-3">
+        <div>
+          <dt class="text-ink-500 dark:text-ink-400">Public outputs</dt>
+          <dd id="works-count" class="mt-1 font-medium text-ink-900 dark:text-ink-50"></dd>
+        </div>
+        <div>
+          <dt class="text-ink-500 dark:text-ink-400">ORCID record updated</dt>
+          <dd id="source-updated" class="mt-1 font-medium text-ink-900 dark:text-ink-50"></dd>
+        </div>
+        <div>
+          <dt class="text-ink-500 dark:text-ink-400">Loaded by this browser</dt>
+          <dd id="browser-loaded" class="mt-1 font-medium text-ink-900 dark:text-ink-50"></dd>
+        </div>
+      </dl>
+    </article>
+
+    <div id="sync-error" class="card hidden border-red-200 dark:border-red-900" role="alert">
+      <h2 class="font-serif text-xl text-ink-900 dark:text-ink-50">The live profile could not be loaded</h2>
+      <p id="sync-error-message" class="mt-2 text-sm text-ink-600 dark:text-ink-300"></p>
+      <button
+        id="retry-sync"
+        type="button"
+        class="mt-4 rounded-md bg-ink-900 px-4 py-2 text-sm font-medium text-white dark:bg-ink-50 dark:text-ink-900"
+      >
+        Retry
+      </button>
+    </div>
+
+    <aside class="mt-8 rounded-lg bg-ink-50 p-5 text-sm text-ink-600 dark:bg-ink-900 dark:text-ink-300">
+      <h2 class="font-serif text-base text-ink-900 dark:text-ink-50">What this demonstrates</h2>
+      <ol class="mt-3 list-decimal space-y-2 pl-5">
+        <li>ORCID remains the source for the public researcher record.</li>
+        <li>The biosketch repository normalizes and versions that record each day.</li>
+        <li>This page fetches the current JSON at visit time, independently of the website build.</li>
+      </ol>
+      <p class="mt-4">
+        <a href={biosketchUrl}>Inspect the canonical JSON →</a>
+      </p>
+    </aside>
+  </section>
+</Base>
+
+<script define:vars={{ biosketchUrl }}>
+  const status = document.querySelector('#sync-status');
+  const statusDot = status?.querySelector('span');
+  const statusText = status?.querySelector('span:last-child');
+  const profile = document.querySelector('#biosketch');
+  const errorPanel = document.querySelector('#sync-error');
+  const retry = document.querySelector('#retry-sync');
+
+  const setText = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element) element.textContent = value ?? '';
+  };
+
+  const formatDate = (value) => {
+    if (!value) return 'Not reported';
+    const date = new Date(value);
+    return Number.isNaN(date.valueOf())
+      ? 'Not reported'
+      : new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(date);
+  };
+
+  const renderBiography = (text) => {
+    const container = document.querySelector('#profile-biography');
+    if (!container) return;
+    container.replaceChildren();
+    for (const paragraph of String(text || '').split(/\n\s*\n/).filter(Boolean)) {
+      const node = document.createElement('p');
+      node.textContent = paragraph;
+      container.append(node);
+    }
+  };
+
+  const render = (data) => {
+    const person = data.person || {};
+    setText('#profile-headline', person.headline || 'Public ORCID biosketch');
+    setText('#profile-name', person.name || 'Unnamed researcher');
+    setText('#profile-orcid-label', `ORCID ${person.orcid || ''}`);
+    setText('#works-count', `${Array.isArray(data.works) ? data.works.length : 0} works`);
+    setText('#source-updated', formatDate(data.provenance?.generated_at));
+    setText('#browser-loaded', formatDate(new Date().toISOString()));
+    renderBiography(person.biography);
+
+    const orcidLink = document.querySelector('#profile-orcid');
+    if (orcidLink && person.orcid_url) orcidLink.href = person.orcid_url;
+  };
+
+  const load = async () => {
+    profile?.classList.add('hidden');
+    errorPanel?.classList.add('hidden');
+    status?.classList.remove('hidden');
+    statusDot?.classList.add('animate-pulse', 'bg-amber-500');
+    statusDot?.classList.remove('bg-emerald-500');
+    if (statusText) statusText.textContent = 'Retrieving the current biosketch…';
+
+    try {
+      const response = await fetch(`${biosketchUrl}?refresh=${Date.now()}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`The biosketch server returned HTTP ${response.status}.`);
+      const data = await response.json();
+      if (!data?.person?.orcid || !data?.provenance) throw new Error('The response is not a valid biosketch.');
+      render(data);
+      profile?.classList.remove('hidden');
+      statusDot?.classList.remove('animate-pulse', 'bg-amber-500');
+      statusDot?.classList.add('bg-emerald-500');
+      if (statusText) statusText.textContent = 'Live biosketch loaded successfully';
+    } catch (error) {
+      status?.classList.add('hidden');
+      errorPanel?.classList.remove('hidden');
+      setText('#sync-error-message', error instanceof Error ? error.message : 'Unknown synchronization error.');
+    }
+  };
+
+  retry?.addEventListener('click', load);
+  load();
+</script>
