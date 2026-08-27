@@ -67,6 +67,62 @@ const biosketchUrl =
       </dl>
     </article>
 
+    <section id="publication-explorer" class="mt-8 hidden" aria-labelledby="publications-title">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="section-eyebrow">Searchable ORCID outputs</p>
+          <h2 id="publications-title" class="mt-2 font-serif text-2xl text-ink-900 dark:text-ink-50">
+            Publications and research outputs
+          </h2>
+        </div>
+        <p id="publication-count" class="text-sm tabular-nums text-ink-500 dark:text-ink-400" aria-live="polite"></p>
+      </div>
+
+      <div class="mt-5 grid gap-3 rounded-lg border border-ink-100 bg-ink-50 p-4 dark:border-ink-800 dark:bg-ink-900 sm:grid-cols-2 lg:grid-cols-4">
+        <label class="sm:col-span-2">
+          <span class="mb-1 block text-xs font-medium text-ink-600 dark:text-ink-300">Search</span>
+          <input
+            id="publication-search"
+            type="search"
+            placeholder="Title, journal, DOI, year…"
+            class="w-full rounded-md border border-ink-200 bg-white px-3 py-2 text-sm text-ink-900 placeholder:text-ink-400 dark:border-ink-700 dark:bg-ink-950 dark:text-ink-50"
+          />
+        </label>
+        <label>
+          <span class="mb-1 block text-xs font-medium text-ink-600 dark:text-ink-300">Output type</span>
+          <select id="publication-type" class="w-full rounded-md border border-ink-200 bg-white px-3 py-2 text-sm dark:border-ink-700 dark:bg-ink-950">
+            <option value="">All types</option>
+          </select>
+        </label>
+        <label>
+          <span class="mb-1 block text-xs font-medium text-ink-600 dark:text-ink-300">Sort</span>
+          <select id="publication-sort" class="w-full rounded-md border border-ink-200 bg-white px-3 py-2 text-sm dark:border-ink-700 dark:bg-ink-950">
+            <option value="date-desc">Newest first</option>
+            <option value="date-asc">Oldest first</option>
+            <option value="title-asc">Title A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="mt-4 overflow-x-auto rounded-lg border border-ink-100 dark:border-ink-800">
+        <table class="w-full min-w-[700px] border-collapse text-left text-sm">
+          <thead class="bg-ink-50 text-xs uppercase tracking-wide text-ink-500 dark:bg-ink-900 dark:text-ink-400">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-medium">Year</th>
+              <th scope="col" class="px-4 py-3 font-medium">Title</th>
+              <th scope="col" class="px-4 py-3 font-medium">Venue</th>
+              <th scope="col" class="px-4 py-3 font-medium">Type</th>
+              <th scope="col" class="px-4 py-3 font-medium">Record</th>
+            </tr>
+          </thead>
+          <tbody id="publication-rows" class="divide-y divide-ink-100 dark:divide-ink-800"></tbody>
+        </table>
+        <p id="publication-empty" class="hidden px-4 py-10 text-center text-sm text-ink-500 dark:text-ink-400">
+          No outputs match these filters.
+        </p>
+      </div>
+    </section>
+
     <div id="sync-error" class="card hidden border-red-200 dark:border-red-900" role="alert">
       <h2 class="font-serif text-xl text-ink-900 dark:text-ink-50">The live profile could not be loaded</h2>
       <p id="sync-error-message" class="mt-2 text-sm text-ink-600 dark:text-ink-300"></p>
@@ -100,6 +156,11 @@ const biosketchUrl =
   const profile = document.querySelector('#biosketch');
   const errorPanel = document.querySelector('#sync-error');
   const retry = document.querySelector('#retry-sync');
+  const publicationExplorer = document.querySelector('#publication-explorer');
+  const publicationSearch = document.querySelector('#publication-search');
+  const publicationType = document.querySelector('#publication-type');
+  const publicationSort = document.querySelector('#publication-sort');
+  let works = [];
 
   const setText = (selector, value) => {
     const element = document.querySelector(selector);
@@ -125,6 +186,94 @@ const biosketchUrl =
     }
   };
 
+  const workYear = (work) => String(work.publication_date || '').slice(0, 4);
+
+  const workUrl = (work) => {
+    const doi = work.identifiers?.doi;
+    return doi ? `https://doi.org/${doi}` : work.url || '';
+  };
+
+  const appendCell = (row, value, classes = '') => {
+    const cell = document.createElement('td');
+    cell.className = `px-4 py-3 align-top ${classes}`;
+    cell.textContent = value || '—';
+    row.append(cell);
+    return cell;
+  };
+
+  const renderWorks = () => {
+    const rows = document.querySelector('#publication-rows');
+    const empty = document.querySelector('#publication-empty');
+    if (!rows) return;
+
+    const query = String(publicationSearch?.value || '').trim().toLocaleLowerCase();
+    const type = String(publicationType?.value || '');
+    const sort = String(publicationSort?.value || 'date-desc');
+    const filtered = works.filter((work) => {
+      if (type && work.type !== type) return false;
+      const searchable = [
+        work.title,
+        work.journal,
+        work.type,
+        workYear(work),
+        ...Object.values(work.identifiers || {}),
+      ].join(' ').toLocaleLowerCase();
+      return !query || searchable.includes(query);
+    });
+
+    filtered.sort((a, b) => {
+      if (sort === 'title-asc') return String(a.title || '').localeCompare(String(b.title || ''));
+      const comparison = String(a.publication_date || '').localeCompare(String(b.publication_date || ''));
+      return sort === 'date-asc' ? comparison : -comparison;
+    });
+
+    rows.replaceChildren();
+    for (const work of filtered) {
+      const row = document.createElement('tr');
+      row.className = 'bg-white text-ink-700 hover:bg-ink-50 dark:bg-ink-950 dark:text-ink-200 dark:hover:bg-ink-900';
+      appendCell(row, workYear(work), 'tabular-nums text-ink-500 dark:text-ink-400');
+      const titleCell = appendCell(row, '');
+      const title = document.createElement('span');
+      title.className = 'font-medium text-ink-900 dark:text-ink-50';
+      title.textContent = work.title || 'Untitled output';
+      titleCell.replaceChildren(title);
+      appendCell(row, work.journal);
+      appendCell(row, String(work.type || '').replaceAll('-', ' '));
+      const recordCell = appendCell(row, '');
+      const url = workUrl(work);
+      if (url) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = work.identifiers?.doi ? 'DOI ↗' : 'Open ↗';
+        recordCell.replaceChildren(link);
+      } else {
+        recordCell.textContent = '—';
+      }
+      rows.append(row);
+    }
+
+    setText('#publication-count', `${filtered.length} of ${works.length} outputs`);
+    empty?.classList.toggle('hidden', filtered.length !== 0);
+    rows.closest('table')?.classList.toggle('hidden', filtered.length === 0);
+  };
+
+  const prepareWorks = (items) => {
+    works = Array.isArray(items) ? items : [];
+    const types = [...new Set(works.map((work) => work.type).filter(Boolean))].sort();
+    if (publicationType) {
+      for (const type of types) {
+        const option = document.createElement('option');
+        option.value = type;
+        option.textContent = String(type).replaceAll('-', ' ');
+        publicationType.append(option);
+      }
+    }
+    renderWorks();
+    publicationExplorer?.classList.remove('hidden');
+  };
+
   const render = (data) => {
     const person = data.person || {};
     setText('#profile-headline', person.headline || 'Public ORCID biosketch');
@@ -134,6 +283,7 @@ const biosketchUrl =
     setText('#source-updated', formatDate(data.provenance?.generated_at));
     setText('#browser-loaded', formatDate(new Date().toISOString()));
     renderBiography(person.biography);
+    prepareWorks(data.works);
 
     const orcidLink = document.querySelector('#profile-orcid');
     if (orcidLink && person.orcid_url) orcidLink.href = person.orcid_url;
@@ -165,5 +315,8 @@ const biosketchUrl =
   };
 
   retry?.addEventListener('click', load);
+  publicationSearch?.addEventListener('input', renderWorks);
+  publicationType?.addEventListener('change', renderWorks);
+  publicationSort?.addEventListener('change', renderWorks);
   load();
 </script>
