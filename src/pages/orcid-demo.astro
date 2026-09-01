@@ -3,6 +3,12 @@ import Base from '~/layouts/Base.astro';
 
 const biosketchUrl =
   'https://raw.githubusercontent.com/dhuzard/orcid-biosketch/main/generated/biosketch.json';
+const artifactBase =
+  'https://raw.githubusercontent.com/dhuzard/orcid-biosketch/main/generated';
+const wrappedUrl = `${artifactBase}/wrapped.json`;
+const cardUrl = `${artifactBase}/card.svg`;
+const heatmapUrl = `${artifactBase}/heatmap.svg`;
+const fortuneUrl = `${artifactBase}/fortune.txt`;
 ---
 
 <Base
@@ -148,6 +154,70 @@ const biosketchUrl =
       </button>
     </div>
 
+    <section class="mt-12" aria-labelledby="playful-title">
+      <p class="section-eyebrow">Same data, less solemn</p>
+      <h2 id="playful-title" class="mt-2 font-serif text-3xl text-ink-900 dark:text-ink-50">
+        An ORCID record can have a sense of humour
+      </h2>
+      <p class="mt-3 max-w-2xl text-ink-600 dark:text-ink-300">
+        The same versioned record also generates a yearly Wrapped, a researcher trading card,
+        an honest publication heatmap, and a fortune made from one of my own paper titles.
+        No credentials—or punchlines—are invented.
+      </p>
+
+      <div class="mt-6 grid gap-5 lg:grid-cols-2">
+        <article class="card" aria-labelledby="wrapped-title">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="section-eyebrow">ORCID Wrapped</p>
+              <h3 id="wrapped-title" class="mt-2 font-serif text-2xl text-ink-900 dark:text-ink-50">
+                <span id="wrapped-year">This year</span>, in metadata
+              </h3>
+            </div>
+            <span id="wrapped-output-count" class="rounded-full bg-ink-100 px-3 py-1 text-sm tabular-nums text-ink-700 dark:bg-ink-800 dark:text-ink-200">…</span>
+          </div>
+          <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div>
+              <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Busiest career year</dt>
+              <dd id="wrapped-busiest" class="mt-1 text-lg font-medium text-ink-900 dark:text-ink-50">Loading…</dd>
+            </div>
+            <div>
+              <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Titles drifted toward</dt>
+              <dd id="wrapped-keywords" class="mt-1 text-lg font-medium text-ink-900 dark:text-ink-50">Loading…</dd>
+            </div>
+          </dl>
+          <p id="wrapped-note" class="mt-5 text-sm text-ink-500 dark:text-ink-400" role="status">
+            Retrieving the latest Wrapped…
+          </p>
+        </article>
+
+        <article class="card flex flex-col" aria-labelledby="fortune-title">
+          <p class="section-eyebrow">Academic fortune cookie</p>
+          <h3 id="fortune-title" class="mt-2 font-serif text-2xl text-ink-900 dark:text-ink-50">
+            A paper of my own, selected deterministically
+          </h3>
+          <blockquote id="academic-fortune" class="mt-6 flex-1 whitespace-pre-line border-l-2 border-[#A6CE39] pl-4 text-lg leading-relaxed text-ink-700 dark:text-ink-200">
+            Opening the cookie…
+          </blockquote>
+        </article>
+      </div>
+
+      <div class="mt-5 grid items-start gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+        <figure class="card">
+          <img src={cardUrl} alt="Researcher trading card generated from the live ORCID record" class="mx-auto h-auto w-full max-w-80" loading="lazy" />
+          <figcaption class="mt-4 text-sm text-ink-500 dark:text-ink-400">
+            Years active become HP; outputs become attack; keywords supply the special ability.
+          </figcaption>
+        </figure>
+        <figure class="card">
+          <img src={heatmapUrl} alt="Publication activity heatmap generated from the live ORCID record" class="h-auto w-full" loading="lazy" />
+          <figcaption class="mt-4 text-sm text-ink-500 dark:text-ink-400">
+            The contribution-grid treatment, including the quiet years a polished CV usually hides.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <aside class="mt-8 rounded-lg bg-ink-50 p-5 text-sm text-ink-600 dark:bg-ink-900 dark:text-ink-300">
       <h2 class="font-serif text-base text-ink-900 dark:text-ink-50">What this demonstrates</h2>
       <ol class="mt-3 list-decimal space-y-2 pl-5">
@@ -219,7 +289,7 @@ const biosketchUrl =
   }
 </style>
 
-<script define:vars={{ biosketchUrl }}>
+<script is:inline define:vars={{ biosketchUrl, wrappedUrl, fortuneUrl }}>
   const status = document.querySelector('#sync-status');
   const statusDot = status?.querySelector('span');
   const statusText = status?.querySelector('span:last-child');
@@ -259,9 +329,19 @@ const biosketchUrl =
 
   const workYear = (work) => String(work.publication_date || '').slice(0, 4);
 
+  const safeHttpUrl = (value) => {
+    if (!value) return '';
+    try {
+      const parsed = new URL(value, window.location.href);
+      return ['http:', 'https:'].includes(parsed.protocol) ? parsed.href : '';
+    } catch {
+      return '';
+    }
+  };
+
   const workUrl = (work) => {
     const doi = work.identifiers?.doi;
-    return doi ? `https://doi.org/${doi}` : work.url || '';
+    return safeHttpUrl(doi ? `https://doi.org/${doi}` : work.url);
   };
 
   const appendCell = (row, value, classes = '') => {
@@ -364,7 +444,9 @@ const biosketchUrl =
       item.className = 'print-entry';
       const title = [entry.role, entry.organization].filter(Boolean).join(', ');
       appendPrintText(item, title || 'Affiliation', 'print-entry-title');
-      const dates = [entry.start_date, entry.end_date || 'present'].filter(Boolean).join(' - ');
+      const dates = entry.start_date
+        ? [entry.start_date, entry.end_date || 'present'].join(' - ')
+        : entry.end_date || '';
       const details = [entry.department, dates].filter(Boolean).join(' | ');
       if (details) appendPrintText(item, details, 'print-entry-meta');
       container.append(item);
@@ -417,7 +499,35 @@ const biosketchUrl =
     prepareWorks(data.works);
 
     const orcidLink = document.querySelector('#profile-orcid');
-    if (orcidLink && person.orcid_url) orcidLink.href = person.orcid_url;
+    const orcidUrl = safeHttpUrl(person.orcid_url);
+    if (orcidLink && orcidUrl) orcidLink.href = orcidUrl;
+  };
+
+  const loadPlayfulExamples = async () => {
+    try {
+      const [wrappedResponse, fortuneResponse] = await Promise.all([
+        fetch(`${wrappedUrl}?refresh=${Date.now()}`, { cache: 'no-store' }),
+        fetch(`${fortuneUrl}?refresh=${Date.now()}`, { cache: 'no-store' }),
+      ]);
+      if (!wrappedResponse.ok || !fortuneResponse.ok) {
+        throw new Error('The playful artifacts are not published yet.');
+      }
+      const wrapped = await wrappedResponse.json();
+      const fortune = await fortuneResponse.text();
+      setText('#wrapped-year', String(wrapped.year || 'This year'));
+      setText('#wrapped-output-count', `${wrapped.output_count || 0} outputs`);
+      setText(
+        '#wrapped-busiest',
+        wrapped.busiest_year ? `${wrapped.busiest_year.year} · ${wrapped.busiest_year.count} outputs` : 'Not enough dated outputs',
+      );
+      setText('#wrapped-keywords', (wrapped.keyword_drift?.emerged || []).slice(0, 3).join(', ') || 'No new terms yet');
+      setText('#wrapped-note', `${wrapped.totals?.outputs || 0} outputs across a ${wrapped.career?.span_years || 0}-year career span.`);
+      setText('#academic-fortune', fortune.trim());
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'The playful artifacts could not be loaded.';
+      setText('#wrapped-note', message);
+      setText('#academic-fortune', message);
+    }
   };
 
   const load = async () => {
@@ -453,4 +563,5 @@ const biosketchUrl =
   publicationSort?.addEventListener('change', renderWorks);
   exportPdf?.addEventListener('click', () => window.print());
   load();
+  loadPlayfulExamples();
 </script>
