@@ -28,7 +28,7 @@ const fortuneUrl = `${artifactBase}/fortune.txt`;
     </div>
   </section>
 
-  <section class="container-prose py-10 sm:py-14">
+  <section class="container-wide py-10 sm:py-14">
     <div class="screen-only mb-6 flex flex-wrap items-center justify-between gap-3">
       <div
         id="sync-status"
@@ -154,64 +154,79 @@ const fortuneUrl = `${artifactBase}/fortune.txt`;
       </button>
     </div>
 
-    <section class="mt-12" aria-labelledby="playful-title">
-      <p class="section-eyebrow">Same data, less solemn</p>
-      <h2 id="playful-title" class="mt-2 font-serif text-3xl text-ink-900 dark:text-ink-50">
-        An ORCID record can have a sense of humour
-      </h2>
-      <p class="mt-3 max-w-2xl text-ink-600 dark:text-ink-300">
-        The same versioned record also generates a yearly Wrapped, a researcher trading card,
-        an honest publication heatmap, and a fortune made from one of my own paper titles.
-        No credentials—or punchlines—are invented.
-      </p>
+    <section class="mt-16 border-t border-ink-100 pt-12 dark:border-ink-800" aria-labelledby="playful-title">
+      <div class="max-w-3xl">
+        <p class="section-eyebrow">Same data, less solemn</p>
+        <h2 id="playful-title" class="mt-2 font-serif text-3xl text-ink-900 dark:text-ink-50 sm:text-4xl">
+          An ORCID record can have a sense of humour
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-ink-600 dark:text-ink-300">
+          The same versioned record also generates a yearly Wrapped, a researcher trading card,
+          an honest publication heatmap, and a fortune made from one of my own paper titles.
+          No credentials—or punchlines—are invented.
+        </p>
+      </div>
 
-      <div class="mt-6 grid gap-5 lg:grid-cols-2">
-        <article class="card" aria-labelledby="wrapped-title">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <p class="section-eyebrow">ORCID Wrapped</p>
-              <h3 id="wrapped-title" class="mt-2 font-serif text-2xl text-ink-900 dark:text-ink-50">
-                <span id="wrapped-year">This year</span>, in metadata
-              </h3>
-            </div>
-            <span id="wrapped-output-count" class="rounded-full bg-ink-100 px-3 py-1 text-sm tabular-nums text-ink-700 dark:bg-ink-800 dark:text-ink-200">…</span>
+      <article class="card mt-8 p-6 sm:p-7" aria-labelledby="wrapped-title">
+        <p class="section-eyebrow">ORCID Wrapped</p>
+        <h3 id="wrapped-title" class="mt-2 font-serif text-2xl text-ink-900 dark:text-ink-50">
+          <span id="wrapped-year">This year</span>, in metadata
+        </h3>
+        <dl class="mt-6 grid overflow-hidden rounded-lg border border-ink-100 bg-ink-50/70 dark:border-ink-800 dark:bg-ink-950/40 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="p-4 sm:p-5">
+            <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">This year</dt>
+            <dd id="wrapped-output-count" class="mt-2 text-xl font-semibold tabular-nums text-ink-900 dark:text-ink-50">Loading…</dd>
           </div>
-          <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-            <div>
-              <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Busiest career year</dt>
-              <dd id="wrapped-busiest" class="mt-1 text-lg font-medium text-ink-900 dark:text-ink-50">Loading…</dd>
-            </div>
-            <div>
-              <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Titles drifted toward</dt>
-              <dd id="wrapped-keywords" class="mt-1 text-lg font-medium text-ink-900 dark:text-ink-50">Loading…</dd>
-            </div>
-          </dl>
-          <p id="wrapped-note" class="mt-5 text-sm text-ink-500 dark:text-ink-400" role="status">
-            Retrieving the latest Wrapped…
-          </p>
-        </article>
+          <div class="border-t border-ink-100 p-4 dark:border-ink-800 sm:border-l sm:border-t-0 sm:p-5">
+            <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Busiest career year</dt>
+            <dd id="wrapped-busiest" class="mt-2 text-xl font-semibold text-ink-900 dark:text-ink-50">Loading…</dd>
+          </div>
+          <div class="border-t border-ink-100 p-4 dark:border-ink-800 sm:p-5 lg:border-l lg:border-t-0">
+            <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Career record</dt>
+            <dd id="wrapped-career" class="mt-2 text-xl font-semibold text-ink-900 dark:text-ink-50">Loading…</dd>
+          </div>
+          <div class="border-t border-ink-100 p-4 dark:border-ink-800 sm:border-l sm:p-5 lg:border-t-0">
+            <dt class="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400">Titles drifted toward</dt>
+            <dd id="wrapped-keywords" class="mt-2 text-base font-semibold leading-snug text-ink-900 dark:text-ink-50">Loading…</dd>
+          </div>
+        </dl>
+        <p id="wrapped-note" class="sr-only" role="status">Retrieving the latest Wrapped…</p>
+      </article>
 
-        <article class="card flex flex-col" aria-labelledby="fortune-title">
+      <article class="card mt-5 grid gap-6 p-6 sm:p-7 lg:grid-cols-[minmax(220px,0.45fr)_minmax(0,1fr)] lg:gap-10" aria-labelledby="fortune-title">
+        <div>
           <p class="section-eyebrow">Academic fortune cookie</p>
           <h3 id="fortune-title" class="mt-2 font-serif text-2xl text-ink-900 dark:text-ink-50">
             A paper of my own, selected deterministically
           </h3>
-          <blockquote id="academic-fortune" class="mt-6 flex-1 whitespace-pre-line border-l-2 border-[#A6CE39] pl-4 text-lg leading-relaxed text-ink-700 dark:text-ink-200">
+        </div>
+        <blockquote class="border-l-2 border-[#A6CE39] pl-5 sm:pl-6">
+          <p id="academic-fortune" class="font-serif text-xl leading-relaxed text-ink-800 dark:text-ink-100 sm:text-2xl">
             Opening the cookie…
-          </blockquote>
-        </article>
-      </div>
+          </p>
+          <footer class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-ink-500 dark:text-ink-400">
+            <span id="fortune-attribution"></span>
+            <a id="fortune-link" class="hidden font-medium text-accent-700 dark:text-accent-300" target="_blank" rel="noopener">Read the paper ↗</a>
+          </footer>
+        </blockquote>
+      </article>
 
-      <div class="mt-5 grid items-start gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-        <figure class="card">
-          <img src={cardUrl} alt="Researcher trading card generated from the live ORCID record" class="mx-auto h-auto w-full max-w-80" loading="lazy" />
-          <figcaption class="mt-4 text-sm text-ink-500 dark:text-ink-400">
+      <div class="mt-5 grid gap-5 lg:grid-cols-2">
+        <figure class="card flex flex-col p-4 sm:p-5">
+          <div class="flex h-[28rem] items-center justify-center overflow-hidden rounded-lg bg-ink-50 p-3 dark:bg-ink-950/50 sm:h-[32rem]">
+            <img src={cardUrl} alt="Researcher trading card generated from the live ORCID record" class="h-full w-full object-contain" loading="lazy" />
+          </div>
+          <figcaption class="mt-4 px-1 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+            <strong class="text-ink-700 dark:text-ink-200">Researcher trading card.</strong>
             Years active become HP; outputs become attack; keywords supply the special ability.
           </figcaption>
         </figure>
-        <figure class="card">
-          <img src={heatmapUrl} alt="Publication activity heatmap generated from the live ORCID record" class="h-auto w-full" loading="lazy" />
-          <figcaption class="mt-4 text-sm text-ink-500 dark:text-ink-400">
+        <figure class="card flex flex-col p-4 sm:p-5">
+          <div class="flex h-[28rem] items-center justify-center overflow-hidden rounded-lg bg-ink-50 p-3 dark:bg-ink-950/50 sm:h-[32rem]">
+            <img src={heatmapUrl} alt="Publication activity heatmap generated from the live ORCID record" class="h-full w-full object-contain" loading="lazy" />
+          </div>
+          <figcaption class="mt-4 px-1 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+            <strong class="text-ink-700 dark:text-ink-200">Publication heatmap.</strong>
             The contribution-grid treatment, including the quiet years a polished CV usually hides.
           </figcaption>
         </figure>
@@ -520,13 +535,31 @@ const fortuneUrl = `${artifactBase}/fortune.txt`;
         '#wrapped-busiest',
         wrapped.busiest_year ? `${wrapped.busiest_year.year} · ${wrapped.busiest_year.count} outputs` : 'Not enough dated outputs',
       );
+      setText(
+        '#wrapped-career',
+        `${wrapped.totals?.outputs || 0} outputs · ${wrapped.career?.span_years || 0} years`,
+      );
       setText('#wrapped-keywords', (wrapped.keyword_drift?.emerged || []).slice(0, 3).join(', ') || 'No new terms yet');
-      setText('#wrapped-note', `${wrapped.totals?.outputs || 0} outputs across a ${wrapped.career?.span_years || 0}-year career span.`);
-      setText('#academic-fortune', fortune.trim());
+      setText('#wrapped-note', 'The latest Wrapped loaded successfully.');
+
+      const normalizedFortune = fortune.replace(/\s+/g, ' ').trim();
+      const parsedFortune = normalizedFortune.match(/^(.*?)\s+--\s+(.+?)(?:\s+(https?:\/\/\S+))?$/);
+      const fortuneTitle = parsedFortune?.[1] || normalizedFortune;
+      const fortuneAttribution = parsedFortune?.[2] || '';
+      const fortunePaperUrl = safeHttpUrl(parsedFortune?.[3]);
+      setText('#academic-fortune', fortuneTitle);
+      setText('#fortune-attribution', fortuneAttribution ? `— ${fortuneAttribution}` : '');
+      const fortuneLink = document.querySelector('#fortune-link');
+      if (fortuneLink) {
+        fortuneLink.classList.toggle('hidden', !fortunePaperUrl);
+        if (fortunePaperUrl) fortuneLink.href = fortunePaperUrl;
+        else fortuneLink.removeAttribute('href');
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : 'The playful artifacts could not be loaded.';
       setText('#wrapped-note', message);
       setText('#academic-fortune', message);
+      setText('#fortune-attribution', '');
     }
   };
 
