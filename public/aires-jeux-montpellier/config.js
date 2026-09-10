@@ -1,7 +1,6 @@
 export const SITE_CONFIG = {
-  supabaseUrl: "YOUR_SUPABASE_URL",
-  supabaseAnonKey: "YOUR_SUPABASE_ANON_KEY",
-  turnstileSiteKey: "YOUR_TURNSTILE_SITE_KEY",
+  supabaseUrl: "https://ywibhyizvfahvqxthlfo.supabase.co",
+  supabaseAnonKey: "sb_publishable_SCyKoVE2D5oxo2vBl2CNLA_PXYTwwiM",
   ownerName: "Damien Huzard",
   ownerEmail: "damien.huzard@gmail.com",
   showPublicSupporters: true
