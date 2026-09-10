@@ -6,7 +6,6 @@
   <meta name="description" content="Pétition citoyenne pour des aires de jeux familiales, ombragées et inclusives dans les parcs départementaux d'Alco et du Château d'O à Montpellier.">
   <meta name="theme-color" content="#f7f3ea">
   <title>Des jeux à l'ombre — Montpellier</title>
-  <link rel="preconnect" href="https://challenges.cloudflare.com">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -90,10 +89,12 @@
             <label><span>Code postal <b aria-hidden="true">*</b></span><input name="postal_code" type="text" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="34000" required></label>
             <label><span>E-mail <b aria-hidden="true">*</b></span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
           </div>
+          <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label>Site internet <input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+          </div>
           <label class="check-row"><input name="support" type="checkbox" required><span>Je soutiens cette pétition et la demande présentée ci-dessus. <b aria-hidden="true">*</b></span></label>
           <label class="check-row"><input name="public_display" type="checkbox"><span>J'accepte que mon prénom, l'initiale de mon nom et mon code postal apparaissent dans la liste publique des soutiens.</span></label>
           <label class="check-row"><input name="privacy" type="checkbox" required><span>J'ai lu les <a href="#confidentialite">informations sur l'utilisation de mes données</a>. <b aria-hidden="true">*</b></span></label>
-          <div id="turnstile-container" class="turnstile-container" aria-label="Protection anti-spam"></div>
           <button id="submit-button" class="button button-primary submit-button" type="submit">Signer la pétition</button>
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
