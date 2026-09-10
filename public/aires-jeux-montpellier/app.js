@@ -10,6 +10,7 @@ const supportersList = document.querySelector("#supporters-list");
 
 const configured = SITE_CONFIG.supabaseUrl && SITE_CONFIG.supabaseAnonKey;
 const supabase = configured ? createClient(SITE_CONFIG.supabaseUrl, SITE_CONFIG.supabaseAnonKey) : null;
+let startedAt = Date.now();
 
 document.querySelectorAll("[data-owner-name]").forEach(el => el.textContent = SITE_CONFIG.ownerName || "À compléter");
 document.querySelectorAll("[data-owner-email]").forEach(el => {
@@ -33,7 +34,7 @@ async function loadStats() {
   const { data, error } = await supabase.rpc("petition_stats");
   if (error) { console.error(error); return; }
   const row = Array.isArray(data) ? data[0] : data;
-  setCount(row?.signature_count ?? 0);
+  setCount(row?.signature_count ?? data ?? 0);
 }
 
 async function loadPublicSupporters() {
@@ -69,15 +70,6 @@ function validateForm() {
   return "";
 }
 
-function friendlyRpcError(error) {
-  const message = String(error?.message || "");
-  if (message.includes("already_signed")) return "Cette adresse e-mail a déjà été utilisée pour soutenir la pétition.";
-  if (message.includes("invalid_postal_code")) return "Le code postal doit contenir 5 chiffres.";
-  if (message.includes("invalid_email")) return "Merci d'indiquer une adresse e-mail valide.";
-  if (message.includes("invalid_name")) return "Merci d'indiquer votre prénom et votre nom.";
-  return "Impossible d'enregistrer la signature pour le moment.";
-}
-
 form.addEventListener("submit", async event => {
   event.preventDefault();
   setStatus("");
@@ -89,19 +81,34 @@ form.addEventListener("submit", async event => {
   submitButton.textContent = "Enregistrement…";
 
   try {
-    const { data, error } = await supabase.rpc("sign_petition", {
-      p_first_name: form.first_name.value.trim(),
-      p_last_name: form.last_name.value.trim(),
-      p_postal_code: form.postal_code.value.trim(),
-      p_email: form.email.value.trim(),
-      p_public_display: form.public_display.checked
+    const { data, error } = await supabase.functions.invoke("sign-petition", {
+      body: {
+        first_name: form.first_name.value.trim(),
+        last_name: form.last_name.value.trim(),
+        postal_code: form.postal_code.value.trim(),
+        email: form.email.value.trim(),
+        public_display: form.public_display.checked,
+        website: form.website?.value || "",
+        started_at: startedAt
+      }
     });
 
-    if (error) throw new Error(friendlyRpcError(error));
+    if (error) {
+      let message = "Impossible d'enregistrer la signature pour le moment.";
+      try {
+        const payload = await error.context?.json?.();
+        if (payload?.error === "already_signed") message = "Cette adresse e-mail a déjà été utilisée pour soutenir la pétition.";
+        else if (payload?.error === "rate_limited") message = payload.message || "Trop de tentatives. Réessayez plus tard.";
+        else if (payload?.error === "submission_timing") message = "Le formulaire a été soumis trop rapidement. Merci de réessayer.";
+        else if (payload?.message) message = payload.message;
+      } catch (_) {}
+      throw new Error(message);
+    }
 
     form.reset();
+    startedAt = Date.now();
     setStatus("Merci. Votre soutien a bien été enregistré.", "success");
-    if (data !== null && data !== undefined) setCount(data);
+    if (data?.signature_count !== undefined) setCount(data.signature_count);
     await loadPublicSupporters();
   } catch (error) {
     console.error(error);
