@@ -8,12 +8,8 @@ const countEls = [document.querySelector("#signature-count"), document.querySele
 const supportersSection = document.querySelector("#public-supporters");
 const supportersList = document.querySelector("#supporters-list");
 
-const configured = SITE_CONFIG.supabaseUrl && SITE_CONFIG.supabaseAnonKey &&
-  !SITE_CONFIG.supabaseUrl.includes("YOUR_") && !SITE_CONFIG.supabaseAnonKey.includes("YOUR_");
-
+const configured = SITE_CONFIG.supabaseUrl && SITE_CONFIG.supabaseAnonKey;
 const supabase = configured ? createClient(SITE_CONFIG.supabaseUrl, SITE_CONFIG.supabaseAnonKey) : null;
-let turnstileToken = "";
-let turnstileWidgetId = null;
 
 document.querySelectorAll("[data-owner-name]").forEach(el => el.textContent = SITE_CONFIG.ownerName || "À compléter");
 document.querySelectorAll("[data-owner-email]").forEach(el => {
@@ -43,14 +39,17 @@ async function loadStats() {
 async function loadPublicSupporters() {
   if (!supabase || !SITE_CONFIG.showPublicSupporters) return;
   const { data, error } = await supabase.rpc("public_signatures", { max_rows: 60 });
-  if (error || !Array.isArray(data) || data.length === 0) return;
+  if (error || !Array.isArray(data) || data.length === 0) {
+    supportersSection.hidden = true;
+    return;
+  }
 
   supportersList.replaceChildren();
   data.forEach(row => {
     const item = document.createElement("div");
     item.className = "supporter";
     const name = document.createElement("strong");
-    const initial = String(row.last_initial || "").slice(0,1).toUpperCase();
+    const initial = String(row.last_initial || "").slice(0, 1).toUpperCase();
     name.textContent = `${row.first_name || ""}${initial ? " " + initial + "." : ""}`;
     const detail = document.createElement("span");
     detail.textContent = row.postal_code || "";
@@ -58,31 +57,6 @@ async function loadPublicSupporters() {
     supportersList.append(item);
   });
   supportersSection.hidden = false;
-}
-
-function loadTurnstile() {
-  const siteKey = SITE_CONFIG.turnstileSiteKey;
-  if (!siteKey || siteKey.includes("YOUR_")) {
-    if (configured) {
-      setStatus("Configuration anti-spam à terminer avant la mise en ligne.", "error");
-      submitButton.disabled = true;
-    }
-    return;
-  }
-  const script = document.createElement("script");
-  script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-  script.async = true;
-  script.defer = true;
-  script.addEventListener("load", () => {
-    turnstileWidgetId = window.turnstile.render("#turnstile-container", {
-      sitekey: siteKey,
-      theme: "light",
-      callback(token) { turnstileToken = token; if (configured) submitButton.disabled = false; },
-      "expired-callback"() { turnstileToken = ""; },
-      "error-callback"() { turnstileToken = ""; setStatus("La vérification anti-spam n'a pas pu être chargée. Réessayez.", "error"); }
-    });
-  });
-  document.head.appendChild(script);
 }
 
 function validateForm() {
@@ -95,45 +69,39 @@ function validateForm() {
   return "";
 }
 
+function friendlyRpcError(error) {
+  const message = String(error?.message || "");
+  if (message.includes("already_signed")) return "Cette adresse e-mail a déjà été utilisée pour soutenir la pétition.";
+  if (message.includes("invalid_postal_code")) return "Le code postal doit contenir 5 chiffres.";
+  if (message.includes("invalid_email")) return "Merci d'indiquer une adresse e-mail valide.";
+  if (message.includes("invalid_name")) return "Merci d'indiquer votre prénom et votre nom.";
+  return "Impossible d'enregistrer la signature pour le moment.";
+}
+
 form.addEventListener("submit", async event => {
   event.preventDefault();
   setStatus("");
   const validationError = validateForm();
   if (validationError) return setStatus(validationError, "error");
-
-  if (!configured) return setStatus("La collecte des signatures est en cours d'activation. Revenez très prochainement.", "error");
-  if (!turnstileToken) return setStatus("Merci de terminer la vérification anti-spam.", "error");
+  if (!supabase) return setStatus("La collecte des signatures n'est pas configurée.", "error");
 
   submitButton.disabled = true;
   submitButton.textContent = "Enregistrement…";
 
   try {
-    const { data, error } = await supabase.functions.invoke("sign-petition", {
-      body: {
-        first_name: form.first_name.value.trim(),
-        last_name: form.last_name.value.trim(),
-        postal_code: form.postal_code.value.trim(),
-        email: form.email.value.trim(),
-        public_display: form.public_display.checked,
-        turnstile_token: turnstileToken
-      }
+    const { data, error } = await supabase.rpc("sign_petition", {
+      p_first_name: form.first_name.value.trim(),
+      p_last_name: form.last_name.value.trim(),
+      p_postal_code: form.postal_code.value.trim(),
+      p_email: form.email.value.trim(),
+      p_public_display: form.public_display.checked
     });
 
-    if (error) {
-      let message = "Impossible d'enregistrer la signature pour le moment.";
-      try {
-        const payload = await error.context?.json?.();
-        if (payload?.error === "already_signed") message = "Cette adresse e-mail a déjà été utilisée pour soutenir la pétition.";
-        else if (payload?.message) message = payload.message;
-      } catch (_) {}
-      throw new Error(message);
-    }
+    if (error) throw new Error(friendlyRpcError(error));
 
     form.reset();
-    turnstileToken = "";
-    if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
     setStatus("Merci. Votre soutien a bien été enregistré.", "success");
-    if (data?.signature_count !== undefined) setCount(data.signature_count);
+    if (data !== null && data !== undefined) setCount(data);
     await loadPublicSupporters();
   } catch (error) {
     console.error(error);
@@ -144,6 +112,4 @@ form.addEventListener("submit", async event => {
   }
 });
 
-if (!configured) setStatus("La page est en ligne ; la collecte des signatures sera activée dès que la base sécurisée sera connectée.", "");
 await Promise.all([loadStats(), loadPublicSupporters()]);
-loadTurnstile();
